@@ -129,7 +129,7 @@ const sumOdd = (inputs) => {
 a = sumOdd([1, 8, 9, -3, 0, 4])
 console.log(`The sum of odd is :${a}`);
 
-*/
+/*
 //Destructuring Workshop
 const order = { name: "VitC", price: 50 };
 const { name, price } = order;
@@ -140,3 +140,24 @@ const getPrice = ({ price }) => {
   return price;
 };
 console.log(getPrice(order));
+*/
+class Animal{
+  constructor(_legs){
+    this.legs = _legs;
+  }
+  amountOfLegs(){
+    console.log(`I have ${this.legs} legs`);
+  }
+}
+const animal = new Animal(2);
+console.log(animal.amountOfLegs());
+
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark");
+  }
+}
+const dog = new Dog(4);
+console.log(dog);
+dog.amountOfLegs();
+dog.makeNoise();
