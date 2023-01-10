@@ -133,8 +133,7 @@ const { price } = order;
 console.log(price);
 
 // Quiz 2
-const getPrice = (order) => {
-  const { price } = order;
+const getPrice = ({ price }) => {
   return price;
 };
 console.log(getPrice(order));
