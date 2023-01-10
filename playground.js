@@ -9,7 +9,7 @@ const myObject = { x: 1, y: 2 };
 const myObjects = [
   { x: 1, y: 2 },
   { x: 3, y: 4 },
-]
+];
 
 console.log(a, b, c, d, e);
 console.log(myArray);
@@ -17,23 +17,23 @@ console.log(myObjects);
 
 //Scope Workshop
 
-const f  = "hello";
-function greet () {
-    console.log(f);
+const f = "hello";
+function greet() {
+  console.log(f);
 }
 greet();
 
-let g = "hello";
-function greet () {
-    h = "hi";
+let h = "hello";
+function greet1() {
+  h = "hi";
+  console.log(h);
 }
-console.log(h);
+greet1();
 
 const i = 10;
 function great() {
-    const j = 20;
-    console.log(i + j);
+  const j = 20;
+  console.log(i + j);
 }
 
 great();
-
