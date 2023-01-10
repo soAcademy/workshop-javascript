@@ -85,15 +85,24 @@
 // };
 // calculateBMI(100,160);
 
-const average = (input) => {
-    let total = 0;
-    let averageResult;
-    for (let i = 0; i < input.length; i++) {
-    total += input[i];
-    }
-    averageResult = total / input.length;
-    console.log(`The average is: ${averageResult}`);
-    }
-    average([1,2,3,4,5])
+// const average = (input) => {
+//   let total = 0;
+//   let averageResult;
+//   for (let i = 0; i < input.length; i++) {
+//     total += input[i];
+//   }
+//   averageResult = total / input.length;
+//   console.log(`The average is: ${averageResult}`);
+// };
+// average([1, 2, 3, 4, 5]);
 
-
+const sumOdd = (input) => {
+  let total = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) {
+      total += input[i];
+    }
+    return `The sum of odd is: ${total}`;
+  }
+};
+console.log(sumOdd([1, 2, 3, 4, 5, 6, 7]));
