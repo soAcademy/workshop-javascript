@@ -51,13 +51,51 @@ console.log(sum2(1, 2, 3)); */
   return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
 };
 console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 })); */
-
+/* 
 const isOdd = (x) => {
     return x % 2 !== 0;
 }
-console.log(isOdd(2))
+console.log(isOdd(2)) */
 
 
+/* const calculateBMI = (weight, height) => {
+    const bmi = weight / (height / 100) ** 2;
+    let grade ;
+    if(bmi < 18.5) {
+        grade = "underweight";
+    } else if (18.5 <= bmi < 25) {
+        grade = "healthy";
+    } else if (25 <= bmi < 30) {
+        grade = "overweight"
+    } else if (bmi >= 30) {
+        grade = "obesity"
+    }
+    return (`Your BMI grade is: ${grade}`);
+};
+console.log(calculateBMI(78, 180));
+ */
+/* const average = (input) => {
+    let sum = 0;
+let average = 0;
+for (let i = 0; i < input.length; i++) {
+sum += input[i];
+}
+average = sum / input.length;
+return (`The average is: ${average}`);
+}
+console.log (average([1,2,3,4]));
+ */
+
+
+const sumOdd = (input) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) 
+    sum += input[i];
+  }
+  return (`The sum of odd  is: ${sum}`);
+};
+console.log (sumOdd([1, 2, 3, 4]));
 
 
 
