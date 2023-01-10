@@ -87,13 +87,24 @@
 // }
 // console.log(`The sum of odd is: ${sumOdd([1, 8, 9, -3, 0, 4])}`);
 
-const order = { name: "VitC", price: 50 };
-// const { price } = order;
+// const order = { name: "VitC", price: 50 };
+// // const { price } = order;
 
-// console.log(`The price is: ${price}`);
+// // console.log(`The price is: ${price}`);
 
-const getprice = ({ price }) => {
-  return price;
-};
+// const getprice = ({ price }) => {
+//   return price;
+// };
 
-console.log(`The price is: ${getprice({ price: 50 })}`);
+// console.log(`The price is: ${getprice({ price: 50 })}`);
+
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+  amountOfLegs() {
+    console.log(`I have ${this.legs} legs`);
+  }
+}
+const animal = new Animal(2);
+animal.amountOfLegs();
