@@ -55,10 +55,16 @@ console.log("Hello World");
 
 // greet2();
 
-console.log("Funnctions Workshop #1");
+console.log("Functions Workshop #1");
 
 function sum1(a, b, c) {
   return a + b + c;
 }
 
 console.log(sum1(1, 2, 3));
+
+console.log("Functions Workshop #2");
+
+const sum2 = (a, b, c) => a + b + c;
+
+console.log(sum2(1, 2, 3));
