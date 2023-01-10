@@ -20,8 +20,14 @@ const myObjects = [
 ];
 console.log("myObject :", myObject);*/
 
-const a = "hello";
+/*const a = "hello";
 function greet() {
   console.log(a);
 }
-greet();
+greet();*/
+
+const a = "hello";
+function greet() {
+  a = "hi";
+}
+console.log(a);
