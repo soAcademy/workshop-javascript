@@ -104,3 +104,15 @@ const calculateBMI = (weight, height) => {
 
 calculateBMI(70, 170);
 calculateBMI(80, 170);
+
+console.log("Flow Control Workshop #2");
+
+const average = (inputArray) => {
+  let accumulatedResult = 0;
+  for (let i = 0; i < inputArray.length; i++) {
+    accumulatedResult += inputArray[i];
+  }
+  return accumulatedResult / inputArray.length;
+};
+
+console.log(average([1, 2, 3, 4]));
