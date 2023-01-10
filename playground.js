@@ -51,8 +51,14 @@
 //     }
 //     console.log(sum2(1,2,3));
 
-const sum3 = (a, b, c) => {
-  return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
-};
+// const sum3 = (a, b, c) => {
+//   return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
+// };
 
-console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+
+const isOdd = (num) => {
+    return num % 2 !== 0;
+    }
+    console.log(isOdd(1));
+    console.log(isOdd(2));
