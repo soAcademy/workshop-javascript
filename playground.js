@@ -173,3 +173,4 @@ class Dog extends Animal {
 }
 const pitBull = new Dog(4);
 pitBull.makeNoise();
+pitBull.amountOfLegs();
