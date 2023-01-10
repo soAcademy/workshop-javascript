@@ -54,37 +54,85 @@
 // greet();
 // ทำงานไม่ได้ แต่ไขแล้ว
 
-//Functions Workshop
+// //Functions Workshop
+// //1.
+// function sum1(a, b, c) {
+//     return a + b + c;
+// }
+// console.log(sum1(1, 2, 3));
+
+// //2.
+// const sum2 = (a, b, c) => a + b + c;
+// console.log(sum1(1, 2, 3));
+
+// //3.
+// const sum3 = (a, b, c) => {
+//     //a = {x: number, y: number}
+
+//     const ax = a.x;
+//     const ay = a.y;
+
+//     const bx = b.x;
+//     const by = b.y;
+
+//     const cx = c.x;
+//     const cy = c.y;
+
+//     const x = ax + bx + cx;
+//     const y = ay + by + cy;
+
+//     return { x: x, y: y };
+// };
+// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+
+// //4.
+// const isOdd = (val) => val % 2 !== 0;
+// console.log(isOdd(5));
+
+//FLOW CONTROL WORKSHOP
 //1.
-function sum1(a, b, c) {
-    return a + b + c;
-}
-console.log(sum1(1, 2, 3));
+const calculateBMI = (weight, height) => {
+    const bmi = weight / (height / 100) ** 2;
+    let result = "";
+    // console.log(bmi);
+    if (bmi >= 30) {
+        result = "obesity";
+    } else if (bmi >= 25) {
+        result = "overweight";
+    } else if (bmi >= 18.5) {
+        result = "healthy";
+    } else {
+        result = "underweight";
+    }
+    return result;
+};
+
+console.log(calculateBMI(62, 175));
 
 //2.
-const sum2 = (a, b, c) => a + b + c;
-console.log(sum1(1, 2, 3));
+const average = (input) => {
+    let resultAvg = 0;
+    let sumIn = 0;
+    for (let i = 0; i < input.length; i++) {
+        sumIn += input[i];
+    }
+    // console.log(sumIn);
+    resultAvg = sumIn / input.length;
+    return resultAvg;
+};
+
+console.log(average([1, 2, 3, 4]));
 
 //3.
-const sum3 = (a, b, c) => {
-    //a = {x: number, y: number}
-
-    const ax = a.x;
-    const ay = a.y;
-
-    const bx = b.x; 
-    const by = b.y;
-
-    const cx = c.x;
-    const cy = c.y;
-
-    const x = ax + bx + cx;
-    const y = ay + by + cy;
-
-    return { x: x, y: y };
+const sumOdd = (input) => {
+    let sumValue = 0;
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] % 2 !== 0) {
+            // console.log(input[i]);
+            sumValue += input[i];
+        }
+    }
+    return sumValue;
 };
-console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
-//4.
-const isOdd = (val) => val % 2 !== 0;
-console.log(isOdd(5));
+console.log(sumOdd([1, 8, 9, -3, 0, 4]));
