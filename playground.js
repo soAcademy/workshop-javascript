@@ -95,7 +95,7 @@
 //   for (let i = 0; i < input.length; i++) {
 //     if (input[i] % 2 !== 0) sum += input[i];
 //   }
-//   return average;
+//   return sum;
 // };
 
 // console.log(sumOdd([1, 2, 3, 4]));
@@ -104,7 +104,7 @@
 const order = {name: 'Teak', price: 50};
 const price = order;
 
-const getPrice = (price) => {
+const getPrice = ({price}) => {
   return price;
 }
 
