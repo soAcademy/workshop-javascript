@@ -1,5 +1,7 @@
 console.log("Hello World");
 
+console.log("Variables Workshop");
+
 const a = 1;
 const b = "hello";
 const c = true;
