@@ -110,8 +110,7 @@ const average = (a) => {
   for (let i = 0; i < a.length; i++) {
     sum += a[i];
   }
-  avg = sum / a.length;
-  console.log(`Average is : ${avg}`);
+  console.log(`Average is : ${sum / a.length}`);
 };
 average([1, 2, 3, 4]);
 
