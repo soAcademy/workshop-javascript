@@ -83,3 +83,13 @@ const calculateBMI = (weight, height) => {
 };
 
 console.log(calculateBMI(70, 175));
+
+const average = (input) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    sum += input[i];
+  }
+  return sum / input.length;
+};
+
+console.log(average([1, 2, 3, 4]));
