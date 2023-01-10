@@ -97,7 +97,27 @@ const { SortOrderType } = require("discord.js");
 // const { price } = order;
 // console.log(price);
 
-const getPrice = ({ price }) => {
-  return price;
-};
-console.log(getPrice({ price: 22 }));
+// const getPrice = ({ price }) => {
+//   return price;
+// };
+// console.log(getPrice({ price: 22 }));
+
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+  amountOfLegs() {
+    console.log(`I have ${this.legs} legs`);
+  }
+}
+const animal = new Animal(18);
+animal.amountOfLegs();
+
+class Duck extends Animal {
+  makeNoise() {
+    console.log("kwak kwak kwak kwak kwak kwak");
+  }
+}
+const duck = new Duck(2);
+duck.amountOfLegs();
+duck.makeNoise();
