@@ -12,10 +12,14 @@
 //   { x: 3, y: 4 },
 // ];
 
-const { CommandInteractionOptionResolver } = require("discord.js");
+// const a = "hello";
+// function greet() {
+//   console.log(a);
+// }
+// greet();
 
 const a = "hello";
 function greet() {
-  console.log(a);
+  a = "hi";
 }
-greet();
+console.log(a);
