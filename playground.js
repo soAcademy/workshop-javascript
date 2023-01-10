@@ -51,7 +51,23 @@
 
 // sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 });
 
-const isOdd = (num) => {
-  return num % 2 !== 0;
+// const isOdd = (num) => {
+//   return num % 2 !== 0;
+// };
+// console.log(isOdd(7));
+
+const calculateBMI = (weight, height) => {
+  const numBmi = weight / (height / 100) ** 2;
+  let grade = "";
+  if (numBmi < 18.5) {
+    grade = "underweight";
+  } else if (numBmi < 25) {
+    grade = "healthy";
+  } else if (numBmi < 30) {
+    grade = "overweight";
+  } else {
+    grade = "obesity";
+  }
+  return `Your BMI grade is: ${grade}`;
 };
-console.log(isOdd(7));
+console.log(calculateBMI(53, 158));
