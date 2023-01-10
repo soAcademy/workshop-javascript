@@ -25,8 +25,34 @@
 // }
 // sum1(1, 2, 3);
 
-const sum2 = (a, b, c) => {
-    const total = a + b + c;
-    console.log(total);
-}
-sum2(1, 2, 3);
+// const sum2 = (a, b, c) => {
+//     const total = a + b + c;
+//     console.log(total);
+// }
+// sum2(1, 2, 3);
+
+const sum3 = (a, b, c) => {
+    let x = Number;
+    let y = Number;
+    a = {
+        x : 1,
+        y : 1
+    }
+    b = {
+        x : 2,
+        y : 2
+    }
+    c = {
+            x : 3,
+            y : 3
+        }
+    console.log(a.x + b.x + c.x);
+    }
+    sum3();
+
+
+
+// const isOdd = (num) => {
+//     return num % 2 !== 0;
+// }
+// console.log(isOdd(8));
