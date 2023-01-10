@@ -1,3 +1,5 @@
+// Variables Workshop
+
 // const a = 1;
 // const b = "hello";
 // const c = true;
@@ -19,6 +21,8 @@
 // console.log(myArray);
 // console.log(myObject);
 // console.log(myObjects);
+
+// Scope Workshop
 
 // const a1 = "hello";
 // function greet() {
@@ -53,6 +57,8 @@
 // }
 // greet4();
 
+// Functions Workshop + Arrow Function
+
 // function sum1(a, b, c) {
 //   return a + b + c;
 // }
@@ -66,6 +72,8 @@
 
 // const isOdd = (num) => num % 2 !== 0;
 // console.log(isOdd(9));
+
+// Flow Control Workshop
 
 // const calculateBMI = (weight, height) => {
 //   const bmi = weight / (height / 100) ** 2;
@@ -106,18 +114,44 @@
 
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
-const order = { name: "VitC", price: 50 };
-//  const price = order.price;
-const { price } = order;
+// Destructuring Workshop
 
-console.log(price);
+// const order = { name: "VitC", price: 50 };
+// //  const price = order.price;
+// const { price } = order;
 
-// const getPrice = (order) => {
-//   return order.price;
-//  }
+// console.log(price);
 
-const getPrice = ({ price }) => {
-  return price;
-};
+// // const getPrice = (order) => {
+// //   return order.price;
+// //  }
 
-console.log(getPrice(order));
+// const getPrice = ({ price }) => {
+//   return price;
+// };
+
+// console.log(getPrice(order));
+
+// Class Workshop
+
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+  amountOfLegs() {
+    console.log(`This animal has ${this.legs} legs.`);
+  }
+}
+
+const duck = new Animal(2);
+duck.amountOfLegs();
+
+class Dog extends Animal {
+  makeNoise() {
+    console.log(`Bark`);
+  }
+}
+
+const dog = new Dog(4);
+dog.amountOfLegs();
+dog.makeNoise();
