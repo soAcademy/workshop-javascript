@@ -36,10 +36,10 @@ greet();
 
 console.log("Scope Workshop #2");
 
-const aaa = "hello";
+let aaa = "hello"; // fixed
 
 function greet1() {
-  let aaa = "hi"; // fixed
+  aaa = "hi";
 }
 
 console.log(aaa);
