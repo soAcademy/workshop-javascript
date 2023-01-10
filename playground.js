@@ -88,12 +88,12 @@
 // console.log(`The sum of odd is: ${sumOdd([1, 8, 9, -3, 0, 4])}`);
 
 const order = { name: "VitC", price: 50 };
-const { price } = order;
+// const { price } = order;
 
-console.log(`The price is: ${price}`);
+// console.log(`The price is: ${price}`);
 
-// const getprice = ({price}) => {
-//   return price;
-// }
+const getprice = ({ price }) => {
+  return price;
+};
 
-// console.log(`The price is: ${getprice({price})}`);
+console.log(`The price is: ${getprice({ price: 50 })}`);
