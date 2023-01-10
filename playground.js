@@ -139,19 +139,19 @@ class Animal {
     this.legs = _legs;
   }
   amountOfLegs() {
-    console.log(`This animal has ${this.legs} legs.`);
+    return `This animal has ${this.legs} legs.`;
   }
 }
 
 const duck = new Animal(2);
-duck.amountOfLegs();
+console.log(duck.amountOfLegs());
 
 class Dog extends Animal {
   makeNoise() {
-    console.log(`Bark`);
+    return `Bark`;
   }
 }
 
 const dog = new Dog(4);
-dog.amountOfLegs();
-dog.makeNoise();
+console.log(dog.amountOfLegs());
+console.log(dog.makeNoise());
