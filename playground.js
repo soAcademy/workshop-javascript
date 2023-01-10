@@ -30,13 +30,19 @@
 // console.log(myObjects);
 
 //Scope Workshop
-const a = 10;
-function greet(){
-    const b = 20;
-    console.log(a+b);
-}
-greet()
-
+// const a = 10;
+// function greet(){
+//     const b = 20;
+//     console.log(a+b);
+// }
+// greet()
 
 // สามารถรันได้ console.log เข้าไปเรียน b ออกมาไม่ได้
 // ต้องย้าย console.log ไว้ใน function
+
+//function Workshop
+function sum1(a, b, c) {
+    return a + b + c;
+    }
+    console.log(sum1(1,2,3));
+
