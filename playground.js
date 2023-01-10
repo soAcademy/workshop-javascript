@@ -69,7 +69,7 @@ const isOdd = (num) => {
     return num % 2 !== 0;
 
     };
-//** */
+
 
 const calculateBMI = (weight, height) => {
     const bmi = (weight / (height / 100) ** 2).toFixed(2);
@@ -108,8 +108,32 @@ const calculateBMI = (weight, height) => {
             if (input[i] % 2 !== 0) {
             sum = sum + input[i];
             }
-             }
+            }
             return sum; };
 
             console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+            //** */
+            //const order = { name: 'VitC', price: 50 };
+            //const price = order.price;
+            //const { price } = order;
+            
+            const order = { name: 'VitC', price: 50, };
+            const { price,} = order;
+            console.log(price); 
+            
+
+
+
+            //const getPrice = (order) => {
+            //    return order.price;
+            //    }
+
+            const getPrice = (order) => {
+                const { price } = order;
+                return price;
+            }
+            const order3 = { name: 'VitC', price: 70 };
+            console.log(getPrice(order3)); 
+            
+
             
