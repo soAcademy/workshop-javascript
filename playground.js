@@ -118,7 +118,6 @@ console.log(calculateBMI(60, 170));
 // Q2
 // For loop
 const average = (input) => {
-  
   let total = 0;
   for (let i = 0; i < input.length; i++) {
     total += input[i];
@@ -138,4 +137,3 @@ const sumOdd = (input) => {
   return total;
 };
 console.log(sumOdd([1, 8, 9, -3, 0, 4]));
-
