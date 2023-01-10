@@ -44,8 +44,6 @@
 //  }
 // sum({x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 3});
 
-
-
 // const isOdd = (num) => {
 //     return num % 2 !== 0;
 // }
@@ -69,15 +67,22 @@
 // }
 // calculateBMI(61,170);
 
-const average = (input) => {
-    let sum = 0;
-    let average =0;
-    for (let i = 0; i < input.length; i++) {
-        sum += input[i];
-            
-}
-average = sum / input.length;
-console.log(`The average is: ${average}`);
-}
-average([1, 2, 3, 4]) ;
-    
+const average = (inputs) => {
+  let sum = 0;
+  let average = 0;
+  for (let i = 0; i < inputs.length; i++) {
+    sum += inputs[i];
+  }
+  average = sum / inputs.length;
+  return average;
+};
+console.log(`The average is: ${average([1, 2, 3, 4])}`);
+
+// const sumOdd = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 !== 0) sum += input[i];
+//   }
+//   console.log(`The sum of odd is: ${sum}`);
+// };
+// sumOdd([1, 8, 9, -3, 0, 4]);
