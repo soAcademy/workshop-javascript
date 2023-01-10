@@ -88,6 +88,6 @@ const sumOdd = (input) => {
       sum = sum + input[i];
     }
   }
-  console.log(`sum of odd is: ${sum}`);
+  return sum;
 };
-sumOdd([1, 8, 9, -3, 0, 4]);
+console.log(sumOdd([1, 8, 9, -3, 0, 4]));
