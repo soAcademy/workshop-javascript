@@ -51,20 +51,33 @@
 // }
 // console.log(isOdd(8));
 
-const calculateBMI = (weight, height) => {
-    let calculateBMI
-    let BMI = 0;
-    BMI = weight/(height/100)**2;
-    if(BMI < 18.5){
-        console.log("underweight");
-        } else if(BMI < 25 && BMI >= 18.5) {
-        console.log("healthy");
-     } else if(BMI < 30 && BMI >= 25) {
-        console.log("overweight");
-        } else if(BMI >= 30) {
-            console.log("obesity");
-        }
-    console.log(BMI);
-    return calculateBMI;
+// const calculateBMI = (weight, height) => {
+//     let calculateBMI
+//     let BMI = 0;
+//     BMI = weight/(height/100)**2;
+//     if(BMI < 18.5){
+//         console.log("underweight");
+//         } else if(BMI < 25 && BMI >= 18.5) {
+//         console.log("healthy");
+//      } else if(BMI < 30 && BMI >= 25) {
+//         console.log("overweight");
+//         } else if(BMI >= 30) {
+//             console.log("obesity");
+//         }
+//     console.log(BMI);
+//     return calculateBMI;
+// }
+// calculateBMI(61,170);
+
+const average = (input) => {
+    let sum = 0;
+    let average =0;
+    for (let i = 0; i < input.length; i++) {
+        sum += input[i];
+            
 }
-calculateBMI(61,170);
+average = sum / input.length;
+console.log(`The average is: ${average}`);
+}
+average([1, 2, 3, 4]) ;
+    
