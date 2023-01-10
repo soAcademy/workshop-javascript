@@ -79,3 +79,10 @@ const sum3 = (a, b, c) => {
 };
 
 console.log(sum3({ x: 1, y: 2 }, { x: 3, y: 4 }, { x: 5, y: 6 }));
+
+console.log("Functions Workshop #4");
+
+const isOdd = (a) => (a % 2 === 0 ? false : true);
+
+console.log(isOdd(23));
+console.log(isOdd(34));
