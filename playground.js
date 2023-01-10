@@ -25,9 +25,19 @@ function greet() {
   console.log(a);
 }
 greet();*/
+// Quiz 1 Answer = hello
 
-const a = "hello";
+/*const a = "hello";
 function greet() {
   a = "hi";
 }
-console.log(a);
+console.log(a);*/
+// Quiz 2 Answer = hello
+
+const a = 10;
+function greet() {
+  const b = 20;
+}
+greet();
+console.log(a + b);
+// Quiz 3 Answer = Error due to b is in function greet()
