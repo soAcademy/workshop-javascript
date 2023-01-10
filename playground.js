@@ -1,5 +1,5 @@
 const a = "hello";
 function greet (){
-    console.log(a);
+    a = "hi";
 }
-greet();
+console.log(a);
