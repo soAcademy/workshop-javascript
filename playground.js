@@ -1,5 +1,6 @@
-const a = "hello";
-function greet (){
+let a = "hello world";
+function greet(){
     a = "hi";
+    console.log(a);
 }
-console.log(a);
+greet()
