@@ -79,7 +79,7 @@ const calculateBMI = (weight, height) => {
   } else {
     score = "obesity";
   }
-  console.log(`Body mass index (BMI) is: ${score}`);
+  return(`Body mass index (BMI) is: ${score}`);
 };
 
 console.log(calculateBMI(70, 175));
