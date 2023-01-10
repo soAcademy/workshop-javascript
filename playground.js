@@ -53,16 +53,33 @@
 // }
 // greet4();
 
-function sum1(a, b, c) {
-  return a + b + c;
-}
-console.log(sum1(1, 2, 3));
+// function sum1(a, b, c) {
+//   return a + b + c;
+// }
+// console.log(sum1(1, 2, 3));
 
-const sum2 = (a, b, c) => a + b + c;
-console.log(sum2(1, 2, 3));
+// const sum2 = (a, b, c) => a + b + c;
+// console.log(sum2(1, 2, 3));
 
-const sum3 = (a, b, c) => ({ x: a.x + b.x + c.x, y: a.y + b.y + c.y });
-console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+// const sum3 = (a, b, c) => ({ x: a.x + b.x + c.x, y: a.y + b.y + c.y });
+// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
-const isOdd = (num) => num %2 !== 0;
-console.log(isOdd(9));
+// const isOdd = (num) => num % 2 !== 0;
+// console.log(isOdd(9));
+
+const calculateBMI = (weight, height) => {
+  const bmi = weight / (height / 100) ** 2;
+  let score;
+  if (bmi < 18.5) {
+    score = "underweight";
+  } else if (bmi < 25) {
+    score = "healthy";
+  } else if (bmi < 30) {
+    score = "overweight";
+  } else {
+    score = "obesity";
+  }
+  console.log(`Body mass index (BMI) is: ${score}`);
+};
+
+console.log(calculateBMI(70, 175));
