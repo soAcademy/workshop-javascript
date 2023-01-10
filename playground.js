@@ -1,23 +1,32 @@
-// const a ="hello";
-// function greet(){
-//     console.log(a);
-// }
-// greet();
+// const a =1;
+// const b = "hello";
+// const c = true;
+// const d = 10;
+// let e = 10;
+// e = 20;
+// let myArray = [1,2,3,];
+// let myObject = {x:1, y:2};
+// let myObjects = [{x:1, y:2}, {x:3, y:4}];
+// console.log(myObjects);
+
+const a = "hello";
+function greet() {
+  console.log(a);
+}
+greet();
 
 // let a = "hello world"
 // function greet(){
-//     a = "hi"
-//     console.log(a);
+//     return a = "hi";
 // }
-// greet();
+// console.log(greet());
 
 // let a = 10;
 // function greet() {
 //     const b = 20;
-//     console.log(a+b);
-
+//     return a + b
 // }
-// greet();
+// console.log(greet());
 
 // function sum1(a, b, c) {
 //   let total = a + b + c;
@@ -98,22 +107,22 @@
 
 // console.log(`The price is: ${getprice({ price: 50 })}`);
 
-class Animal {
-  constructor(_legs) {
-    this.legs = _legs;
-  }
-  amountOfLegs() {
-    console.log(`I have ${this.legs} legs`);
-  }
-}
-const animal = new Animal(2);
-animal.amountOfLegs();
+// class Animal {
+//   constructor(_legs) {
+//     this.legs = _legs;
+//   }
+//   amountOfLegs() {
+//     console.log(`I have ${this.legs} legs`);
+//   }
+// }
+// const animal = new Animal(2);
+// animal.amountOfLegs();
 
-class Dog extends Animal {
-  makeNoise() {
-    console.log("Bark");
-  }
-}
-const dog = new Dog(4);
-dog.amountOfLegs();
-dog.makeNoise();
+// class Dog extends Animal {
+//   makeNoise() {
+//     console.log("Bark");
+//   }
+// }
+// const dog = new Dog(4);
+// dog.amountOfLegs();
+// dog.makeNoise();
