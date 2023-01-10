@@ -116,3 +116,17 @@ const average = (inputArray) => {
 };
 
 console.log(average([1, 2, 3, 4]));
+
+console.log("Flow Control Workshop #3");
+
+const sumOdd = (input) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) {
+      sum += input[i];
+    }
+  }
+  return sum;
+};
+
+console.log(sumOdd([1, 8, 9, -3, 0, 4]));
