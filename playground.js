@@ -33,3 +33,13 @@ function greet() {
 }
 
 greet();
+
+console.log("Scope Workshop #2");
+
+const aaa = "hello";
+
+function greet1() {
+  aaa = "hi";
+}
+
+console.log(aaa);
