@@ -55,34 +55,52 @@ console.log("Hello World");
 
 // greet2();
 
-console.log("Functions Workshop #1");
+// console.log("Functions Workshop #1");
 
-function sum1(a, b, c) {
-  return a + b + c;
-}
+// function sum1(a, b, c) {
+//   return a + b + c;
+// }
 
-console.log(sum1(1, 2, 3));
+// console.log(sum1(1, 2, 3));
 
-console.log("Functions Workshop #2");
+// console.log("Functions Workshop #2");
 
-const sum2 = (a, b, c) => a + b + c;
+// const sum2 = (a, b, c) => a + b + c;
 
-console.log(sum2(1, 2, 3));
+// console.log(sum2(1, 2, 3));
 
-console.log("Functions Workshop #3");
+// console.log("Functions Workshop #3");
 
-const sum3 = (a, b, c) => {
-  let sumObject = { x: 0, y: 0 };
-  sumObject.x = a.x + b.x + c.x;
-  sumObject.y = a.y + b.y + c.y;
-  return sumObject;
+// const sum3 = (a, b, c) => {
+//   let sumObject = { x: 0, y: 0 };
+//   sumObject.x = a.x + b.x + c.x;
+//   sumObject.y = a.y + b.y + c.y;
+//   return sumObject;
+// };
+
+// console.log(sum3({ x: 1, y: 2 }, { x: 3, y: 4 }, { x: 5, y: 6 }));
+
+// console.log("Functions Workshop #4");
+
+// const isOdd = (a) => (a % 2 === 0 ? false : true);
+
+// console.log(isOdd(23));
+// console.log(isOdd(34));
+
+console.log("Flow Control Workshop #1");
+
+const calculateBMI = (weight, height) => {
+  const bmi = weight / (height / 100) ** 2;
+  if (bmi < 18.5) {
+    console.log("underweight");
+  } else if (bmi < 25) {
+    console.log("healthy");
+  } else if (bmi < 30) {
+    console.log("overweight");
+  } else {
+    console.log("obesity");
+  }
 };
 
-console.log(sum3({ x: 1, y: 2 }, { x: 3, y: 4 }, { x: 5, y: 6 }));
-
-console.log("Functions Workshop #4");
-
-const isOdd = (a) => (a % 2 === 0 ? false : true);
-
-console.log(isOdd(23));
-console.log(isOdd(34));
+calculateBMI(70, 170);
+calculateBMI(80, 170);
