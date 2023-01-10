@@ -67,20 +67,33 @@
 // console.log(isOdd(2)); // output: false
 
 //Flow workshop
-const calculateBMI = (weight, height) => {
-  const bmi = weight / (height / 100) ** 2;
-  console.log(weight, height,bmi);
-  let grade = "please fill weight and height";
-  if (bmi < 18.5) {
-    grade = "underweight";
-  } else if (bmi < 25) {
-    grade = "healthy";
-  } else if (bmi < 30) {
-    grade = "overweight";
-  } else if (bmi >= 30) {
-    grade = "obesity";
-  }
-  console.log(`Your BMI =: ${grade}`);
-  return grade;
-};
-calculateBMI(100,160);
+// const calculateBMI = (weight, height) => {
+//   const bmi = weight / (height / 100) ** 2;
+//   console.log(weight, height,bmi);
+//   let grade = "please fill weight and height";
+//   if (bmi < 18.5) {
+//     grade = "underweight";
+//   } else if (bmi < 25) {
+//     grade = "healthy";
+//   } else if (bmi < 30) {
+//     grade = "overweight";
+//   } else if (bmi >= 30) {
+//     grade = "obesity";
+//   }
+//   console.log(`Your BMI =: ${grade}`);
+//   return grade;
+// };
+// calculateBMI(100,160);
+
+const average = (input) => {
+    let total = 0;
+    let averageResult;
+    for (let i = 0; i < input.length; i++) {
+    total += input[i];
+    }
+    averageResult = total / input.length;
+    console.log(`The average is: ${averageResult}`);
+    }
+    average([1,2,3,4,5])
+
+
