@@ -102,17 +102,35 @@ console.log(`The sum of odd  is: ${sumOdd([1, 2, 3, 4])}`);
 const {price} = order;
 console.log(price) */
 
-const order = { name: "VitC", price: 50 };
+/* const order = { name: "VitC", price: 50 };
 const getPrice = ({price}) => {
   return price;
 };
 console.log(getPrice(order))
 
+ */
 
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+  amountOfLegs() {
+    return this.legs;
+  }
+}
 
+const animal = new Animal(4);
+console.log(`I have ${animal.amountOfLegs()} legs`);
 
+class Dog extends Animal {
+  makeNoise() {
+    return 'Bark'
+  }
+}
 
-
+const dog = new Dog(4);
+console.log(`I have ${dog.amountOfLegs()} legs`);
+console.log(dog.makeNoise());
 
 
 
