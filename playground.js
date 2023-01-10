@@ -68,3 +68,14 @@ console.log("Functions Workshop #2");
 const sum2 = (a, b, c) => a + b + c;
 
 console.log(sum2(1, 2, 3));
+
+console.log("Functions Workshop #3");
+
+const sum3 = (a, b, c) => {
+  let sumObject = { x: 0, y: 0 };
+  sumObject.x = a.x + b.x + c.x;
+  sumObject.y = a.y + b.y + c.y;
+  return sumObject;
+};
+
+console.log(sum3({ x: 1, y: 2 }, { x: 3, y: 4 }, { x: 5, y: 6 }));
