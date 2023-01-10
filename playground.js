@@ -67,41 +67,57 @@
 // const isOdd = (num) => num % 2 !== 0;
 // console.log(isOdd(9));
 
-const calculateBMI = (weight, height) => {
-  const bmi = weight / (height / 100) ** 2;
-  let score;
-  if (bmi < 18.5) {
-    score = "underweight";
-  } else if (bmi < 25) {
-    score = "healthy";
-  } else if (bmi < 30) {
-    score = "overweight";
-  } else {
-    score = "obesity";
-  }
-  return `Body mass index (BMI) is: ${score}`;
+// const calculateBMI = (weight, height) => {
+//   const bmi = weight / (height / 100) ** 2;
+//   let score;
+//   if (bmi < 18.5) {
+//     score = "underweight";
+//   } else if (bmi < 25) {
+//     score = "healthy";
+//   } else if (bmi < 30) {
+//     score = "overweight";
+//   } else {
+//     score = "obesity";
+//   }
+//   return `Body mass index (BMI) is: ${score}`;
+// };
+
+// console.log(calculateBMI(70, 175));
+
+// const average = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     sum += input[i];
+//   }
+//   return sum / input.length;
+// };
+
+// console.log(average([1, 2, 3, 4]));
+
+// const sumOdd = (input2) => {
+//   let sum = 0;
+//   for (let i = 0; i < input2.length; i++) {
+//     if (input2[i] % 2 !== 0) {
+//       sum = sum + input2[i];
+//     }
+//   }
+//   return sum;
+// };
+
+// console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+
+const order = { name: "VitC", price: 50 };
+//  const price = order.price;
+const { price } = order;
+
+console.log(price);
+
+// const getPrice = (order) => {
+//   return order.price;
+//  }
+
+const getPrice = ({ price }) => {
+  return price;
 };
 
-console.log(calculateBMI(70, 175));
-
-const average = (input) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    sum += input[i];
-  }
-  return sum / input.length;
-};
-
-console.log(average([1, 2, 3, 4]));
-
-const sumOdd = (input2) => {
-  let sum = 0;
-  for (let i = 0; i < input2.length; i++) {
-    if (input2[i] % 2 !== 0) {
-      sum = sum + input2[i];
-    }
-  }
-  return sum;
-};
-
-console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+console.log(getPrice(order));
