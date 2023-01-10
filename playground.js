@@ -1,4 +1,4 @@
-const a = 1;
+/*const a = 1;
 console.log("a :", a);
 const b = "hello";
 console.log("b :", b);
@@ -18,4 +18,10 @@ const myObjects = [
   { x: 1, y: 2 },
   { x: 3, y: 4 },
 ];
-console.log("myObject :", myObject);
+console.log("myObject :", myObject);*/
+
+const a = "hello";
+function greet() {
+  console.log(a);
+}
+greet();
