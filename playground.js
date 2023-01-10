@@ -67,7 +67,21 @@ console.log(sum1(1, 2, 3));
 
 //3.
 const sum3 = (a, b, c) => {
-    return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
+    //a = {x: number, y: number}
+
+    const ax = a.x;
+    const ay = a.y;
+
+    const bx = b.x; 
+    const by = b.y;
+
+    const cx = c.x;
+    const cy = c.y;
+
+    const x = ax + bx + cx;
+    const y = ay + by + cy;
+
+    return { x: x, y: y };
 };
 console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
