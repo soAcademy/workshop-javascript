@@ -39,7 +39,7 @@ console.log("Scope Workshop #2");
 const aaa = "hello";
 
 function greet1() {
-  aaa = "hi";
+  let aaa = "hi"; // fixed
 }
 
 console.log(aaa);
