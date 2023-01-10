@@ -15,18 +15,18 @@
 // }
 // greet();
 
-let a = "hello";
-function greet() {
-  return (a = "hi");
-}
-console.log(greet());
-
-// let a = 10;
+// let a = "hello";
 // function greet() {
-//     const b = 20;
-//     return a + b
+//   return (a = "hi");
 // }
 // console.log(greet());
+
+let a = 10;
+function greet() {
+  const b = 20;
+  return a + b;
+}
+console.log(greet());
 
 // function sum1(a, b, c) {
 //   let total = a + b + c;
