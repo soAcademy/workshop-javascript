@@ -108,3 +108,12 @@ class Animal {
 }
 const animal = new Animal(2);
 animal.amountOfLegs();
+
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark");
+  }
+}
+const dog = new Dog(4);
+dog.amountOfLegs();
+dog.makeNoise();
