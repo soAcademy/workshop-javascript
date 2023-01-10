@@ -127,13 +127,37 @@
 // console.log(`Sum odd no. = ${sumOdd([1, 8, 9, -3, 0, 4])}`);
 
 // Workshop#5
-// Quiz 1
-const order = { name: "VitC", price: 50 };
-const { price } = order;
-console.log(price);
 
-// Quiz 2
-const getPrice = ({ price }) => {
-  return price;
-};
-console.log(getPrice(order));
+// Quiz 1
+// const order = { name: "VitC", price: 50 };
+// const { price } = order;
+// console.log(price);
+
+// // Quiz 2
+// const getPrice = ({ price }) => {
+//   return price;
+// };
+// console.log(getPrice(order));
+
+// Workshop#6
+
+// Quiz 1
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+  amountOfLegs() {
+    console.log(this.legs);
+  }
+}
+let x = new Animal(6);
+x.amountOfLegs();
+
+//Quiz 2
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark!!");
+  }
+}
+let y = new Dog(6);
+y.makeNoise();
