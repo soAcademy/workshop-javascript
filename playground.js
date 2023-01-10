@@ -60,7 +60,7 @@
 // console.log(sum3({ x: 20, y: 20 }, { x: 30, y: 30 }, { x: 40, y: 40 }));
 // console.log(isOdd(20));
 
-// //Flow Control Workshop 
+// //Flow Control Workshop
 // const calculateBMI = (weight, height) => {
 //   const bmi = weight / (height / 100) ** 2;
 //   let grade = "";
@@ -101,11 +101,34 @@
 // console.log(sumOdd([1, 2, 3, 4]));
 // Destructuring
 
-const order = {name: 'Teak', price: 50};
-const price = order;
+// const order = {name: 'Teak', price: 50};
+// const price = order;
 
-const getPrice = ({price}) => {
-  return price;
+// const getPrice = ({price}) => {
+//   return price;
+// }
+
+// console.log(getPrice(price));
+
+// Class Workshop
+class Animal {
+  constructor(_legs) {
+    this.leg = _legs;
+  }
+  amountOfLegs() {
+    return this.leg;
+  }
 }
 
-console.log(getPrice(price));
+const animal = new Animal(4);
+console.log(animal.amountOfLegs());
+
+class Dog extends Animal {
+  makeNoise() {
+    return "Bark";
+  }
+}
+
+const dog = new Dog();
+
+console.log(dog.makeNoise());
