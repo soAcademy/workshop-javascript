@@ -72,11 +72,22 @@
 // };
 // console.log(calculateBMI(53, 158));
 
-const average = (input) => {
+// const average = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     sum = sum + input[i];
+//   }
+//   return sum / input.length;
+// };
+// console.log(average([1, 2, 3, 4]));
+
+const sumOdd = (input) => {
   let sum = 0;
   for (let i = 0; i < input.length; i++) {
-    sum = sum + input[i];
+    if (input[i] % 2 !== 0) {
+      sum = sum + input[i];
+    }
   }
-  return sum / input.length;
+  console.log(`sum of odd is: ${sum}`);
 };
-console.log(average([1, 2, 3, 4]));
+sumOdd([1, 8, 9, -3, 0, 4]);
