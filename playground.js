@@ -119,9 +119,18 @@ class Animal {
   constructor(_leg) {
     this.leg = _leg;
   }
-  amountOfLeg() {
-    console.log(`There are ${this.leg} legs`);
+  amountOfLegs() {
+    return `There are ${this.leg} legs`;
   }
 }
-const animal = new Animal(4);
-animal.amountOfLeg();
+const animal = new Animal(2);
+console.log(animal.amountOfLegs());
+
+class Dog extends Animal {
+  makeNoise() {
+    return "Bark";
+  }
+}
+const dog = new Dog(4);
+console.log(dog.amountOfLegs());
+console.log(dog.makeNoise());
