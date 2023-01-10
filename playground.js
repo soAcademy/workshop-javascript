@@ -57,7 +57,6 @@
 //     y: a.y + b.y + c.y,
 //   };
 // };
-
 // console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
 // const isOdd = (num) => {
@@ -80,10 +79,9 @@
 //   } else if (bmi >= 30) {
 //     grade = "obesity";
 //   }
-//   console.log(`Your BMI =: ${grade}`);
-//   return grade;
+//   return `Your BMI =: ${grade}`;  
 // };
-// calculateBMI(100,160);
+// console.log(calculateBMI(100,160));
 
 // const average = (input) => {
 //   let total = 0;
@@ -96,13 +94,18 @@
 // };
 // average([1, 2, 3, 4, 5]);
 
-const sumOdd = (inputs) => {
-  let total = 0;
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i] % 2 !== 0) {
-      total += inputs[i];
-    }
-  }
-  return `The sum of odd is: ${total}`;
-};
-console.log(sumOdd([1, 2, 3, 4, 5, 6, 7]));
+// const sumOdd = (inputs) => {
+//   let total = 0;
+//   for (let i = 0; i < inputs.length; i++) {
+//     if (inputs[i] % 2 !== 0) {
+//       total += inputs[i];
+//     }
+//   }
+//   return `The sum of odd is: ${total}`;
+// };
+// console.log(sumOdd([1, 2, 3, 4, 5, 6, 7]));
+
+const order = {name:'VitC',price:50}
+const {name,price} = order;
+const result = name+","+price
+console.log(result);
