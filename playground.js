@@ -21,60 +21,47 @@
 // }
 // console.log(greet());
 
-let a = 10;
-function greet() {
-  const b = 20;
-  return a + b;
-}
-console.log(greet());
+// let a = 10;
+// function greet() {
+//   const b = 20;
+//   return a + b;
+// }
+// console.log(greet());
 
 // function sum1(a, b, c) {
-//   let total = a + b + c;
-//   console.log(total);
+//   return a + b + c;
 // }
-// sum1(1, 2, 3);
+// console.log(sum1(1, 2, 3));
 
 // const sum2 = (a, b, c) => {
-//     const total = a + b + c;
-//     console.log(total);
-// }
-// sum2(1, 2, 3);
+//   return a + b + c;
+// };
+// console.log(sum2(1, 2, 3));
 
-// const sum3 = (a, b, c, d) => {
-//     const total = (a.x+b.x+c.x);
-//     return;
-// }
-// sum3({x:1},{});
-
-// const sum (a, b, c) => {
-//     const sum1 =  (a.x+b.x+c.x) + (a.y+b.y+c.y);
-//  const total = (a.x+b.x+c.x) + (a.y+b.y+c.y);
-//  return;
-//  }
-// sum({x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 3});
+// const sum3 = (a, b, c) => {
+//   return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
+// };
+// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
 // const isOdd = (num) => {
-//     return num % 2 !== 0;
-// }
-// console.log(isOdd(8));
+//   return num % 2 !== 0;
+// };
+// console.log(isOdd(7));
 
-// const calculateBMI = (weight, height) => {
-//     let calculateBMI
-//     let BMI = 0;
-//     BMI = weight/(height/100)**2;
-//     if(BMI < 18.5){
-//         console.log("underweight");
-//         } else if(BMI < 25 && BMI >= 18.5) {
-//         console.log("healthy");
-//      } else if(BMI < 30 && BMI >= 25) {
-//         console.log("overweight");
-//         } else if(BMI >= 30) {
-//             console.log("obesity");
-//         }
-//     console.log(BMI);
-//     return calculateBMI;
-// }
-// calculateBMI(61,170);
+const calculateBMI = (weight, height) => {
+  let BMI = weight / (height / 100) ** 2;
+  let grade = ``;
+  grade =
+    BMI < 18.5
+      ? `underweight`
+      : BMI < 25
+      ? `healthy`
+      : BMI < 30
+      ? `overweight`
+      : `obesity`;
+  console.log(`Your BMI grade is: ${grade}`);
+};
+calculateBMI(61, 170);
 
 // const average = (inputs) => {
 //   let sum = 0;
