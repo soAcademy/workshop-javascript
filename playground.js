@@ -93,3 +93,15 @@ const average = (input) => {
 };
 
 console.log(average([1, 2, 3, 4]));
+
+const sumOdd = (input2) => {
+  let sum = 0;
+  for (let i = 0; i < input2.length; i++) {
+    if (input2[i] % 2 !== 0) {
+      sum = sum + input2[i];
+    }
+  }
+  return sum;
+};
+
+console.log(sumOdd([1, 8, 9, -3, 0, 4]));
