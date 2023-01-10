@@ -23,3 +23,13 @@ console.log("e = " + e);
 console.log("myArray = " + myObjects);
 console.log("myObject = " + myObject);
 console.log("myObjects = " + myObjects);
+
+console.log("Scope Workshop #1");
+
+const aa = "hello";
+
+function greet() {
+  console.log(aa);
+}
+
+greet();
