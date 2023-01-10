@@ -19,8 +19,14 @@
 // }
 // greet();
 
-function sum1(a,b,c) {
-let total = a + b + c;
-console.log(total);
+// function sum1(a, b, c) {
+//   let total = a + b + c;
+//   console.log(total);
+// }
+// sum1(1, 2, 3);
+
+const sum2 = (a, b, c) => {
+    const total = a + b + c;
+    console.log(total);
 }
-sum1(1,2,3);
+sum2(1, 2, 3);
