@@ -100,9 +100,9 @@ const calculateBMI = (weight, height) => {
   } else {
     a = "obesity";
   }
-  console.log("Your BMI grade =", a);
+  return a;
 };
-calculateBMI(60, 172);
+console.log(`Your BMI grade = ${calculateBMI(60, 172)}`);
 
 //Quiz 2
 const average = (a) => {
@@ -110,9 +110,9 @@ const average = (a) => {
   for (let i = 0; i < a.length; i++) {
     sum += a[i];
   }
-  console.log(`Average is : ${sum / a.length}`);
+  return sum / a.length;
 };
-average([1, 2, 3, 4]);
+console.log(`Average = ${average([1, 2, 3, 4])}`);
 
 //Quiz 3
 const sumOdd = (input) => {
@@ -122,6 +122,6 @@ const sumOdd = (input) => {
       sum += input[i];
     }
   }
-  console.log(`Sum = ${sum}`);
+  return sum;
 };
-sumOdd([1, 8, 9, -3, 0, 4]);
+console.log(`Sum odd no. = ${sumOdd([1, 8, 9, -3, 0, 4])}`);
