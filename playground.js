@@ -139,15 +139,44 @@ console.log("Hello World");
 
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
-console.log("Destructuring Workshop #1");
+// console.log("Destructuring Workshop #1");
 
-const order = { name: "VitC", price: 50 };
-const { price } = order;
+// const order = { name: "VitC", price: 50 };
+// const { price } = order;
 
-console.log(price);
+// console.log(price);
 
-console.log("Destructuring Workshop #2");
+// console.log("Destructuring Workshop #2");
 
-const getPrice = ({ price }) => price;
+// const getPrice = ({ price }) => price;
 
-console.log(getPrice(order));
+// console.log(getPrice(order));
+
+console.log("Class Workshop #1");
+
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+
+  amountOfLegs() {
+    console.log(this.legs);
+  }
+}
+
+kitty = new Animal(4);
+
+kitty.amountOfLegs();
+
+console.log("Class Workshop #2");
+
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark");
+  }
+}
+
+scoobyDoo = new Dog(4);
+
+scoobyDoo.amountOfLegs();
+scoobyDoo.makeNoise();
