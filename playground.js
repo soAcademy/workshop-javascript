@@ -144,11 +144,11 @@
 //DESTRUCTURING WORKSHOP
 //1.
 const order = { name: "VitC", price: 50 };
-const { name, price } = order;
+const { price } = order;
 console.log(price);
 
 //2.
-const getPrice = (order) => {
+const getPrice = ({ price }) => {
   return price;
 };
-console.log(getPrice(order));
+console.log(getPrice({ price }));
