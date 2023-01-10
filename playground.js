@@ -129,6 +129,6 @@ class Dog extends Animal {
   }
 }
 
-const dog = new Dog();
+const dog = new Dog(4);
 
 console.log(dog.makeNoise());
