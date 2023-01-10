@@ -28,6 +28,7 @@
 // ];
 // console.log(`8: ${myObjects}`);
 
+
 //Scope Workshop
 // const a = "hello";
 // function greet() {
@@ -53,6 +54,7 @@
 // }
 // greet();
 // ทำงานไม่ได้ แต่ไขแล้ว
+
 
 // //Functions Workshop
 // //1.
@@ -88,6 +90,7 @@
 // //4.
 // const isOdd = (val) => val % 2 !== 0;
 // console.log(isOdd(5));
+
 
 // //FLOW CONTROL WORKSHOP
 // //1.
@@ -136,6 +139,7 @@
 // };
 
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+
 
 //DESTRUCTURING WORKSHOP
 //1.
