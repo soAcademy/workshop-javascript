@@ -103,15 +103,15 @@
 console.log("Flow Control Workshop");
 // Q1
 const calculateBMI = (weight, height) => {
-	const BMI = (weight / (height / 100) ** 2).toFixed(2);
-	return (grade =
-		BMI < 18.5
-			? "underweight"
-			: BMI < 25
-			? "healthy"
-			: BMI < 30
-			? "overweight"
-			: "obesity");
+  const BMI = (weight / (height / 100) ** 2).toFixed(2);
+  return (grade =
+    BMI < 18.5
+      ? "underweight"
+      : BMI < 25
+      ? "healthy"
+      : BMI < 30
+      ? "overweight"
+      : "obesity");
 };
 console.log(calculateBMI(60, 170));
 
@@ -119,23 +119,23 @@ console.log(calculateBMI(60, 170));
 // For loop
 const average = (input) => {
   
-	let total = 0;
-	for (let i = 0; i < input.length; i++) {
-		total += input[i];
-	}
-	return total / input.length;
+  let total = 0;
+  for (let i = 0; i < input.length; i++) {
+    total += input[i];
+  }
+  return total / input.length;
 };
 console.log(average([1, 2, 3, 4]));
 
 // Q3
 const sumOdd = (input) => {
   let total = 0;
-	for (let i = 0; i < input.length; i++) {
-		if (input[i] % 2 !== 0) {
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) {
       total += input[i];
-		}
-	}
-	return total;
+    }
+  }
+  return total;
 };
 console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
