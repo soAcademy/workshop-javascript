@@ -8,7 +8,7 @@ const c = true;
 //4
 const d = 10;
 //5
-let e = 20;
+let e = 10;
 e = 20;
 //6
 const myArray = [1, 2, 3];
