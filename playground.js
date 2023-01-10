@@ -30,12 +30,13 @@
 // console.log(myObjects);
 
 //Scope Workshop
-let a = "hello";
+const a = 10;
 function greet(){
-    a = "hi";
+    const b = 20;
+    console.log(a+b);
 }
 greet()
-console.log(a);
 
-// สามารถรันได้ แต่ไม่ใช่กับรับค่าจากฟังชั้น output = hello
-// ถ้าต้องการให้ outputออกมาเป็น a=hi  ต้องแก้ const เป็น let และเรียกใช้ฟังก์ชั้นก่อน console.log(a);
+
+// สามารถรันได้ console.log เข้าไปเรียน b ออกมาไม่ได้
+// ต้องย้าย console.log ไว้ใน function
