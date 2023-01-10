@@ -80,7 +80,7 @@ console.log(sum3({x:1,y:1},{x:2,y:2},{x:3,y:3}));
 const IsOdd = (x) => (x % 2 !==0 ? true : false);
 console.log(IsOdd(2));
 */
-
+/*
 console.log("Flow Control Workshop");
 //1
 const calculateBMI = (weight, height) => {
@@ -99,7 +99,9 @@ const calculateBMI = (weight, height) => {
 };
 
 calculateBMI(76, 190);
+
 //2
+
 const average = (input) => {
   let sum = 0;
   let average = 0;
@@ -107,19 +109,34 @@ const average = (input) => {
     sum = sum + input[i];
   }
   average = sum / input.length;
-  console.log(`The average is ${average}`);
+  return average;
+  
 };
-average([1, 2, 3, 4]);
+b= average([1, 2, 3, 4]);
+console.log(`The average is :${b}`);
 
 //3
-const sumOdd = (input) => {
-  let sum = 0;
 
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 !== 0) {
-      sum = sum + input[i];
+const sumOdd = (inputs) => {
+  let sum = 0;
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i] % 2 !== 0) {
+      sum = sum + inputs[i];
     }
   }
-  console.log(`The sum of odd is ${sum}`);
+  return sum;
 };
-sumOdd([1, 8, 9, -3, 0, 4]);
+a = sumOdd([1, 8, 9, -3, 0, 4])
+console.log(`The sum of odd is :${a}`);
+
+*/
+//Destructuring Workshop
+const order = { name: "VitC", price: 50 };
+const { name, price } = order;
+price;
+console.log(price);
+
+const getPrice = ({ price }) => {
+  return price;
+};
+console.log(getPrice(order));
