@@ -112,10 +112,8 @@ const calculateBMI = (weight, height) => {
             return sum; };
 
             console.log(sumOdd([1, 8, 9, -3, 0, 4]));
-            //** */
-            //const order = { name: 'VitC', price: 50 };
-            //const price = order.price;
-            //const { price } = order;
+            
+            
             
             const order = { name: 'VitC', price: 50, };
             const { price,} = order;
@@ -124,9 +122,7 @@ const calculateBMI = (weight, height) => {
 
 
 
-            //const getPrice = (order) => {
-            //    return order.price;
-            //    }
+           
 
             const getPrice = (order) => {
                 const { price } = order;
@@ -134,6 +130,28 @@ const calculateBMI = (weight, height) => {
             }
             const order3 = { name: 'VitC', price: 70 };
             console.log(getPrice(order3)); 
-            
+            //** */
+
+            class Animal {
+
+                constructor(_legs) {
+                this.leg = _legs;
+                }
+                amountOfLegs() {
+                    return this.leg;
+                }
+                }
+                const animal = new Animal(4);
+                console.log(animal.amountOfLegs());
+
+                class Dog extends Animal {
+                    makeNoise() {
+                        return "Bark";
+                    }
+                }
+                const dog = new Dog();
+                console.log(dog.makeNoise());
+                
+
 
             
