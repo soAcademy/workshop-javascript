@@ -67,22 +67,33 @@
 // }
 // calculateBMI(61,170);
 
-const average = (inputs) => {
-  let sum = 0;
-  let average = 0;
-  for (let i = 0; i < inputs.length; i++) {
-    sum += inputs[i];
-  }
-  average = sum / inputs.length;
-  return average;
-};
-console.log(`The average is: ${average([1, 2, 3, 4])}`);
+// const average = (inputs) => {
+//   let sum = 0;
+//   let average = 0;
+//   for (let i = 0; i < inputs.length; i++) {
+//     sum += inputs[i];
+//   }
+//   average = sum / inputs.length;
+//   return average;
+// };
+// console.log(`The average is: ${average([1, 2, 3, 4])}`);
 
 // const sumOdd = (input) => {
 //   let sum = 0;
 //   for (let i = 0; i < input.length; i++) {
 //     if (input[i] % 2 !== 0) sum += input[i];
 //   }
-//   console.log(`The sum of odd is: ${sum}`);
-// };
-// sumOdd([1, 8, 9, -3, 0, 4]);
+//   return sumOdd;
+// }
+// console.log(`The sum of odd is: ${sumOdd([1, 8, 9, -3, 0, 4])}`);
+
+const order = { name: "VitC", price: 50 };
+const { price } = order;
+
+console.log(`The price is: ${price}`);
+
+// const getprice = ({price}) => {
+//   return price;
+// }
+
+// console.log(`The price is: ${getprice({price})}`);
