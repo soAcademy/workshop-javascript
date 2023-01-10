@@ -18,8 +18,15 @@
 // }
 // greet();
 
-const a = "hello";
+// const a = "hello";
+// function greet() {
+//   a = "hi";
+// }
+// console.log(a);
+
+const a = 10;
 function greet() {
-  a = "hi";
+  const b = 20;
+  console.log(a + b);
 }
-console.log(a);
+greet();
