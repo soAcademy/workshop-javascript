@@ -56,18 +56,27 @@
 // };
 // console.log(isOdd(7));
 
-const calculateBMI = (weight, height) => {
-  const numBmi = weight / (height / 100) ** 2;
-  let grade = "";
-  if (numBmi < 18.5) {
-    grade = "underweight";
-  } else if (numBmi < 25) {
-    grade = "healthy";
-  } else if (numBmi < 30) {
-    grade = "overweight";
-  } else {
-    grade = "obesity";
+// const calculateBMI = (weight, height) => {
+//   const numBmi = weight / (height / 100) ** 2;
+//   let grade = "";
+//   if (numBmi < 18.5) {
+//     grade = "underweight";
+//   } else if (numBmi < 25) {
+//     grade = "healthy";
+//   } else if (numBmi < 30) {
+//     grade = "overweight";
+//   } else {
+//     grade = "obesity";
+//   }
+//   return `Your BMI grade is: ${grade}`;
+// };
+// console.log(calculateBMI(53, 158));
+
+const average = (input) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    sum = sum + input[i];
   }
-  return `Your BMI grade is: ${grade}`;
+  return sum / input.length;
 };
-console.log(calculateBMI(53, 158));
+console.log(average([1, 2, 3, 4]));
