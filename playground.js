@@ -34,18 +34,22 @@
 //     console.log(a);
 // }
 // greet();
+// ทำงานได้ปกติ
 
 //no.2
-// const a = "hello";
+// let a = "hello";
 // function greet() {
 //     a = "hi";
 // }
+// greet();
 // console.log(a);
+// ทำงานไม่ได้ แต่ไขแล้ว
 
-//no.3
+// no.3
 const a = 10;
 function greet() {
     const b = 20;
+    console.log(a + b);
 }
 greet();
-console.log(a + b);
+// ทำงานไม่ได้ แต่ไขแล้ว
