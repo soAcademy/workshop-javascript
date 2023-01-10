@@ -64,7 +64,7 @@
 // console.log(even); // Output: false
 
 
-function CalculateBMI(weight, height) {
+function calculateBMI(weight, height) {
     const bmi = weight / (height/100) ** 2;
     if (bmi < 18.5) {
       return "underweight";
@@ -76,10 +76,8 @@ function CalculateBMI(weight, height) {
       return "obesity";
     }
   }
-
-  const bmi_grade = CalculateBMI(70, 170);
-  console.log(bmi_grade);
-
+  const bmiGrade = calculateBMI(70, 170);
+  console.log(bmiGrade);
 
 
 
@@ -93,6 +91,7 @@ function average(input) {
   const inputArray = [4, 8, 16, 32];
   const avg = average(inputArray);
   console.log(avg); // Output: 2.5
+
 
 
 function sumOdd(input) {
