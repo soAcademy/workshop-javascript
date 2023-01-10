@@ -136,5 +136,4 @@ const sumOdd = (input) => {
 	}
 	return total;
 };
-
 console.log(sumOdd([1, 8, 9, -3, 0, 4]));
