@@ -12,6 +12,8 @@
 //   { x: 3, y: 4 },
 // ];
 
+const { SortOrderType } = require("discord.js");
+
 // const a = "hello";
 // function greet() {
 //   console.log(a);
@@ -91,6 +93,11 @@
 //   return sum;
 // };
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
-const order = { name: "VitC", price: 50 };
-const { price } = order;
-console.log(price);
+// const order = { name: "VitC", price: 50 };
+// const { price } = order;
+// console.log(price);
+
+const getPrice = ({ price }) => {
+  return price;
+};
+console.log(getPrice({ price: 22 }));
