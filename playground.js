@@ -1,6 +1,7 @@
-let a = "hello world";
-function greet(){
-    a = "hi";
-    console.log(a);
+let a = 10;
+function greet() {
+    const b = 20;
+    console.log(a+b);
+
 }
-greet()
+greet();
