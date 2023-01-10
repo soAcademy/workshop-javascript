@@ -100,14 +100,32 @@
 // const sum = sumOdd(inputArray1);
 // console.log(sum); // Output: 7
 
+// const order = { name: 'VitC', price: 50 };
+// const { price } = order;
+// console.log(price)
 
-const order = { name: 'VitC', price: 50 };
-const { price } = order;
-console.log(price)
+// const getPrice1 = ({price1}) => {
+//   return price1;
+// };
+// const order1 = { name1: 'VitC1', price1: 60 };
+// console.log(getPrice1(order1));
 
+class Animal {
+  constructor(legs = 4) {
+    this.legs = legs;
+  }
+  amountOfLegs() {
+    console.log(`I have ${this.legs} legs`);
+  }
+}
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark");
+  }
+}
+const myDog = new Dog();
+myDog.amountOfLegs(); // Output: "I have 4 legs"
+myDog.makeNoise(); // Output: "Bark"
 
-const getPrice1 = ({price1}) => {
-  return price1;
-};
-const order1 = { name1: 'VitC1', price1: 60 };
-console.log(getPrice1(order1));
+const myDog2 = new Dog(3);
+myDog2.amountOfLegs(); // Output: "I have 3 legs"
