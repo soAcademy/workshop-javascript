@@ -67,31 +67,31 @@
 // console.log("console.log() has to be inside greet() to work properly\n");
 
 // Function Workshop
-console.log('Function Workshop');
+console.log("Function Workshop");
 // Q1
-function sum1 (a,b,c) {
-    return a+b+c;
+function sum1(a, b, c) {
+	return a + b + c;
 }
-console.log(sum1(1,2,3));
+console.log(sum1(1, 2, 3));
 
 // Q2
-const sum2 = (a,b,c) => a+b+c;
-console.log(sum2(1,2,3));
+const sum2 = (a, b, c) => a + b + c;
+console.log(sum2(1, 2, 3));
 
 // Q3
-const sum3 = (a,b,c) => {
-    return {
-        x:a.x+b.x+c.x,
-        y:a.y+b.y+c.y
-    }
-}
-let a = {x:1,y:2}
-let b = {x:3,y:4}
-let c = {x:5,y:6}
-console.log(sum3(a,b,c));
+const sum3 = (a, b, c) => {
+	return {
+		x: a.x + b.x + c.x,
+		y: a.y + b.y + c.y,
+	};
+};
+let a = { x: 1, y: 2 };
+let b = { x: 3, y: 4 };
+let c = { x: 5, y: 6 };
+console.log(sum3(a, b, c));
 
 // Q4
 const isOdd = (x) => {
-    return x % 2 != 0 
-}
+	return x % 2 != 0;
+};
 console.log(isOdd(153));
