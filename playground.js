@@ -87,41 +87,54 @@
 
 // Workshop#4
 
-//Quiz 1
-const calculateBMI = (weight, height) => {
-  let bmi = weight / (height / 100) ** 2;
-  let a = "";
-  if (bmi <= 18.5) {
-    a = "underweight";
-  } else if (bmi < 25) {
-    a = "healthy";
-  } else if (bmi < 30) {
-    a = "overweight";
-  } else {
-    a = "obesity";
-  }
-  return a;
-};
-console.log(`Your BMI grade = ${calculateBMI(60, 172)}`);
+// Quiz 1
+// const calculateBMI = (weight, height) => {
+//   let bmi = weight / (height / 100) ** 2;
+//   let a = "";
+//   if (bmi <= 18.5) {
+//     a = "underweight";
+//   } else if (bmi < 25) {
+//     a = "healthy";
+//   } else if (bmi < 30) {
+//     a = "overweight";
+//   } else {
+//     a = "obesity";
+//   }
+//   return a;
+// };
+// console.log(`Your BMI grade = ${calculateBMI(60, 172)}`);
 
-//Quiz 2
-const average = (a) => {
-  let sum = 0;
-  for (let i = 0; i < a.length; i++) {
-    sum += a[i];
-  }
-  return sum / a.length;
-};
-console.log(`Average = ${average([1, 2, 3, 4])}`);
+// //Quiz 2
+// const average = (a) => {
+//   let sum = 0;
+//   for (let i = 0; i < a.length; i++) {
+//     sum += a[i];
+//   }
+//   return sum / a.length;
+// };
+// console.log(`Average = ${average([1, 2, 3, 4])}`);
 
-//Quiz 3
-const sumOdd = (input) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 != 0) {
-      sum += input[i];
-    }
-  }
-  return sum;
+// //Quiz 3
+// const sumOdd = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 != 0) {
+//       sum += input[i];
+//     }
+//   }
+//   return sum;
+// };
+// console.log(`Sum odd no. = ${sumOdd([1, 8, 9, -3, 0, 4])}`);
+
+// Workshop#5
+// Quiz 1
+const order = { name: "VitC", price: 50 };
+const { price } = order;
+console.log(price);
+
+// Quiz 2
+const getPrice = (order) => {
+  const { price } = order;
+  return price;
 };
-console.log(`Sum odd no. = ${sumOdd([1, 8, 9, -3, 0, 4])}`);
+console.log(getPrice(order));
