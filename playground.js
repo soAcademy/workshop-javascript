@@ -1,7 +1,7 @@
 const a = 1;
 console.log("No1 :", a);
 
-const b = "hello"
+const b = "hello";
 console.log("No2 :", b);
 
 const c = true;
@@ -14,11 +14,14 @@ let e = 10;
 e = 20;
 console.log("No5 :", e);
 
-const myArray = [1,2,3]
+const myArray = [1, 2, 3];
 console.log("No6 :", myArray);
 
-const myObject = {x:1,y:2}
+const myObject = { x: 1, y: 2 };
 console.log("No7 :", myObject);
 
-const myObjects = [{x:1,y:2}, {x:3,y:4}]
+const myObjects = [
+  { x: 1, y: 2 },
+  { x: 3, y: 4 },
+];
 console.log("No8 :", myObjects);
