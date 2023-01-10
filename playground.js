@@ -96,13 +96,13 @@
 // };
 // average([1, 2, 3, 4, 5]);
 
-const sumOdd = (input) => {
+const sumOdd = (inputs) => {
   let total = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 !== 0) {
-      total += input[i];
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i] % 2 !== 0) {
+      total += inputs[i];
     }
-    return `The sum of odd is: ${total}`;
   }
+  return `The sum of odd is: ${total}`;
 };
 console.log(sumOdd([1, 2, 3, 4, 5, 6, 7]));
