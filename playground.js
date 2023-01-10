@@ -94,4 +94,7 @@ console.log(sum3(a, b, c));
 const isOdd = (x) => {
 	return x % 2 != 0;
 };
+const isOdd2 = (x) => x % 2 != 0
+
 console.log(isOdd(153));
+console.log(isOdd2(3));
