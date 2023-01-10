@@ -25,3 +25,12 @@ const myObjects = [
   { x: 3, y: 4 },
 ];
 console.log("No8 :", myObjects);
+
+const f = "Hello";
+function greet(){
+    console.log(f);
+}
+greet();
+
+
+
