@@ -32,7 +32,14 @@ function greet() {
   a = "hi";
 }
 console.log(a);*/
-// Quiz 2 Answer = "hello" can run with no error
+/*Quiz 2 Answer = "hello" can run with no error
+or change code to be this if wannt to change a = hi
+let a = "hello";
+function greet() {
+  a = "hi";
+  console.log(a);
+}
+greet();*/
 
 const a = 10;
 function greet() {
