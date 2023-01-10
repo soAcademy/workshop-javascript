@@ -9,17 +9,17 @@
 // let myObjects = [{x:1, y:2}, {x:3, y:4}];
 // console.log(myObjects);
 
-const a = "hello";
-function greet() {
-  console.log(a);
-}
-greet();
-
-// let a = "hello world"
-// function greet(){
-//     return a = "hi";
+// const a = "hello";
+// function greet() {
+//   console.log(a);
 // }
-// console.log(greet());
+// greet();
+
+let a = "hello";
+function greet() {
+  return (a = "hi");
+}
+console.log(greet());
 
 // let a = 10;
 // function greet() {
