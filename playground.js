@@ -66,20 +66,63 @@
 // greet();
 
 // Workshop#3
+
 //Quiz 1
-function sum1(a, b, c) {
-  return a + b + c;
-}
-console.log(sum1(1, 2, 3));
+// function sum1(a, b, c) {
+//   return a + b + c;
+// }
+// console.log(sum1(1, 2, 3));
 
-// Quiz 2
-const sum2 = (a, b, c) => a + b + c;
-console.log(sum2(1, 2, 1));
+// // Quiz 2
+// const sum2 = (a, b, c) => a + b + c;
+// console.log(sum2(1, 2, 1));
 
-// Quiz 3
-const sum3 = (a, b, c) => ({ x: a.x + b.x + c.x, y: a.y + b.y + c.y });
-console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+// // Quiz 3
+// const sum3 = (a, b, c) => ({ x: a.x + b.x + c.x, y: a.y + b.y + c.y });
+// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
-// Quiz 4
-const isOdd = (x) => x % 2 !== 0;
-console.log(isOdd(13));
+// // Quiz 4
+// const isOdd = (x) => x % 2 !== 0;
+// console.log(isOdd(13));
+
+// Workshop#4
+
+//Quiz 1
+const calculateBMI = (weight, height) => {
+  let bmi = weight / (height / 100) ** 2;
+  let a = "";
+  if (bmi <= 18.5) {
+    a = "underweight";
+  } else if (bmi < 25) {
+    a = "healthy";
+  } else if (bmi < 30) {
+    a = "overweight";
+  } else {
+    a = "obesity";
+  }
+  console.log("Your BMI grade =", a);
+};
+calculateBMI(60, 172);
+
+//Quiz 2
+const average = (a) => {
+  let sum = 0;
+  for (let i = 0; i < a.length; i++) {
+    sum += a[i];
+  }
+  avg = sum / a.length;
+  console.log(`Average is : ${avg}`);
+};
+average([1, 2, 3, 4]);
+
+//Quiz 3
+const sumOdd = (input) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 != 0) {
+      sum += input[i];
+    }
+  }
+  console.log(`Sum = ${sum}`);
+};
+sumOdd([1, 8, 9, -3, 0, 4]);
