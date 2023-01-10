@@ -31,28 +31,40 @@
 // }
 // sum2(1, 2, 3);
 
-// const sum3 = (a, b, c) => {
-//     let x = Number;
-//     let y = Number;
-//     a = {
-//         x : 1,
-//         y : 1
-//     }
-//     b = {
-//         x : 2,
-//         y : 2
-//     }
-//     c = {
-//             x : 3,
-//             y : 3
-//         }
-//     console.log(a.x + b.x + c.x);
-//     }
-//     sum3();
+// const sum3 = (a, b, c, d) => {
+//     const total = (a.x+b.x+c.x);
+//     return;
+// }
+// sum3({x:1},{});
+
+// const sum (a, b, c) => {
+//     const sum1 =  (a.x+b.x+c.x) + (a.y+b.y+c.y);
+//  const total = (a.x+b.x+c.x) + (a.y+b.y+c.y);
+//  return;
+//  }
+// sum({x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 3});
 
 
 
-const isOdd = (num) => {
-    return num % 2 !== 0;
+// const isOdd = (num) => {
+//     return num % 2 !== 0;
+// }
+// console.log(isOdd(8));
+
+const calculateBMI = (weight, height) => {
+    let calculateBMI
+    let BMI = 0;
+    BMI = weight/(height/100)**2;
+    if(BMI < 18.5){
+        console.log("underweight");
+        } else if(BMI < 25 && BMI >= 18.5) {
+        console.log("healthy");
+     } else if(BMI < 30 && BMI >= 25) {
+        console.log("overweight");
+        } else if(BMI >= 30) {
+            console.log("obesity");
+        }
+    console.log(BMI);
+    return calculateBMI;
 }
-console.log(isOdd(8));
+calculateBMI(61,170);
