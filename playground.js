@@ -12,17 +12,18 @@
 //   { x: 3, y: 4 },
 // ];
 
-// const a = "hello";
-// function greet() {
-//   console.log(a);
-// }
-// greet();
-
 const a = "hello";
 function greet() {
-  a = "hi";
+  console.log(a);
 }
-console.log(a);
+greet();
+//can run because block scope
+
+// const a = "hello";
+// function greet() {
+//   a = "hi";
+// }
+// console.log();
 //ทำงานไม่ได้เพราะ hi อยู่ใน block scope
 
 // const a = 10;
