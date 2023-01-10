@@ -41,24 +41,27 @@
 // ต้องย้าย console.log ไว้ใน function
 
 //function Workshop
-// function sum1(a, b, c) {
-//     return a + b + c;
-//     }
-//     console.log(sum1(1,2,3));
+function sum1(a, b, c) {
+  return a + b + c;
+}
+console.log(sum1(1, 2, 3));
 
-// const sum2 = (a, b, c) => {
-//     return a + b + c;
-//     }
-//     console.log(sum2(1,2,3));
+const sum2 = (a, b, c) => {
+  return a + b + c;
+};
+console.log(sum2(1, 2, 3));
 
-// const sum3 = (a, b, c) => {
-//   return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
-// };
+const sum3 = (a, b, c) => {
+  return {
+    x: a.x + b.x + c.x,
+    y: a.y + b.y + c.y,
+  };
+};
 
-// console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
+console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }));
 
 const isOdd = (num) => {
-    return num % 2 !== 0;
-    }
-    console.log(isOdd(1)); // output: true
-    console.log(isOdd(2)); // output: false
+  return num % 2 !== 0;
+};
+console.log(isOdd(1)); // output: true
+console.log(isOdd(2)); // output: false
