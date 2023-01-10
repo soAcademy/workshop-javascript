@@ -138,16 +138,38 @@
 // };
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
-// Destructuring Workshop
-console.log("Destructuring Workshop");
+// // Destructuring Workshop
+// console.log("Destructuring Workshop");
+// // Q1
+// const order = { name: "VitC", price: 50 };
+// const order2 = { name: "VitU", price: 100 };
+// // const price = order.price;
+// const { name, price } = order;
+// console.log(price);
+
+// // Q2
+// const getPrice = ({ price }) => price
+// console.log(getPrice(order2));
+
+// Class Workshop
 // Q1
-const order = { name: "VitC", price: 50 };
-// const price = order.price;
-const { name, price } = order;
-console.log(price);
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
+
+  amountOfLegs() {
+    console.log(this.legs);
+  }
+}
+const kangaroo = new Animal(2);
+kangaroo.amountOfLegs();
 
 // Q2
-const getPrice = ({ price }) => {
-  return price;
-};
-console.log(getPrice(order));
+class Dog extends Animal {
+  makeNoise() {
+    console.log("Bark");
+  }
+}
+const pitBull = new Dog(4);
+pitBull.makeNoise();
