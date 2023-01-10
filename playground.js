@@ -92,47 +92,47 @@
 //FLOW CONTROL WORKSHOP
 //1.
 const calculateBMI = (weight, height) => {
-    const bmi = weight / (height / 100) ** 2;
-    let result = "";
-    // console.log(bmi);
-    if (bmi >= 30) {
-        result = "obesity";
-    } else if (bmi >= 25) {
-        result = "overweight";
-    } else if (bmi >= 18.5) {
-        result = "healthy";
-    } else {
-        result = "underweight";
-    }
-    return result;
+  const bmi = weight / (height / 100) ** 2;
+  let result = "";
+  // console.log(bmi);
+  if (bmi >= 30) {
+    result = "obesity";
+  } else if (bmi >= 25) {
+    result = "overweight";
+  } else if (bmi >= 18.5) {
+    result = "healthy";
+  } else {
+    result = "underweight";
+  }
+  return result;
 };
 
 console.log(calculateBMI(62, 175));
 
 //2.
 const average = (input) => {
-    let resultAvg = 0;
-    let sumIn = 0;
-    for (let i = 0; i < input.length; i++) {
-        sumIn += input[i];
-    }
-    // console.log(sumIn);
-    resultAvg = sumIn / input.length;
-    return resultAvg;
+  let resultAvg = 0;
+  let sumIn = 0;
+  for (let i = 0; i < input.length; i++) {
+    sumIn += input[i];
+  }
+  // console.log(sumIn);
+  resultAvg = sumIn / input.length;
+  return resultAvg;
 };
 
 console.log(average([1, 2, 3, 4]));
 
 //3.
 const sumOdd = (input) => {
-    let sumValue = 0;
-    for (let i = 0; i < input.length; i++) {
-        if (input[i] % 2 !== 0) {
-            // console.log(input[i]);
-            sumValue += input[i];
-        }
+  let sumValue = 0;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) {
+      // console.log(input[i]);
+      sumValue += input[i];
     }
-    return sumValue;
+  }
+  return sumValue;
 };
 
 console.log(sumOdd([1, 8, 9, -3, 0, 4]));
