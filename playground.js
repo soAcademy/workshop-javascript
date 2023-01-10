@@ -79,7 +79,7 @@
 //   } else if (bmi >= 30) {
 //     grade = "obesity";
 //   }
-//   return `Your BMI =: ${grade}`;  
+//   return `Your BMI =: ${grade}`;
 // };
 // console.log(calculateBMI(100,160));
 
@@ -105,7 +105,12 @@
 // };
 // console.log(sumOdd([1, 2, 3, 4, 5, 6, 7]));
 
-const order = {name:'VitC',price:50}
-const {name,price} = order;
-const result = name+","+price
-console.log(result);
+const order = { name: "VitC", price: 50 };
+const { name, price } = order;
+// const result = name+","+price
+// console.log(result);
+
+const getPrice = ({ price }) => {
+  return price;
+};
+console.log(getPrice(order));
