@@ -33,8 +33,14 @@
 // }
 // greet();
 
-function sum1(a, b, c) {
-  return a + b + c;
-}
+// function sum1(a, b, c) {
+//   return a + b + c;
+// }
 
-console.log(sum1(1, 2, 3));
+// console.log(sum1(1, 2, 3));
+
+const sum2 = (a, b, c) => {
+  return a + b + c;
+};
+
+console.log(sum2(1, 2, 3));
