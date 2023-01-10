@@ -151,26 +151,139 @@
 // const getPrice = ({ price }) => price
 // console.log(getPrice(order2));
 
-// Class Workshop
-// Q1
-class Animal {
-  constructor(_legs) {
-    this.legs = _legs;
-  }
+// // Class Workshop
+// // Q1
+// class Animal {
+//   constructor(_legs) {
+//     this.legs = _legs;
+//   }
 
-  amountOfLegs() {
-    console.log(this.legs);
-  }
-}
-const kangaroo = new Animal(2);
-kangaroo.amountOfLegs();
+//   amountOfLegs() {
+//     console.log(this.legs);
+//   }
+// }
+// const kangaroo = new Animal(2);
+// kangaroo.amountOfLegs();
 
-// Q2
-class Dog extends Animal {
-  makeNoise() {
-    console.log("Bark");
+// // Q2
+// class Dog extends Animal {
+//   makeNoise() {
+//     console.log("Bark");
+//   }
+// }
+// const pitBull = new Dog(4);
+// pitBull.makeNoise();
+// pitBull.amountOfLegs();
+
+// HW
+const products = [
+  {
+    id: 1,
+    price: 9.99,
+    cost: 7.25,
+    quantity: 50,
+    name: "Product 1",
+  },
+  {
+    id: 2,
+    price: 19.99,
+    cost: 14.5,
+    quantity: 40,
+    name: "Product 2",
+  },
+  {
+    id: 3,
+    price: 29.99,
+    cost: 21.35,
+    quantity: 30,
+    name: "Product 3",
+  },
+];
+
+const orders = [
+  {
+    id: 1,
+    customer: "John Doe",
+    items: [
+      {
+        productId: 1,
+        quantity: 2,
+      },
+      {
+        productId: 2,
+        quantity: 1,
+      },
+    ],
+    datetime: "2022-12-15T12:00:00Z",
+  },
+  {
+    id: 2,
+    customer: "Jane Smith",
+    items: [
+      {
+        productId: 3,
+        quantity: 3,
+      },
+    ],
+    datetime: "2022-12-14T12:00:00Z",
+  },
+  {
+    id: 3,
+    customer: "Bob Johnson",
+    items: [
+      {
+        productId: 1,
+        quantity: 1,
+      },
+    ],
+    datetime: "2022-12-13T12:00:00Z",
+  },
+  {
+    id: 4,
+    customer: "John Doe",
+    items: [
+      {
+        productId: 2,
+        quantity: 2,
+      },
+      {
+        productId: 3,
+        quantity: 1,
+      },
+    ],
+    datetime: "2022-12-13T11:00:00Z",
+  },
+];
+
+// [{productId: 1, quantity: 2, price: 400, cost: 300}
+const summarizeOrder = (productsObject = products, ordersObject = orders) => {
+  let ordersByProductId = [];
+  for (i = 0; i < products.length; i++) {
+    let { id, price, cost } = products[i];
+    productId = id;
+    saleQuantity = 0;
+    totalSale = 0;
+    totalCost = 0;
+    for (j = 0; j < orders.length; j++) {
+      let { items } = orders[j];
+      for (k = 0; k < items.length; k++) {
+        if (items[k]["productId"] === productId) {
+          saleQuantity += items[k]["quantity"];
+        }
+      }
+      totalSale = saleQuantity * price;
+      totalCost = saleQuantity * cost;
+    }
+    products[i].quantity -= saleQuantity;
+    productSale = {
+      productId: id,
+      saleQuantity: saleQuantity,
+      totalSale: Number(totalSale.toFixed(2)),
+      totalCost: Number(totalCost.toFixed(2),)
+    };
+    ordersByProductId.push(productSale);
   }
-}
-const pitBull = new Dog(4);
-pitBull.makeNoise();
-pitBull.amountOfLegs();
+  return ordersByProductId;
+};
+console.log(summarizeOrder());
+console.log(products);
