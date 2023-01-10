@@ -97,4 +97,4 @@ const isOdd = (x) => {
 const isOdd2 = (x) => x % 2 != 0
 
 console.log(isOdd(153));
-console.log(isOdd2(3));
+console.log(isOdd2(14));
