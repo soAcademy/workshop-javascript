@@ -37,3 +37,25 @@ function great() {
 }
 
 great();
+
+//Functions Workshop
+function sum1(a, b, c) {
+  return a + b + c;
+}
+
+const sum2 = (a, b, c) => {
+  return a + b + c;
+};
+
+const sum3 = (a, b, c) => {
+  return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
+};
+
+const isOdd = (num) => {
+  return num % 2 !== 0;
+};
+
+console.log(sum1(20, 30, 40));
+console.log(sum2(20, 30, 40));
+console.log(sum3({ x: 20, y: 20 }, { x: 30, y: 30 }, { x: 40, y: 40 }));
+console.log(isOdd(20));
