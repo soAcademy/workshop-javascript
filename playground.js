@@ -87,54 +87,67 @@ console.log("Hello World");
 // console.log(isOdd(23));
 // console.log(isOdd(34));
 
-console.log("Flow Control Workshop #1");
+// console.log("Flow Control Workshop #1");
 
-const calculateBMI = (weight, height) => {
-  const bmi = weight / (height / 100) ** 2;
-  if (bmi < 18.5) {
-    return "underweight";
-  } else if (bmi < 25) {
-    return "healthy";
-  } else if (bmi < 30) {
-    return "overweight";
-  } else {
-    return "obesity";
-  }
-};
+// const calculateBMI = (weight, height) => {
+//   const bmi = weight / (height / 100) ** 2;
+//   if (bmi < 18.5) {
+//     return "underweight";
+//   } else if (bmi < 25) {
+//     return "healthy";
+//   } else if (bmi < 30) {
+//     return "overweight";
+//   } else {
+//     return "obesity";
+//   }
+// };
 
-console.log(
-  "A person who weighs 70 kg and is 170 cm tall is considered " +
-    calculateBMI(70, 170) +
-    ", according to BMI"
-);
-console.log(
-  "A person who weighs 80 kg and is 170 cm tall is considered " +
-    calculateBMI(80, 170) +
-    ", according to BMI"
-);
+// console.log(
+//   "A person who weighs 70 kg and is 170 cm tall is considered " +
+//     calculateBMI(70, 170) +
+//     ", according to BMI"
+// );
+// console.log(
+//   "A person who weighs 80 kg and is 170 cm tall is considered " +
+//     calculateBMI(80, 170) +
+//     ", according to BMI"
+// );
 
-console.log("Flow Control Workshop #2");
+// console.log("Flow Control Workshop #2");
 
-const average = (inputArray) => {
-  let accumulatedResult = 0;
-  for (let i = 0; i < inputArray.length; i++) {
-    accumulatedResult += inputArray[i];
-  }
-  return accumulatedResult / inputArray.length;
-};
+// const average = (inputArray) => {
+//   let accumulatedResult = 0;
+//   for (let i = 0; i < inputArray.length; i++) {
+//     accumulatedResult += inputArray[i];
+//   }
+//   return accumulatedResult / inputArray.length;
+// };
 
-console.log(average([1, 2, 3, 4]));
+// console.log(average([1, 2, 3, 4]));
 
-console.log("Flow Control Workshop #3");
+// console.log("Flow Control Workshop #3");
 
-const sumOdd = (input) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 !== 0) {
-      sum += input[i];
-    }
-  }
-  return sum;
-};
+// const sumOdd = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 !== 0) {
+//       sum += input[i];
+//     }
+//   }
+//   return sum;
+// };
 
-console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+// console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+
+console.log("Destructuring Workshop #1");
+
+const order = { name: "VitC", price: 50 };
+const { price } = order;
+
+console.log(price);
+
+console.log("Destructuring Workshop #2");
+
+const getPrice = ({ price }) => price;
+
+console.log(getPrice(order));
