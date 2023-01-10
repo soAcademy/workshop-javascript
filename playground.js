@@ -36,6 +36,7 @@ let a3 = "hello";
 function greet3() {
   a3 = "hi";
 }
+greet3();
 console.log(a3);
 
 /* const a4 = 10;
