@@ -29,8 +29,15 @@
 // console.log(`8: ${myObjects}`);
 
 //Scope Workshop
+// const a = "hello";
+// function greet() {
+//     console.log(a);
+// }
+// greet();
+
+//no.2
 const a = "hello";
 function greet() {
-    console.log(a);
+    a = "hi";
 }
-greet();
+console.log(a);
