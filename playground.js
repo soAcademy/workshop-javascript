@@ -87,20 +87,26 @@ console.log (average([1,2,3,4]));
  */
 
 
-const sumOdd = (input) => {
+/* const sumOdd = (input) => {
   let sum = 0;
   for (let i = 0; i < input.length; i++) {
     if (input[i] % 2 !== 0) 
     sum += input[i];
   }
-  return (`The sum of odd  is: ${sum}`);
+  return sum;
 };
-console.log (sumOdd([1, 2, 3, 4]));
+console.log(`The sum of odd  is: ${sumOdd([1, 2, 3, 4])}`);
+ */
 
+/* const order = { name: "VitC", price: 50 };
+const {price} = order;
+console.log(price) */
 
-
-
-
+const order = { name: "VitC", price: 50 };
+const getPrice = ({price}) => {
+  return price;
+};
+console.log(getPrice(order))
 
 
 
