@@ -18,15 +18,16 @@
 // }
 // greet();
 
-// const a = "hello";
-// function greet() {
-//   a = "hi";
-// }
-// console.log(a);
-
-const a = 10;
+const a = "hello";
 function greet() {
-  const b = 20;
-  console.log(a + b);
+  a = "hi";
 }
-greet();
+console.log(a);
+//ทำงานไม่ได้เพราะ hi อยู่ใน block scope
+
+// const a = 10;
+// function greet() {
+//   const b = 20;
+//   console.log(a + b);
+// }
+// greet();
