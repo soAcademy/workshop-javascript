@@ -130,7 +130,7 @@ console.log(average([1, 2, 3, 4]));
 const sumOdd = (input) => {
 	let total = 0;
 	for (let i = 0; i < input.length; i++) {
-		if (input[i] % 2 != 0) {
+		if (input[i] % 2 !== 0) {
 			total += input[i];
 		}
 	}
