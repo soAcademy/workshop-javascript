@@ -43,3 +43,15 @@ function greet1() {
 }
 
 console.log(aaa);
+
+console.log("Scope Workshop #3");
+
+const aaaa = 10;
+const bbbb = 20; // fixed
+
+function greet2() {
+  const bbbb = 20;
+}
+
+greet2();
+console.log(aaaa + bbbb);
