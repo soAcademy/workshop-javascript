@@ -25,8 +25,8 @@
 // console.log("Q7: ", myObject);
 // // Q8
 // const myObjects = [
-// 	{ x: 1, y: 2 },
-// 	{ x: 3, y: 4 },
+//   { x: 1, y: 2 },
+//   { x: 3, y: 4 },
 // ];
 // console.log("Q8: ", myObjects);
 
@@ -50,7 +50,7 @@
 // }
 // console.log(a);`);
 // console.log(
-// 	"The code works and the result is 'hello' because function greet() hasn't been called yet\n"
+//   "The code works and the result is 'hello' because function greet() hasn't been called yet\n"
 // );
 
 // //Q3
@@ -62,7 +62,7 @@
 // greet();
 // console.log(a + b);`);
 // console.log(
-// 	"The code is error because b is only defined and work in function greet()."
+//   "The code is error because b is only defined and work in function greet()."
 // );
 // console.log("console.log() has to be inside greet() to work properly\n");
 
@@ -70,7 +70,7 @@
 // console.log("Function Workshop");
 // // Q1
 // function sum1(a, b, c) {
-// 	return a + b + c;
+//   return a + b + c;
 // }
 // console.log(sum1(1, 2, 3));
 
@@ -80,10 +80,10 @@
 
 // // Q3
 // const sum3 = (a, b, c) => {
-// 	return {
-// 		x: a.x + b.x + c.x,
-// 		y: a.y + b.y + c.y,
-// 	};
+//   return {
+//     x: a.x + b.x + c.x,
+//     y: a.y + b.y + c.y,
+//   };
 // };
 // let a = { x: 1, y: 2 };
 // let b = { x: 3, y: 4 };
@@ -92,7 +92,7 @@
 
 // // Q4
 // const isOdd = (x) => {
-// 	return x % 2 != 0;
+//   return x % 2 != 0;
 // };
 // const isOdd2 = (x) => x % 2 != 0;
 
@@ -139,15 +139,15 @@
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
 // Destructuring Workshop
-console.log('Destructuring Workshop');
+console.log("Destructuring Workshop");
 // Q1
-const order = { name: 'VitC', price: 50 };
-// // const price = order.price;
-// const {name, price} = order
-// console.log(price);
+const order = { name: "VitC", price: 50 };
+// const price = order.price;
+const { name, price } = order;
+console.log(price);
 
 // Q2
-const getPrice = ({price}) => {
-  return price
-}
+const getPrice = ({ price }) => {
+  return price;
+};
 console.log(getPrice(order));
