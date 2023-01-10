@@ -12,11 +12,11 @@
 //   { x: 3, y: 4 },
 // ];
 
-const a = "hello";
-function greet() {
-  console.log(a);
-}
-greet();
+// const a = "hello";
+// function greet() {
+//   console.log(a);
+// }
+// greet();
 //can run because block scope
 
 // const a = "hello";
@@ -32,3 +32,9 @@ greet();
 //   console.log(a + b);
 // }
 // greet();
+
+function sum1(a, b, c) {
+  return a + b + c;
+}
+
+console.log(sum1(1, 2, 3));
