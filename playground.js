@@ -50,19 +50,18 @@
 // console.log(sum2(2,3,4))
 
 
-// // const sum3 = (a, b, c) => {
-// //     const result = a.x + b.x + c.x + a.y + b.y + c.y;
-// //     return result;
-// // }
-// // console a1 = ({x: 1, y: 1}, {x:2, y:2})
+// const sum3 = (a, b, c) => ({x: a.x + b.x + c.x, y: a.y + b.y + c.y});
+// const a = {x: 1, y: 2};
+// const b = {x: 3, y: 4};
+// const c = {x: 5, y: 6};
+// const result = sum3(a, b, c);
+// console.log(result); // Output: {x: 9, y: 12}
 
-// const sum3 = (a, b, c) => {
-//     return ({x:a.x + b.x + c.x, y: a.y, b.y + c.y});
-// }
-
-// const isOdd = (num) => {
-//     return num % 2 !== 0;
-// }
+// const isOdd = n => n % 2 !== 0;
+// const odd = isOdd(3);
+// console.log(odd); // Output: true
+// const even = isOdd(4);
+// console.log(even); // Output: false
 
 
 function CalculateBMI(weight, height) {
