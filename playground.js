@@ -28,7 +28,6 @@
 // ];
 // console.log(`8: ${myObjects}`);
 
-
 //Scope Workshop
 // const a = "hello";
 // function greet() {
@@ -54,7 +53,6 @@
 // }
 // greet();
 // ทำงานไม่ได้ แต่ไขแล้ว
-
 
 // //Functions Workshop
 // //1.
@@ -90,7 +88,6 @@
 // //4.
 // const isOdd = (val) => val % 2 !== 0;
 // console.log(isOdd(5));
-
 
 // //FLOW CONTROL WORKSHOP
 // //1.
@@ -140,15 +137,36 @@
 
 // console.log(sumOdd([1, 8, 9, -3, 0, 4]));
 
+// // DESTRUCTURING WORKSHOP
+// // 1.
+// const order = { name: "VitC", price: 50 };
+// const { price } = order;
+// console.log(price);
 
-//DESTRUCTURING WORKSHOP
+// //2.
+// const getPrice = ({ price }) => {
+//   return price;
+// };
+// console.log(getPrice({ price }));
+
+//CLASS WORKSHOP
 //1.
-const order = { name: "VitC", price: 50 };
-const { price } = order;
-console.log(price);
+class Animal {
+  constructor(_legs) {
+    this.legs = _legs;
+  }
 
-//2.
-const getPrice = ({ price }) => {
-  return price;
-};
-console.log(getPrice({ price }));
+  amountOfLegs() {
+    console.log(`amountOfLegs: ${this.legs}`);
+  }
+}
+
+class Dog extends Animal {
+  makeNoise() {
+    console.log('makeNoise: Bark');
+  }
+}
+
+const dog = new Dog(4);
+dog.amountOfLegs();
+dog.makeNoise();
