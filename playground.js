@@ -36,8 +36,16 @@
 // greet();
 
 //no.2
-const a = "hello";
+// const a = "hello";
+// function greet() {
+//     a = "hi";
+// }
+// console.log(a);
+
+//no.3
+const a = 10;
 function greet() {
-    a = "hi";
+    const b = 20;
 }
-console.log(a);
+greet();
+console.log(a + b);
