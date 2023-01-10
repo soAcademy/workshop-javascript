@@ -19,3 +19,35 @@ console.log(e);
 console.log(myArray);
 console.log(myObject);
 console.log(myObjects);
+
+const a1 = "hello";
+function greet() {
+  console.log(a1);
+}
+greet();
+
+const a2 = "hello";
+function greet1() {
+  a = "hi";
+}
+console.log(a2);
+
+let a3 = "hello";
+function greet3() {
+  a3 = "hi";
+}
+greet3();
+
+/* const a4 = 10;
+function greet4() {
+  const b2 = 20;
+}
+greet4();
+console.log(a4 + b2); */
+
+const a4 = 10;
+function greet4() {
+  const b2 = 20;
+  console.log(a4 + b2);
+}
+greet4();
