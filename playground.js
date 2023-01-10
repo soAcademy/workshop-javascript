@@ -40,11 +40,14 @@ function greet() {
 }
 greet();
 console.log(a + b);
-/* Quiz 3 Answer = Error due to b is in function greet() move code as below
+
+/* 
+Quiz 3 Answer = Error due to b is in function greet() move code as below
 
 const a = 10;
 function greet() {
   const b = 20;
   console.log(a + b);
 }
+greet();
 */
