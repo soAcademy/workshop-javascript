@@ -14,3 +14,26 @@ const myObjects = [
 console.log(a, b, c, d, e);
 console.log(myArray);
 console.log(myObjects);
+
+//Scope Workshop
+
+const f  = "hello";
+function greet () {
+    console.log(f);
+}
+greet();
+
+let g = "hello";
+function greet () {
+    h = "hi";
+}
+console.log(h);
+
+const i = 10;
+function great() {
+    const j = 20;
+    console.log(i + j);
+}
+
+great();
+
