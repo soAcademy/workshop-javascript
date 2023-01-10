@@ -81,13 +81,16 @@
 // };
 // console.log(average([1, 2, 3, 4]));
 
-const sumOdd = (input) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 !== 0) {
-      sum = sum + input[i];
-    }
-  }
-  return sum;
-};
-console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+// const sumOdd = (input) => {
+//   let sum = 0;
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] % 2 !== 0) {
+//       sum = sum + input[i];
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumOdd([1, 8, 9, -3, 0, 4]));
+const order = { name: "VitC", price: 50 };
+const { price } = order;
+console.log(price);
