@@ -92,18 +92,26 @@ console.log("Flow Control Workshop #1");
 const calculateBMI = (weight, height) => {
   const bmi = weight / (height / 100) ** 2;
   if (bmi < 18.5) {
-    console.log("underweight");
+    return "underweight";
   } else if (bmi < 25) {
-    console.log("healthy");
+    return "healthy";
   } else if (bmi < 30) {
-    console.log("overweight");
+    return "overweight";
   } else {
-    console.log("obesity");
+    return "obesity";
   }
 };
 
-calculateBMI(70, 170);
-calculateBMI(80, 170);
+console.log(
+  "A person who weighs 70 kg and is 170 cm tall is considered " +
+    calculateBMI(70, 170) +
+    ", according to BMI"
+);
+console.log(
+  "A person who weighs 80 kg and is 170 cm tall is considered " +
+    calculateBMI(80, 170) +
+    ", according to BMI"
+);
 
 console.log("Flow Control Workshop #2");
 
@@ -112,10 +120,10 @@ const average = (inputArray) => {
   for (let i = 0; i < inputArray.length; i++) {
     accumulatedResult += inputArray[i];
   }
-  console.log(accumulatedResult / inputArray.length);
+  return accumulatedResult / inputArray.length;
 };
 
-average([1, 2, 3, 4]);
+console.log(average([1, 2, 3, 4]));
 
 console.log("Flow Control Workshop #3");
 
@@ -126,7 +134,7 @@ const sumOdd = (input) => {
       sum += input[i];
     }
   }
-  console.log(sum);
+  return sum;
 };
 
-sumOdd([1, 8, 9, -3, 0, 4]);
+console.log(sumOdd([1, 8, 9, -3, 0, 4]));
