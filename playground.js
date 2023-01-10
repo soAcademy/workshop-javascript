@@ -83,49 +83,43 @@ console.log(IsOdd(2));
 
 console.log("Flow Control Workshop");
 //1
-const calculateBMI=(weight,height)=>{
-    const bmi = weight/(height/100)**2;
-    let grade =" ";
-    if (bmi<18.5){
-        grade = "underweight";
-    }
-    else if (bmi<25){
-        grade = "healthy";
-    }
-    else if (bmi<30){
-        grade = "overweight";
-    }else{
-        grade = "obesity";
-    }
-    console.log("Your BMI grade is " + grade);  
-}
+const calculateBMI = (weight, height) => {
+  const bmi = weight / (height / 100) ** 2;
+  let grade = " ";
+  if (bmi < 18.5) {
+    grade = "underweight";
+  } else if (bmi < 25) {
+    grade = "healthy";
+  } else if (bmi < 30) {
+    grade = "overweight";
+  } else {
+    grade = "obesity";
+  }
+  console.log(`Your BMI grade is ${grade}`);
+};
 
-calculateBMI(76,190);
+calculateBMI(76, 190);
 //2
-const average = (input)=>{
-    let sum =0;
-    let average=0;
-    for(let i=0; i<input.length; i++){
-        sum = sum+input[i];
-        
-    }
-    average=sum/input.length
-    console.log("The average is " + average);
-}
-average([1,2,3,4,]);
+const average = (input) => {
+  let sum = 0;
+  let average = 0;
+  for (let i = 0; i < input.length; i++) {
+    sum = sum + input[i];
+  }
+  average = sum / input.length;
+  console.log(`The average is ${average}`);
+};
+average([1, 2, 3, 4]);
 
 //3
-const sumOdd = (input)=>{
-    let sum = 0;
-    
-    for (let i=0; i<input.length; i++){
-        if(input[i]%2!==0){
-            sum= sum+input[i];
-        }
+const sumOdd = (input) => {
+  let sum = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] % 2 !== 0) {
+      sum = sum + input[i];
     }
-    console.log("The sum of odd is " + sum);
-}
-sumOdd([1,8,9,-3,0,4]);
-
-
-
+  }
+  console.log(`The sum of odd is ${sum}`);
+};
+sumOdd([1, 8, 9, -3, 0, 4]);
