@@ -92,62 +92,91 @@ let products = [
 // console.log(calTotalSale(orders, products));
 
 // Find Best Seller Product
-const topSellingProduct = (orders, products) => {
-  let result = []
-  orders.map((order) => {
-    order.items.map((item)=>{
-      let value = products.find((e)=> e.id === item.productId).price* item.quantity
-      let cost = products.find((e)=> e.id === item.productId).cost* item.quantity
-      target = result.findIndex((e)=> e.id === item.productId)
-      const x = target !== -1
-      ? result[target] = {
-        id: result[target].id,
-        saleValue: result[target].saleValue += value,
-        costValue: result[target].costValue += cost,
-        profit: result[target].saleValue - result[target].costValue,
-        saleQuantity: result[target].saleQuantity + item.quantity,
-        remainQuantity: result[target].remainQuantity - item.quantity
-      }
-      : result.push({
-        id: item.productId,
-        saleValue: value,
-        costValue: cost,
-        profit: value - cost,
-        saleQuantity: item.quantity,
-        remainQuantity: products.find((e)=>e.id === item.productId).quantity - item.quantity
-      })
-    })
-  })
-  let sortedProductBySale = result.sort((a,b)=> b.saleValue-a.saleValue)[0]
-  return sortedProductBySale
-} 
-console.log(topSellingProduct(orders, products))
+// const topSellingProduct = (orders, products) => {
+//   let result = []
+//   orders.map((order) => {
+//     order.items.map((item)=>{
+//       let value = products.find((e)=> e.id === item.productId).price* item.quantity
+//       let cost = products.find((e)=> e.id === item.productId).cost* item.quantity
+//       target = result.findIndex((e)=> e.id === item.productId)
+//       const x = target !== -1
+//       ? result[target] = {
+//         id: result[target].id,
+//         saleValue: result[target].saleValue += value,
+//         costValue: result[target].costValue += cost,
+//         profit: result[target].saleValue - result[target].costValue,
+//         saleQuantity: result[target].saleQuantity + item.quantity,
+//         remainQuantity: result[target].remainQuantity - item.quantity
+//       }
+//       : result.push({
+//         id: item.productId,
+//         saleValue: value,
+//         costValue: cost,
+//         profit: value - cost,
+//         saleQuantity: item.quantity,
+//         remainQuantity: products.find((e)=>e.id === item.productId).quantity - item.quantity
+//       })
+//     })
+//   })
+//   let sortedProductBySale = result.sort((a,b)=> b.saleValue-a.saleValue)[0]
+//   return sortedProductBySale
+// }
+// console.log(topSellingProduct(orders, products))
 
 // Find Top Buyer
-// { 
+// {
 //   customer: String,
-//   saleValue: Number, 
+//   saleValue: Number,
 //   products: {
-//     id: String, 
-//     name: String, 
+//     id: String,
+//     name: String,
 //     quantity: String}
 //   }
-// const topBuyer = (orders, products) => {
-//   let customers = orders.map((e)=> e.customer)
-//   customers = [...new Set(customer)]
-//   customers.map((customer)=> {
-//     orders
-//     .filter((order)=> order.customer === customer)
-//     .map((e)=> d)
-//   })
-//   // orders.reduce((acc, e) => {
-//   //   let value = e.items.map((e)=> {
-      
-//   //   })
-//   //   acc[e.customer] = {
-//   //     customer: e.customer,
-//   //     saleValue: (acc[e.customer]?.saleValue) += value
-//   //   }
-//   // },{})
-// }
-// topBuyer(orders, products)
+const topBuyer = (orders, products) => {
+  let customers = orders.map((e) => e.customer);
+  customers = [...new Set(customers)];
+  let result = customers.map((customer) =>
+    orders
+      .filter((order) => order.customer === customer)
+      .reduce((acc, e) => {
+        let sumValue = 0;
+        let product = {};
+        e.items.map((i) => {
+          let price = products.find((e) => e.id === i.productId).price;
+          sumValue += i.quantity * price;
+          product[i.productId] = {
+            id: i.productId,
+            name: products.find((e) => e.id === i.productId).name,
+            quantity: i.quantity,
+          };
+          return product;
+        });
+
+        acc[e.customer] = {
+          customer: e.customer,
+          saleValue: (acc[e.customer]?.saleValue ?? 0) + sumValue,
+          products: {},
+        };
+        return acc;
+      }, {})
+  );
+  result = result.map((e) => Object.values(e)).flat();
+  orders.map((e) => {
+    e.items.map((order) => {
+      result.find((i) => i.customer === e.customer).products[order.productId] =
+        {
+          id: order.productId,
+          name: products.find((e) => e.id === order.productId).name,
+          quantity:
+            result.find((i) => i.customer === e.customer).products[
+              order.productId
+            ]?.quantity ?? 0 + order.quantity,
+        };
+    });
+  });
+  result
+    .sort((a, b) => b.saleValue - a.saleValue)
+    .map((e) => (e.products = Object.values(e.products)))[0];
+  return result[0];
+};
+console.log(topBuyer(orders, products));
