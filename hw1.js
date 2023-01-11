@@ -200,23 +200,23 @@ const summarizeOrder = (orders, products) => {
     if (result[item.productId]) {
       result[item.productId] = {
         productId: result[item.productId].productId,
-        totalSalesQuantity: (result[item.productId].totalSalesQuantity +=
+        totalSaleQuantities: (result[item.productId].totalSaleQuantities +=
           item.quantity),
-        totalSalesPrice: (result[item.productId].totalSalesPrice += sales),
+        totalSaleValues: (result[item.productId].totalSaleValues += sales),
         totalCosts: (result[item.productId].totalCosts += costs),
       };
     } else {
       result[item.productId] = {
         productId: item.productId,
-        totalSalesQuantity: item.quantity,
-        totalSalesPrice: sales,
+        totalSaleQuantities: item.quantity,
+        totalSaleValues: sales,
         totalCosts: costs,
       };
     }
   });
   result = Object.values(result);
   result.forEach((e) => {
-    productsMap[e.productId].quantity -= e.totalSalesQuantity;
+    productsMap[e.productId].quantity -= e.totalSaleQuantities;
   });
   products.forEach((product) => {
     product.quantity = productsMap[product.id].quantity;
@@ -225,3 +225,4 @@ const summarizeOrder = (orders, products) => {
 };
 console.log(summarizeOrder(orders, products));
 console.log(products);
+// summarizeOrder(orders, products)
