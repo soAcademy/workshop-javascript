@@ -188,13 +188,35 @@ console.log("Top Buyer: ", topBuyer(orders, products));
 const saleByDate = (orders, products) => {
   const ordersByDate = orders.reduce((acc, order) => {
     const date = order.datetime.slice(0, 10);
-    
-  })
-}
+    const sale = order.items
+      .map((r) => {
+        const product = products.find((p) => p.id === r.productId);
+        console.log(product);
+        return {
+          ...r,
+          saleValue: r.quantity * product.price,
+        };
+      })
+      .reduce((acc, r) => acc + r.saleValue, 0);
+
+    acc[date] = {
+      date,
+      saleValue: (acc[date]?.saleValue ?? 0) + sale,
+      quantity:
+        (acc[date]?.saleValue ?? 0) +
+        order.items.reduce((acc, r) => acc + r.quantity, 0),
+    };
+    return acc;
+  }, {});
+
+  return Object.values(ordersByDate);
+};
+
+console.log("Sale By Date: ", saleByDate(orders, products));
 
 // แจกโจทย์ assignment : ให้โจทย์ e-commerce โดยให้ข้อมูล array สินค้ามีอะไรบ้าง สินค้าเป็นเท่าไหร่ จำนวนที่เหลือเท่าไหร่ input2 ให้รายการคำสั่งซื้อจากลูกค้าจริง โจทย์คือ หายอดรวมรายได้ทั้งหมด / ให้หาว่าสินค้าไหนขายดีสุด / ให้เช็คว่าสินค้าแต่ละรายการคงเหลือเท่าไหร่ / หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย / ให้ทำรายได้แยกออกมาเป็นรายวัน / คำนวนกำไร ต้นทุนรายวัน    integrade ความรู้ week 1 ออกมาเป็นชิ้นงานประเมินผล 1 ชิ้น products.json
 
 // 1. calculateTotalSale --> number
 // 2. topSellingProduct -> {id: Number, name: String, saleValue: Number, costValue: Number, profit: Number, saleQuantity: Number, remainQuantity: Number}[]
-// 3. topBuyer -> {customer: String, saleValue: Number, products: {id: String, name: String, quantity: String}[]}[]
+// 3. topBuyer -> {customer: String, saleValue: Number, items: {id: String, name: String, quantity: String}[]}[]
 // 4. saleByDate -> {date: String, saleValue: Number, costValue: Number, profit: Number, saleQuantity: Number}[]

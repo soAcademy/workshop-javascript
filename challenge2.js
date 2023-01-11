@@ -99,6 +99,7 @@ const documents = [
 // Quiz
 // 1. สร้างฟังก์ชั่น hasDocumentPermission({documentId, name, role}) แล้ว return ว่ามี permissions หรือไม่
 // เช่น hasDocumentPermissioin({documentId: 'd3', name: 'Jam', role: 'EDITOR'}) -> true
+// .some, .filter
 
 const hasDocumentPermission = ({documentId, name, role}) => {}
 
