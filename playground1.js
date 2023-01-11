@@ -69,17 +69,35 @@
 
 // Q7
 
-let student = [
-  { name: "Bin", score: 68 },
-  { name: "Jam", score: 70 },
-  { name: "Nan", score: 72 },
-  { name: "Ploy", score: 65 },
+// let student = [
+//   { name: "Bin", score: 68 },
+//   { name: "Jam", score: 70 },
+//   { name: "Nan", score: 72 },
+//   { name: "Ploy", score: 65 },
+// ];
+
+// const q7 = (input) => {
+//   const scores = input.filter(r => r.score < 70);
+//   const names = scores.map(r => r.name);
+//   return names;
+// };
+
+// console.log(q7(student));
+
+// Q8
+
+let orderList = [
+  { status: "PAID", name: "Glory", price: 200, quantity: 3 },
+  { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
+  { status: "PAID", name: "VitC", price: 150, quantity: 2 },
 ];
 
-const q7 = (input) => {
-  const scores = input.filter(r => r.score < 70);
-  const names = scores.map(r => r.name);
-  return names;
-};
+const q8 = (input) => {
+  const totalPaidOrders = input
+  .filter((r) => r.status === "PAID")
+  .map((r) => r.price * r.quantity)
+  .reduce((acc, r) => { acc += r; return acc}, 0);
+  return totalPaidOrders;
+  };
 
-console.log(q7(student));
+console.log(q8(orderList));
