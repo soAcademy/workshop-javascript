@@ -46,9 +46,23 @@
 
 // Q5
 
+// const q5 = (input) => {
+//   input.sort();
+//   return input;
+// };
+
+// console.log(q5([3, 1, 2, 0]));
+
+// Q6
+
+let customer = [
+  { id: 2, name: "B" },
+  { id: 1, name: "A" },
+];
+
 const q6 = (input) => {
-  input.sort();
-  return input;
+  const fineId = input.sort((a, b) => a.id - b.id);
+  return fineId;
 };
 
-console.log(q6([3, 1, 2, 0]));
+console.log(q6(customer));
