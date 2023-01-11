@@ -135,48 +135,32 @@ let products = [
 const topBuyer = (orders, products) => {
   let customers = orders.map((e) => e.customer);
   customers = [...new Set(customers)];
-  let result = customers.map((customer) =>
-    orders
+  let result = customers.map((customer) => {
+    let product = {};
+    return orders
       .filter((order) => order.customer === customer)
       .reduce((acc, e) => {
         let sumValue = 0;
-        let product = {};
         e.items.map((i) => {
           let price = products.find((e) => e.id === i.productId).price;
           sumValue += i.quantity * price;
           product[i.productId] = {
             id: i.productId,
             name: products.find((e) => e.id === i.productId).name,
-            quantity: i.quantity,
+            quantity: (product[i.productId]?.quantity ?? 0) + i.quantity,
           };
-          return product;
         });
 
         acc[e.customer] = {
           customer: e.customer,
           saleValue: (acc[e.customer]?.saleValue ?? 0) + sumValue,
-          products: {},
+          products: product,
         };
         return acc;
-      }, {})
-  );
-  result = result.map((e) => Object.values(e)).flat();
-  orders.map((e) => {
-    e.items.map((order) => {
-      result.find((i) => i.customer === e.customer).products[order.productId] =
-        {
-          id: order.productId,
-          name: products.find((e) => e.id === order.productId).name,
-          quantity:
-            result.find((i) => i.customer === e.customer).products[
-              order.productId
-            ]?.quantity ?? 0 + order.quantity,
-        };
-    });
+      }, {});
   });
-  result
-    .sort((a, b) => b.saleValue - a.saleValue)
-    .map((e) => (e.products = Object.values(e.products)))[0];
+  result = result.map((e) => Object.values(e)).flat();
+  result.sort((a, b) => b.saleValue - a.saleValue);
   return result[0];
 };
 console.log(topBuyer(orders, products));
