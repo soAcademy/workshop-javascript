@@ -43,14 +43,32 @@
 // };
 // console.log(filterUser(userInfo, "099111222"));
 
-// ############ ข้อ 3 ###############
+// ############ ข้อ 4 ###############
 
-const array = [3, 1, 2, 0];
+// const array = [3, 1, 2, 0];
 
-const sortArray = (num) => {
+// const sortArray = (num) => {
+//   const copy = [...array];
+//   copy.sort((a, b) => a - b);
+//   return copy;
+// };
+// console.log(sortArray(array));
+// console.log(array);
+
+// ############ ข้อ 5 ###############
+
+const array = [
+  { id: 2, name: "B" },
+  { id: 1, name: "A" },
+];
+
+const sortArray = (obj) => {
   const copy = [...array];
-  copy.sort((a, b) => a - b);
+  copy.sort((a, b) => a.id - b.id);
   return copy;
 };
+
 console.log(sortArray(array));
 console.log(array);
+
+// ############ ข้อ 6 ###############
