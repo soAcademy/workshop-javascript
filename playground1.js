@@ -57,18 +57,32 @@
 
 // ############ ข้อ 5 ###############
 
-const array = [
-  { id: 2, name: "B" },
-  { id: 1, name: "A" },
+// const array = [
+//   { id: 2, name: "B" },
+//   { id: 1, name: "A" },
+// ];
+
+// const sortArray = (obj) => {
+//   const copy = [...array];
+//   copy.sort((a, b) => a.id - b.id);
+//   return copy;
+// };
+
+// console.log(sortArray(array));
+// console.log(array);
+
+// // ############ ข้อ 6 ###############
+
+const students = [
+  { name: "Bin", score: 68 },
+  { name: "Jam", score: 70 },
+  { name: "Nan", score: 72 },
+  { name: "Ploy", score: 65 },
 ];
 
-const sortArray = (obj) => {
-  const copy = [...array];
-  copy.sort((a, b) => a.id - b.id);
-  return copy;
+const failStudent = (obj) => {
+  const scores = obj.filter((r) => r.score < 70).map((r) => r.name);
+  return scores;
 };
 
-console.log(sortArray(array));
-console.log(array);
-
-// ############ ข้อ 6 ###############
+console.log(failStudent(students));
