@@ -86,9 +86,9 @@ const orderId1 = orders[0].items.map((r) => {
     name: product.name,
   };
 });
-console.log(orderId1);
+// console.log(orderId1);
 let resultId1 = orderId1.reduce((acc, r) => acc + r.price, 0);
-console.log(resultId1);
+// console.log(resultId1);
 
 const orderId2 = orders[1].items.map((r) => {
   const product = products.filter((p) => p.id === r.productId)[0];
@@ -99,9 +99,9 @@ const orderId2 = orders[1].items.map((r) => {
     name: product.name,
   };
 });
-console.log(orderId2);
+// console.log(orderId2);
 let resultId2 = orderId2.reduce((acc, r) => acc + r.price, 0);
-console.log(resultId2);
+// console.log(resultId2);
 
 const orderId3 = orders[2].items.map((r) => {
   const product = products.filter((p) => p.id === r.productId)[0];
@@ -112,9 +112,9 @@ const orderId3 = orders[2].items.map((r) => {
     name: product.name,
   };
 });
-console.log(orderId3);
+// console.log(orderId3);
 let resultId3 = orderId3.reduce((acc, r) => acc + r.price, 0);
-console.log(resultId3);
+// console.log(resultId3);
 
 const orderId4 = orders[3].items.map((r) => {
   const product = products.filter((p) => p.id === r.productId)[0];
@@ -125,9 +125,9 @@ const orderId4 = orders[3].items.map((r) => {
     name: product.name,
   };
 });
-console.log(orderId4);
+// console.log(orderId4);
 let resultId4 = orderId4.reduce((acc, r) => acc + r.price, 0);
-console.log(resultId4);
+// console.log(resultId4);
 
 let revenue = resultId1 + resultId2 + resultId3 + resultId4;
 console.log(`Total revenue: ${revenue}`);
