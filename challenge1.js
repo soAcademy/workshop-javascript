@@ -79,8 +79,33 @@ const orders = [
 
 // Quiz: 1
 
-const calculateTotalSale = () => {};
-console.log();
+const ordersItems = orders.map((order) => order.items).flat();
+
+// console.log(ordersItems);
+
+const ordersItemsCombined = Object.values(
+  ordersItems.reduce((acc, item) => {
+    acc[item.productId] = {
+      productId: item.productId,
+      quantity: (acc[item.productId]?.quantity ?? 0) + item.quantity,
+    };
+    return acc;
+  }, {})
+);
+
+// console.log(ordersItemsCombined);
+
+const calculateTotalSale = ordersItemsCombined.reduce((acc, item) => {
+  const matchedProduct = products.find(
+    (product) => product.id === item.productId
+  );
+  acc += item.quantity * matchedProduct.price;
+  return acc;
+}, 0);
+
+console.log(
+  "Quiz #1\nTotal sales is " + calculateTotalSale.toFixed(2) + " Baht\n"
+);
 
 // Quiz: 2
 const findTopValueCustomer = () => {};
