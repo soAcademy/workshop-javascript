@@ -140,6 +140,7 @@ const hasDocumentPermission = ({ documentId, name, role }) => {
   ));
 }
 
+
 const createGroups2 = () => {
   return groups.map(group => {
     const newGroup = { ...group };
