@@ -118,7 +118,7 @@ const topSellingProduct = (orders, products) => {
       })
     })
   })
-  let sortedProductBySale = result.sort((a,b)=> b.saleQuantity-a.saleQuantity)[0]
+  let sortedProductBySale = result.sort((a,b)=> b.saleValue-a.saleValue)[0]
   return sortedProductBySale
 } 
 console.log(topSellingProduct(orders, products))
