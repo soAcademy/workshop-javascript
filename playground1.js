@@ -30,7 +30,7 @@ const array4 = [
 ];
 const array4Filtered = array4.filter((x) => x.tel === "0991112222");
 
-console.log(array4Filtered);
+console.log(JSON.stringify(array4Filtered));
 
 console.log("JS Functions Workshop #5");
 
@@ -49,7 +49,7 @@ const array6 = [
 const array6Sorted = [...array6];
 array6Sorted.sort((a, b) => a.id - b.id);
 
-console.log(array6Sorted);
+console.log(JSON.stringify(array6Sorted));
 
 console.log("JS Functions Workshop #7");
 
