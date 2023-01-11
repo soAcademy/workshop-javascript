@@ -65,3 +65,17 @@ const namesWithLowScores = scores
   .map((x) => x.name);
 
 console.log(namesWithLowScores);
+
+console.log("JS Functions Workshop #8");
+
+const orders = [
+  { status: "PAID", name: "Glory", price: 200, quantity: 3 },
+  { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
+  { status: "PAID", name: "VitC", price: 150, quantity: 2 },
+];
+
+const totalPaidAmount = orders
+  .filter((x) => x.status === "PAID")
+  .reduce((acc, cur) => acc + cur.price * cur.quantity, 0);
+
+console.log(totalPaidAmount);
