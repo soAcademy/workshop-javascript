@@ -106,31 +106,93 @@ const calculateTotalSale = (orders, products) => {
   return totalSale;
 };
 // console.log(JSON.stringify(calculateTotalSale(orders, products)));
-console.log('Total Sale: ', calculateTotalSale(orders, products));
+console.log("Total Sale: ", calculateTotalSale(orders, products));
 
 const topSellingProduct = (orders, products) => {
   const items = orders.map((order) => order.items).flat();
-  const result = products.map((product) => {
-    const filteredItems = items.filter((item) => item.productId === product.id);
-    const saleValue = filteredItems.reduce((acc, r) => acc + r.quantity * product.price, 0);
-    const costValue = filteredItems.reduce((acc, r) => acc + r.quantity * product.cost, 0);
-    const saleQuantity = filteredItems.reduce((acc, r) => acc + r.quantity, 0);
-    return {
-      ...product,
-      saleValue,
-      costValue,
-      profit: saleValue - costValue,
-      saleQuantity,
-      remainQuantity: product.quantity - saleQuantity
-    }
-  });
+  const result = products
+    .map((product) => {
+      const filteredItems = items.filter(
+        (item) => item.productId === product.id
+      );
+      const saleValue = filteredItems.reduce(
+        (acc, r) => acc + r.quantity * product.price,
+        0
+      );
+      const costValue = filteredItems.reduce(
+        (acc, r) => acc + r.quantity * product.cost,
+        0
+      );
+      const saleQuantity = filteredItems.reduce(
+        (acc, r) => acc + r.quantity,
+        0
+      );
+      return {
+        ...product,
+        saleValue,
+        costValue,
+        profit: saleValue - costValue,
+        saleQuantity,
+        remainQuantity: product.quantity - saleQuantity,
+      };
+    })
+    .sort((a, b) => b.saleValue - a.saleValue);
   return result;
+};
+
+console.log("Top Selling Product: ", topSellingProduct(orders, products));
+
+const topBuyer = (orders, products) => {
+  const customers = [...new Set(orders.map((order) => order.customer))];
+  const result = customers
+    .map((customer) => {
+      const filteredItems = orders
+        .filter((order) => order.customer === customer)
+        .map((r) => r.items)
+        .flat();
+      const groupItems = filteredItems.reduce((acc, r) => {
+        acc[r.productId] = {
+          productId: r.productId,
+          quantity: (acc[r.productId]?.quantity ?? 0) + r.quantity,
+        };
+        return acc;
+      }, {});
+      const items = Object.values(groupItems).map((item) => {
+        const product = products.find(
+          (product) => product.id === item.productId
+        );
+        return {
+          ...item,
+          price: product.price,
+          cost: product.cost,
+          saleValue: product.price * item.quantity,
+          costValue: product.cost * item.quantity,
+          profit: (product.price - product.cost) * item.quantity,
+        };
+      });
+
+      return {
+        customer: customer,
+        items,
+        saleValue: items.reduce((acc, r) => acc + r.saleValue, 0),
+        costValue: items.reduce((acc, r) => acc + r.costValue, 0),
+        profit: items.reduce((acc, r) => acc + r.profit, 0),
+      };
+    })
+    .sort((a, b) => b.saleValue - a.saleValue);
+  return result;
+};
+
+console.log("Top Buyer: ", topBuyer(orders, products));
+
+const saleByDate = (orders, products) => {
+  const ordersByDate = orders.reduce((acc, order) => {
+    const date = order.datetime.slice(0, 10);
+    
+  })
 }
 
-console.log('Top Selling Product: ', topSellingProduct(orders, products));
-
-
-// แจกโจทย์ assignment : ให้โจทย์ e-commerce โดยให้ข้อมูล array สินค้ามีอะไรบ้าง สินค้าเป็นเท่าไหร่ จำนวนที่เหลือเท่าไหร่ input2 ให้รายการคำสั่งซื้อจากลูกค้าจริง โจทย์คือ หายอดรวมรายได้ทั้งหมด / ให้หาว่าสินค้าไหนขายดีสุด / ให้เช็คว่าสินค้าแต่ละรายการคงเหลือเท่าไหร่ / หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย / ให้ทำรายได้แยกออกมาเป็นรายวัน / คำนวนกำไร ต้นทุนรายวัน    integrade ความรู้ week 1 ออกมาเป็นชิ้นงานประเมินผล 1 ชิ้น products.json 
+// แจกโจทย์ assignment : ให้โจทย์ e-commerce โดยให้ข้อมูล array สินค้ามีอะไรบ้าง สินค้าเป็นเท่าไหร่ จำนวนที่เหลือเท่าไหร่ input2 ให้รายการคำสั่งซื้อจากลูกค้าจริง โจทย์คือ หายอดรวมรายได้ทั้งหมด / ให้หาว่าสินค้าไหนขายดีสุด / ให้เช็คว่าสินค้าแต่ละรายการคงเหลือเท่าไหร่ / หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย / ให้ทำรายได้แยกออกมาเป็นรายวัน / คำนวนกำไร ต้นทุนรายวัน    integrade ความรู้ week 1 ออกมาเป็นชิ้นงานประเมินผล 1 ชิ้น products.json
 
 // 1. calculateTotalSale --> number
 // 2. topSellingProduct -> {id: Number, name: String, saleValue: Number, costValue: Number, profit: Number, saleQuantity: Number, remainQuantity: Number}[]
