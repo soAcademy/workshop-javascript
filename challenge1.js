@@ -76,3 +76,48 @@ let products = [
     name: "Product 3",
   },
 ];
+
+// calculate total sale
+const calTotalSale = (orders, products) => {
+  let total = 0;
+  orders.forEach((order) =>
+    order.items.forEach(
+      (item) =>
+        (total +=
+          item.quantity * products.find((e) => e.id === item.productId).price)
+    )
+  );
+  return total
+};
+console.log(calTotalSale(orders, products));
+
+// Find Best Seller Product
+const topSellingProduct = (orders, products) => {
+  let result = []
+  orders.forEach((order) => {
+    order.items.forEach((item)=>{
+      let value = products.find((e)=> e.id === item.productId).price* item.quantity
+      let cost = products.find((e)=> e.id === item.productId).cost* item.quantity
+      target = result.findIndex((e)=> e.id === item.productId)
+      const x = target !== -1
+      ? result[target] = {
+        id: result[target].id,
+        saleValue: result[target].saleValue += value,
+        costValue: result[target].costValue += cost,
+        profit: result[target].saleValue - result[target].costValue,
+        saleQuantity: result[target].saleQuantity + item.quantity,
+        remainQuantity: result[target].remainQuantity - item.quantity
+      }
+      : result.push({
+        id: item.productId,
+        saleValue: value,
+        costValue: cost,
+        profit: value - cost,
+        saleQuantity: item.quantity,
+        remainQuantity: products.find((e)=>e.id === item.productId).quantity - item.quantity
+      })
+    })
+  })
+  return result
+} 
+console.log(topSellingProduct(orders, products))
