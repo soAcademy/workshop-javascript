@@ -192,12 +192,17 @@
     //   console.log(soon);
 
     // [{productId: 1, quantity: 2, price: 400, cost: 300}, {productId: 2, quantity: 3, price: 100, cost: 30}]
-    
-    let pd = [{productId: 1, quantity: 2, price: 400, cost: 300},
-      {productId: 2, quantity: 3, price: 100, cost: 30}]
-    let qtt = 0;
-    let round = pd.length;
-for (let i = 0;i<round;i++){
-qtt += pd[i].quantity;
-}
-console.log("SUM Quantity : ",qtt)
+
+    //การบ้าน 1   
+//     let pd = [{productId: 1, quantity: 2, price: 400, cost: 300},
+//       {productId: 2, quantity: 3, price: 100, cost: 30}]
+//     let qtt = 0;
+//     let round = pd.length;
+// for (let i = 0;i<round;i++){
+// qtt += pd[i].quantity;
+// }
+// console.log("SUM Quantity : ",qtt)
+
+
+
+
