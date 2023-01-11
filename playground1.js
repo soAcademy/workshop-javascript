@@ -55,14 +55,31 @@
 
 // Q6
 
-let customer = [
-  { id: 2, name: "B" },
-  { id: 1, name: "A" },
+// let customer = [
+//   { id: 2, name: "B" },
+//   { id: 1, name: "A" },
+// ];
+
+// const q6 = (input) => {
+//   const fineId = input.sort((a, b) => a.id - b.id);
+//   return fineId;
+// };
+
+// console.log(q6(customer));
+
+// Q7
+
+let student = [
+  { name: "Bin", score: 68 },
+  { name: "Jam", score: 70 },
+  { name: "Nan", score: 72 },
+  { name: "Ploy", score: 65 },
 ];
 
-const q6 = (input) => {
-  const fineId = input.sort((a, b) => a.id - b.id);
-  return fineId;
+const q7 = (input) => {
+  const scores = input.filter(r => r.score < 70);
+  const names = scores.map(r => r.name);
+  return names;
 };
 
-console.log(q6(customer));
+console.log(q7(student));
