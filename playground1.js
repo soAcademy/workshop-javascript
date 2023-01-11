@@ -1,4 +1,6 @@
-const array = [1,2,3,4];
-const arrSquare = array.map((r) => r ** 2 );
+const q1 = (input) => {
+  const arrSquare = input.map((r) => r ** 2);
+  return arrSquare;
+};
 
-console.log(arrSquare);
+console.log(q1([1, 2, 3, 4]));
