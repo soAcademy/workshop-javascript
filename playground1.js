@@ -54,9 +54,9 @@ let data4 = [
   { name: "Ploy", score: 65 },
 ];
 
-const filterScoreBelow = (data) =>
-  data.filter((e) => e.score < 70).map((e) => e.name);
-console.log("Q7: ", filterScoreBelow(data4));
+const filterScoreBelow = (data, score) =>
+  data.filter((e) => e.score < score).map((e) => e.name);
+console.log("Q7: ", filterScoreBelow(data4, 71));
 
 // Q8
 let data5 = [
