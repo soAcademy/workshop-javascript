@@ -94,5 +94,5 @@ inputNo8 = [
   { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
   { status: "PAID", name: "VitC", price: 150, quantity: 2 },
 ];
-resultNo8 = inputNo8.filter(r => r.status === "PAID").reduce((acc, r) => (acc += r.price * r.quantity),0);
+resultNo8 = inputNo8.filter(r => r.status === "PAID").reduce((acc, r) => (acc + r.price * r.quantity),0);
 console.log(resultNo8);
