@@ -1,11 +1,11 @@
-console.log("JS Function Workshop #1");
+console.log("JS Functions Workshop #1");
 
 const array1 = [1, 2, 3, 4];
 const array1Squared = array1.map((x) => x ** 2);
 
 console.log(array1Squared);
 
-console.log("JS Function Workshop #2");
+console.log("JS Functions Workshop #2");
 
 const array2 = [
   { id: 1, name: "A" },
@@ -50,3 +50,18 @@ const array6Sorted = [...array6];
 array6Sorted.sort((a, b) => a.id - b.id);
 
 console.log(array6Sorted);
+
+console.log("JS Functions Workshop #7");
+
+const scores = [
+  { name: "Bin", score: 68 },
+  { name: "Jam", score: 70 },
+  { name: "Nan", score: 72 },
+  { name: "Ploy", score: 65 },
+];
+
+const namesWithLowScores = scores
+  .filter((x) => x.score < 70)
+  .map((x) => x.name);
+
+console.log(namesWithLowScores);
