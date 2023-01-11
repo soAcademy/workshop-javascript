@@ -78,24 +78,24 @@ let products = [
 ];
 
 // calculate total sale
-const calTotalSale = (orders, products) => {
-  let total = 0;
-  orders.forEach((order) =>
-    order.items.forEach(
-      (item) =>
-        (total +=
-          item.quantity * products.find((e) => e.id === item.productId).price)
-    )
-  );
-  return total
-};
-console.log(calTotalSale(orders, products));
+// const calTotalSale = (orders, products) => {
+//   let total = 0;
+//   orders.map((order) =>
+//     order.items.map(
+//       (item) =>
+//         (total +=
+//           item.quantity * products.find((e) => e.id === item.productId).price)
+//     )
+//   );
+//   return total
+// };
+// console.log(calTotalSale(orders, products));
 
 // Find Best Seller Product
 const topSellingProduct = (orders, products) => {
   let result = []
-  orders.forEach((order) => {
-    order.items.forEach((item)=>{
+  orders.map((order) => {
+    order.items.map((item)=>{
       let value = products.find((e)=> e.id === item.productId).price* item.quantity
       let cost = products.find((e)=> e.id === item.productId).cost* item.quantity
       target = result.findIndex((e)=> e.id === item.productId)
@@ -118,6 +118,36 @@ const topSellingProduct = (orders, products) => {
       })
     })
   })
-  return result
+  let sortedProductBySale = result.sort((a,b)=> b.saleQuantity-a.saleQuantity)[0]
+  return sortedProductBySale
 } 
 console.log(topSellingProduct(orders, products))
+
+// Find Top Buyer
+// { 
+//   customer: String,
+//   saleValue: Number, 
+//   products: {
+//     id: String, 
+//     name: String, 
+//     quantity: String}
+//   }
+// const topBuyer = (orders, products) => {
+//   let customers = orders.map((e)=> e.customer)
+//   customers = [...new Set(customer)]
+//   customers.map((customer)=> {
+//     orders
+//     .filter((order)=> order.customer === customer)
+//     .map((e)=> d)
+//   })
+//   // orders.reduce((acc, e) => {
+//   //   let value = e.items.map((e)=> {
+      
+//   //   })
+//   //   acc[e.customer] = {
+//   //     customer: e.customer,
+//   //     saleValue: (acc[e.customer]?.saleValue) += value
+//   //   }
+//   // },{})
+// }
+// topBuyer(orders, products)
