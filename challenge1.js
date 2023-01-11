@@ -79,9 +79,31 @@ const orders = [
 
 // Quiz: 1
 
-const calculateTotalSale = () => {};
-console.log()
-
-// Quiz: 2
-const findTopValueCustomer = () => {}
-console.log
+const calculateTotalSale = (orders, products) => {
+  const totalSale = orders
+    .map((order) => {
+      const items = order.items.map((item) => {
+        const product = products.find(
+          (product) => product.id === item.productId
+        );
+        return {
+          ...item,
+          ...product,
+          saleValue: item.quantity * product.price,
+          costValue: item.quantity * product.cost,
+        };
+      });
+      return {
+        id: order.id,
+        customer: order.customer,
+        items,
+        datetime: order.datetime,
+        saleValue: items.reduce((acc, r) => acc + r.saleValue, 0),
+        // costValue: items.reduce((acc, r) => acc + r.costValue, 0),
+      };
+    })
+    .reduce((acc, r) => acc + r.saleValue, 0);
+  return totalSale;
+};
+// console.log(JSON.stringify(calculateTotalSale(orders, products)));
+console.log(calculateTotalSale(orders, products));
