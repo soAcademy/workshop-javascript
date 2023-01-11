@@ -44,9 +44,8 @@
 //   { name: "Nan", score: 72 },
 //   { name: "Ploy", score: 65 },
 // ];
-// const result7 = arr7.filter((r) => r.score < 70);
-// const result7final = result7.map((r) => r.name);
-// console.log(result7final);
+// const result7 = arr7.filter((r) => r.score < 70).map((r) => r.name);
+// console.log(result7);
 
 // Quiz 8
 const arr8 = [
@@ -54,7 +53,8 @@ const arr8 = [
   { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
   { status: "PAID", name: "VitC", price: 150, quantity: 2 },
 ];
-const a1 = arr8.filter((r) => r.status === "PAID");
-const a2 = a1.map((r) => r.price * r.quantity);
-const a3 = a2.reduce((acc, r) => acc + r);
-console.log(a3);
+const a1 = arr8
+  .filter((r) => r.status === "PAID")
+  .map((r) => r.price * r.quantity)
+  .reduce((acc, r) => acc + r);
+console.log(a1);
