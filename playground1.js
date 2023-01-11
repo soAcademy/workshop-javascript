@@ -1,132 +1,58 @@
-/* console.log("Hello World");
-const a = 1;
-const b = "hello";
-const c = true;
-const d = 10;
-let e = 10;
-e = 20;
-const myArray = [1, 2, 3];
-const myObject = [
-  { x: 1, y: 2 },
-  { x: 3, y: 4 },
-]; */
+// const array1 = [1, 2, 3, 4];
+// const powers = array1.map((r) => r ** 2);
+// console.log(powers) 
 
-/* console.log(a, b, c, d, e);
-console.log(myArray);
-console.log(myObject); */
+// const array2 = [
+//   { id: 1, name: "A" },
+//   { id: 2, name: "B" },
+// ];
+// const example2 = array2.map((r) => (r.name));
+// console.log(example2) 
 
-/* const a1 = "hello";
-function greet() {
-  console.log(a1);
-}
-greet();
+// const array3 = [1, 2, 3, 4, 5];
+// const example3 = array3.filter((r) => r % 2 !== 0 );
+// console.log(example3)
 
-let a2 = "hello";
-function greet2() {
-  a2 = "hi";
-}
-console.log(a2);
+// const array4 = [{id: 1, name: 'A', tel:
+// '0818218888'},
+// {id: 2, name: 'B', tel:
+// '0991112222'}];
 
-const a = 10;
-function greet3() {
-  const b = 20;
-  console.log(a + b);
-}
-greet3(); */
+// const example4 = array4.filter((r) => r.tel === "0991112222");
+// console.log(example4);
 
-/* function sum1(a,b,c) {
-    const d = (a+b+c);
-    return d;
-}
-console.log(sum1(1,2,3)) */
+// const array5 = [3, 1, 2, 0];
+// const example5 = array5.sort();
+// console.log(example5);
 
-/* const sum2 = (a, b, c) =>{
-  const d = a + b + c;
-  return d;
-}
-console.log(sum2(1, 2, 3)); */
+// const array6 = [
+//   { id: 2, name: "B" },
+//   { id: 1, name: "A" },
+//   { id: 3, name: "C" },
+// ];
 
-/* const sum3 = (a, b, c) => {
-  return { x: a.x + b.x + c.x, y: a.y + b.y + c.y };
-};
-console.log(sum3({ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 })); */
-/* 
-const isOdd = (x) => {
-    return x % 2 !== 0;
-}
-console.log(isOdd(2)) */
+// const example6 = array6.sort((a,b) => a.id-b.id)
+// console.log(example6);
 
-/* const calculateBMI = (weight, height) => {
-    const bmi = weight / (height / 100) ** 2;
-    let grade ;
-    if(bmi < 18.5) {
-        grade = "underweight";
-    } else if (18.5 <= bmi < 25) {
-        grade = "healthy";
-    } else if (25 <= bmi < 30) {
-        grade = "overweight"
-    } else if (bmi >= 30) {
-        grade = "obesity"
-    }
-    return (`Your BMI grade is: ${grade}`);
-};
-console.log(calculateBMI(78, 180));
- */
-/* const average = (input) => {
-    let sum = 0;
-let average = 0;
-for (let i = 0; i < input.length; i++) {
-sum += input[i];
-}
-average = sum / input.length;
-return (`The average is: ${average}`);
-}
-console.log (average([1,2,3,4]));
- */
+// const array7 = 
+// [{name: 'Bin', score: 68},
+// {name: 'Jam', score: 70},
+// {name: 'Nan', score: 72},
+// {name: 'Ploy', score: 65}];
 
-/* const sumOdd = (input) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] % 2 !== 0) 
-    sum += input[i];
-  }
-  return sum;
-};
-console.log(`The sum of odd  is: ${sumOdd([1, 2, 3, 4])}`);
- */
+// const example7 = array7.filter((r) => r.score < 70).map((r) => r.name);
+// console.log(example7);
 
-/* const order = { name: "VitC", price: 50 };
-const {price} = order;
-console.log(price) */
+// const array8 = [
+//   { status: "PAID", name: "Glory", price: 200, quantity: 3 },
+//   { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
+//   { status: "PAID", name: "VitC", price: 150, quantity: 2 },
+// ];
 
-/* const order = { name: "VitC", price: 50 };
-const getPrice = ({price}) => {
-  return price;
-};
-console.log(getPrice(order))
-
- */
-
-/* class Animal {
-  constructor(_legs) {
-    this.legs = _legs;
-  }
-  amountOfLegs() {
-    return this.legs;
-  }
-}
-
-const animal = new Animal(4);
-console.log(`I have ${animal.amountOfLegs()} legs`);
-
-class Dog extends Animal {
-  makeNoise() {
-    return "Bark";
-  }
-}
-
-const dog = new Dog(4);
-console.log(`I have ${dog.amountOfLegs()} legs`);
-console.log(dog.makeNoise()); */
-
-
+// const example8 = array8.reduce((acc,r) => {
+//   if (r.status === "PAID") {
+//     return acc += (r.price * r.quantity);
+//   }
+//   return acc;
+// },0)
+// console.log(example8);
