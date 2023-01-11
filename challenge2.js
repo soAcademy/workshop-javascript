@@ -140,14 +140,6 @@ const hasDocumentPermission = ({ documentId, name, role }) => {
   ));
 }
 
-
-const createGroups2 = () => {
-  return groups.map(group => {
-    const newGroup = { ...group };
-    newGroup.users = group.users.map(user => {
-      const userObject = users.find(u => u.userId === user.userId);
-      return { ...user, name: userObject.name };
-    });
-    return newGroup;
-  });
+const createGroup2 = () => {
+  return users.map(user => user.name);
 }
