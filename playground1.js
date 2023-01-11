@@ -73,16 +73,39 @@
 
 // // ############ ข้อ 6 ###############
 
-const students = [
-  { name: "Bin", score: 68 },
-  { name: "Jam", score: 70 },
-  { name: "Nan", score: 72 },
-  { name: "Ploy", score: 65 },
+// const students = [
+//   { name: "Bin", score: 68 },
+//   { name: "Jam", score: 70 },
+//   { name: "Nan", score: 72 },
+//   { name: "Ploy", score: 65 },
+// ];
+
+// const failStudent = (obj) => {
+//   const scores = obj.filter((r) => r.score < 70).map((r) => r.name);
+//   return scores;
+// };
+
+// console.log(failStudent(students));
+
+// // ############ ข้อ 7 ###############
+
+const array = [
+  { status: "PAID", name: "Glory", price: 200, quantity: 3 },
+  { status: "PENDING", name: "Glorilla", price: 200, quantity: 1 },
+  { status: "PAID", name: "VitC", price: 150, quantity: 2 },
 ];
 
-const failStudent = (obj) => {
-  const scores = obj.filter((r) => r.score < 70).map((r) => r.name);
-  return scores;
+const priceNet = (obj) => {
+  const pricePaidAlready = obj
+    .filter((r) => r.status === "PAID")
+    .map((r) => r.quantity * r.price)
+    .reduce((acc, r) => {
+      acc += r;
+      return acc;
+    }, 0);
+  return pricePaidAlready;
 };
 
-console.log(failStudent(students));
+console.log(priceNet(array));
+
+// // ############ ข้อ 8 ################
