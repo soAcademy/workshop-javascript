@@ -32,13 +32,25 @@
 
 // ############ ข้อ 3 ###############
 
-const userInfo = [
-  { id: 1, name: "A", tel: "0818218888" },
-  { id: 2, name: "B", tel: "099111222" },
-];
+// const userInfo = [
+//   { id: 1, name: "A", tel: "0818218888" },
+//   { id: 2, name: "B", tel: "099111222" },
+// ];
 
-const filterUser = (info, phone) => {
-  const filterInfo = info.filter((r) => r.tel === phone);
-  return filterInfo;
+// const filterUser = (info, phone) => {
+//   const filterInfo = info.filter((r) => r.tel === phone);
+//   return filterInfo;
+// };
+// console.log(filterUser(userInfo, "099111222"));
+
+// ############ ข้อ 3 ###############
+
+const array = [3, 1, 2, 0];
+
+const sortArray = (num) => {
+  const copy = [...array];
+  copy.sort((a, b) => a - b);
+  return copy;
 };
-console.log(filterUser(userInfo, "099111222"));
+console.log(sortArray(array));
+console.log(array);
