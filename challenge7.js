@@ -21,7 +21,7 @@ const calculateROC = (stockPrices) =>
       (acc, price) => ({
         previousPrice: price,
         idx: (acc.idx ?? 0) + 1,
-        rocs: [...acc.rocs, acc.idx === 0 || price / acc.previousPrice - 1],
+        rocs: [...acc.rocs, acc.idx === 0 ? 0 : price / acc.previousPrice - 1],
       }),
       { previousPrice: 0, idx: 0, rocs: [] }
     )
