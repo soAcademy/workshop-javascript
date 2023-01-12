@@ -2,7 +2,7 @@
 // 0 1 1 2 3 5 8 13 21
 const fib = (n) =>
   [...Array(n).keys()].reduce(
-    (acc, r) => {
+    (acc, _r) => {
       const vt = acc.v1;
       acc.v1 = acc.v1 + acc.v0;
       acc.v0 = vt;
@@ -18,7 +18,7 @@ console.log(fib(6));
 
 const fibSeries = (n) =>
   [...Array(n).keys()].reduce(
-    (acc, r) => {
+    (acc, _r) => {
       acc = [...acc, acc[acc.length - 1] + acc[acc.length - 2]];
       return acc;
     },
