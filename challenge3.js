@@ -7,6 +7,7 @@ const customers = [
 
 // Quiz 1: Filter customer age >= 25 and age <= 30 and then get unique hobbies
 // ["reading", "hiking", "swimming", "cycling", "painting"]
+// .filter, .map, .flat, .unique
 
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
