@@ -106,7 +106,7 @@ const average = (input) => {
   let sum = 0;
   let average = 0;
   for (let i = 0; i < input.length; i++) {
-    sum = sum + input[i];
+    sum += input[i];
   }
   average = sum / input.length;
   return average;
@@ -121,7 +121,7 @@ const sumOdd = (inputs) => {
   let sum = 0;
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i] % 2 !== 0) {
-      sum = sum + inputs[i];
+      sum += inputs[i];
     }
   }
   return sum;
@@ -140,12 +140,12 @@ const getPrice = ({ price }) => {
   return price;
 };
 console.log(getPrice(order));
-*/
-class Animal{
-  constructor(_legs){
+
+class Animal {
+  constructor(_legs) {
     this.legs = _legs;
   }
-  amountOfLegs(){
+  amountOfLegs() {
     console.log(`I have ${this.legs} legs`);
   }
 }
@@ -161,3 +161,9 @@ const dog = new Dog(4);
 console.log(dog);
 dog.amountOfLegs();
 dog.makeNoise();
+*/
+
+
+
+
+
