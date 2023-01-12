@@ -7,15 +7,73 @@ const customers = [
 
 //// day 4
 
-// q1
+// Q1
 
-const q1 = (customers) => {
-  const customerAges = customers
-    .filter((customer) => customer.age >= 25 && customer.age <= 30)
-    .map((r) => r.hobbies)
-    .flat();
-  const unique = [...new Set(customerAges)];
-  return unique;
+// const q1 = (customers) => {
+//   const customerAges = customers
+//     .filter((customer) => customer.age >= 25 && customer.age <= 30)
+//     .map((r) => r.hobbies)
+//     .flat();
+//   const unique = [...new Set(customerAges)];
+//   return unique;
+// };
+
+// console.log(q1(customers));
+
+// Q2
+
+// const q2 = (customers) => {
+//   const cusInterest = customers
+//     .filter((customer) => {
+//       const findHobby = customer.hobbies.some((hobby) => hobby === "swimming");
+//       // console.log(customer);
+//       // console.log(findHobby);
+//       return findHobby;
+//     })
+//     .map((findNames) => findNames.name);
+//   return cusInterest;
+// };
+
+// console.log(q2(customers));
+
+// Q3
+
+const q3 = (customers) => {
+  const findHob = customers.map((customer) => customer.hobbies).flat();
+  const uniqHob = [...new Set(findHob)];
+  const result = uniqHob.reduce((acc, r) => {
+    const aa = findHob.reduce((a, b) => {
+      const check = r === b;
+      return check ? a + 1 : a;
+      // console.log(check);
+    }, 0);
+    // console.log(aa);
+    return [
+      ...acc,
+      {
+        hobby: r,
+        count: aa,
+      },
+    ];
+  }, []);
+  const answer = Object.values(result).sort((a, b) => b.count - a.count);
+  // console.log(answer);
+  return answer;
+  // console.log(uniqHob);
+  // return findHob;
 };
 
-console.log(q1(customers));
+// console.log(acc);
+console.log(q3(customers));
+
+let ff = [
+  { hobby: "reading", count: 2 },
+  { hobby: "swimming", count: 2 },
+  { hobby: "hiking", count: 1 },
+  { hobby: "cooking", count: 1 },
+  { hobby: "dancing", count: 1 },
+  { hobby: "traveling", count: 1 },
+  { hobby: "cycling", count: 1 },
+  { hobby: "painting", count: 1 },
+  { hobby: "gardening", count: 1 },
+];
