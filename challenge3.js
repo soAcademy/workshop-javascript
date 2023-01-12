@@ -9,8 +9,26 @@ const customers = [
 // ["reading", "hiking", "swimming", "cycling", "painting"]
 // .filter, .map, .flat, .unique
 
+const customersFiltered = customers
+.filter(customer => customer.age >= 25 && customer.age <= 30)
+.map(item => item.hobbies)
+.flat();
+
+const unique = [...new Set(customersFiltered)];
+
+//console.log(customersFiltered);
+console.log(unique);
+
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
+const swimming = customers
+.filter(customer => customer.hobbies.some(c => c === "swimming"))
+.map(item => item.name);
+
+
+
+console.log(swimming);
+
 
 // Quiz 3: Count customers by hobby and by count desc
 // [
@@ -28,3 +46,33 @@ const customers = [
 //   },
 //   ...
 // ]
+
+const count = Object.entries(
+  customers
+  .map((customer) => customer.hobbies)
+  .flat() // [ 'reading', 'hiking', 'reading', 'cycling', 'painting' ]
+  .reduce((acc, hobby) => {
+    const counting = (acc[hobby] ?? 0) + 1 
+    acc[hobby] = counting
+    return acc 
+    // {
+    //   'reading': 2,
+    //   'hiking': 1,
+    // }
+  }, {})
+)
+// {
+//   'reading': 1,
+//   'hiking': 1,
+//   'swimming': 1,
+//   'cycling': 1,
+//   'painting': 1,
+// }
+
+console.log(count);
+
+
+// const numbers = [4567, 9999, 8769]
+// const result = numbers.reduce((acc, amount) => acc += amount)
+
+// console.log(result);
