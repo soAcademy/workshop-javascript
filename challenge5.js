@@ -6,14 +6,14 @@ const csvData = `id,name,orderValue,orderDate
 5,Jam,850,15/01/2023`;
 
 // Quiz 1: convert csvData to object like these
-// [
-//   {
-//     id: 1,
-//     name: 'Bin',
-//     orderValue: 1340,
-//     orderDate: "14/01/2023"
-//   }
-// ]
+[
+  {
+    id: 1,
+    name: 'Bin',
+    orderValue: 1340,
+    orderDate: "14/01/2023"
+  }
+]
 
 const convertCsvToObject = (csvData) => {
   const rows = csvData.split("\n");
