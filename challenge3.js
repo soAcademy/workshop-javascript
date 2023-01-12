@@ -63,4 +63,5 @@ let hobbiesCounts = hobbies.reduce((acc, e) => {
   };
   return acc;
 }, {});
-console.log(hobbiesCounts);
+hobbiesCounts = Object.values(hobbiesCounts)
+console.log(hobbiesCounts.sort((a,b)=> b.count - a.count));

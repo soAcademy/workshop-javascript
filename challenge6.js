@@ -7,3 +7,8 @@ const socialUrl = {
 // This challenge is just FYI
 // Q1: get social channel and return url avoid using if/else or switch case
 console.log(socialUrl['FACEBOOK'])
+const getUrl = (socialUrl) => {
+  return Object.values(socialUrl)
+}
+
+console.log(getUrl(socialUrl));
