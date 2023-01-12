@@ -5,6 +5,14 @@ const customers = [
   { name: "Alice", age: 22, hobbies: ["reading", "gardening"] },
 ];
 
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+
+console.log("test", Object.entries(obj))
+
 // Quiz 1: Filter customer age >= 25 and age <= 30 and then get unique hobbies
 // ["reading", "hiking", "swimming", "cycling", "painting"]
 //tips : Filter,map,flat(),uniques,
@@ -66,20 +74,29 @@ findSwimming(customers);
 // 3. use .reduce to count hobby
 // 4. use Object.value to remove key
 
+
+
+
+
+// {
+//   hobbyCount: 10,
+//   sumAge: 50
+// }
+
 const countCustomers = (input) => {
-  const extractHobbies = input
+  const extractHobbies = Object.entries(input
     .map((c) =>c.hobbies)
     .flat()
     .reduce((acc, r) => {
-      acc[r] = (acc[r] || 0) + 1;      //(acc[r] || 0) check ว่ามี value ใน key ไหม ถ้ามีจะ return value of key นั้นๆ
-      return acc;                      //ถ้าไม่มีค่า หรือ undefined,null จะ return value 0
-    }, {});
+      acc[r] = (acc[r] || 0) + 1;                   //(acc[r] || 0) check ว่ามี value ใน key ไหม ถ้ามีจะ return value of key นั้นๆ
+      return acc;                                   //ถ้าไม่มีค่า หรือ undefined,null จะ return value 0
+    }, {}))                                         // reduce ในข้อนี้จะออกมาเป็น {} แล้ว map,filter,reduce ใช้ได้กับแค่ array จึงต้องใช้ Object.entries เพื่อจับคู่ obj key กับ value กลายเป็น array 
+    .map((r)=>  ({  hobby: r[0],  count: r[1]}));   // เพิ่ม string in obj 
 
-    let result = Object.values(extractHobbies);
-    console.log(result);
-    
-    //console.log(extractHobbies);
-}
+    console.log(extractHobbies);
+  };                         
+   //console.log(extractHobbies);
+
 countCustomers(customers);
 
 
