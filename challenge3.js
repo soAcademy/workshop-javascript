@@ -21,7 +21,7 @@ const getCustomerHobbies = (customers) => [
   ),
 ];
 
-console.log("Q1: ", getCustomerHobbies(customers));
+// console.log("Q1: ", getCustomerHobbies(customers));
 
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
@@ -34,7 +34,7 @@ const getCustomersByInterest = (customers, interest) =>
     .filter((customer) => customer.hobbies.some((hobby) => hobby === interest))
     .map((customer) => customer.name);
 
-console.log("Q2: ", getCustomersByInterest(customers, "swimming"));
+// console.log("Q2: ", getCustomersByInterest(customers, "swimming"));
 
 // Quiz 3: Count customers by hobby and by count desc
 // [
@@ -63,6 +63,7 @@ const countCustomerByHobbies = (customers) =>
       .map((customer) => customer.hobbies)
       .flat()
       .reduce((acc, r) => {
+        const t = { ...acc };
         acc[r] = (acc[r] ?? 0) + 1;
         return acc;
       }, {})
@@ -74,3 +75,11 @@ const countCustomerByHobbies = (customers) =>
     .sort((a, b) => b.count - a.count);
 
 console.log("Q3: ", countCustomerByHobbies(customers));
+
+// For explaination
+const data = ["k1", "k2", "k3", "k1"].reduce((acc, r) => {
+  const t = { ...acc };
+  acc[r] = (acc[r] ?? 0) + 1;
+  console.log(r, t, t[r], acc);
+  return acc;
+}, {});
