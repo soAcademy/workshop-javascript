@@ -129,5 +129,4 @@ const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
       totalValue,
     };
   });
-
 console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
