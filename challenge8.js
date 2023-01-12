@@ -2288,3 +2288,47 @@ const stockPrices = [
 //     roc: 0.015
 //   }
 // ]
+
+const roc = (stockPrices, n, idx) => {
+  let result =
+    (stockPrices[idx - 1]?.close ?? 0) /
+      (stockPrices[idx - n - 1]?.close ?? NaN) -
+      1 ?? 0;
+  result = Number.isNaN(result) ? 0 : result; // convert NaN result to 0
+  return Number(result.toFixed(6));
+};
+// console.log(roc(stockPrices, 2, 5));
+
+const sum = (arr) => arr.reduce((acc, e) => acc + e, 0);
+
+const sma = (stockPrices, n, idx) => {
+  let start = idx - n - 1;
+  let closes = stockPrices.slice(idx - n - 1, idx);
+  closes = closes.map((e) => e.close);
+  return (result = start >= 0 ? sum(closes) / (n + 1) : 0);
+};
+
+const ema = (stockPrices, n, idx, smoothing = 2) => {
+  let start = idx - 2;
+  let close = stockPrices.slice(idx - 1, idx)[0];
+  close = close?.close ?? 0;
+  return (result =
+    start >= 0
+      ? (close * smoothing) / (1 + n) +
+        ema(stockPrices, n, idx - 1, smoothing) * (1 - smoothing / (1 + n))
+      : 0);
+};
+
+const getInd = (stockPrices, n) => {
+  return (stockPricesInd = stockPrices.map((e, idx) => {
+    e = {
+      ...e,
+      sma: sma(stockPrices, n, idx),
+      ema: ema(stockPrices, n, idx),
+      roc: roc(stockPrices, n, idx),
+    };
+    return e;
+  }));
+};
+
+console.log(getInd(stockPrices, 20).slice(-5));
