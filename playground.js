@@ -1,4 +1,3 @@
-/*
 const a = 1;
 console.log("No1 :", a);
 
