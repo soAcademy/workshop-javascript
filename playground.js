@@ -134,24 +134,33 @@
 
 // Class Workshop
 
-class Animal {
-  constructor(_legs) {
-    this.legs = _legs;
-  }
-  amountOfLegs() {
-    return `This animal has ${this.legs} legs.`;
-  }
-}
+// class Animal {
+//   constructor(_legs) {
+//     this.legs = _legs;
+//   }
+//   amountOfLegs() {
+//     return `This animal has ${this.legs} legs.`;
+//   }
+// }
 
-const duck = new Animal(2);
-console.log(duck.amountOfLegs());
+// const duck = new Animal(2);
+// console.log(duck.amountOfLegs());
 
-class Dog extends Animal {
-  makeNoise() {
-    return `Bark`;
-  }
-}
+// class Dog extends Animal {
+//   makeNoise() {
+//     return `Bark`;
+//   }
+// }
 
-const dog = new Dog(4);
-console.log(dog.amountOfLegs());
-console.log(dog.makeNoise());
+// const dog = new Dog(4);
+// console.log(dog.amountOfLegs());
+// console.log(dog.makeNoise());
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+const testReduce = (input) => {
+  const result = input.reduce((acc, r) => acc + r, 0);
+  return result;
+};
+
+console.log(testReduce(arr));

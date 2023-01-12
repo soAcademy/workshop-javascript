@@ -39,10 +39,12 @@ const customers = [
 // Q3
 
 const q3 = (customers) => {
-  const findHob = customers.map((customer) => customer.hobbies).flat();
-  const uniqHob = [...new Set(findHob)];
-  const result = uniqHob.reduce((acc, r) => {
-    const aa = findHob.reduce((a, b) => {
+  const findHob = customers.map((customer) => customer.hobbies).flat(); // หา hobby ทั้งหมดจาก customers
+  const uniqHob = [...new Set(findHob)]; // กรอง hobby แต่ละ ประเภท ** นำ hobby ที่ซ้ำกันออก
+  const result = uniqHob.reduce((acc, r, index) => {
+    console.log(index, r, acc);
+    const aa = findHob.reduce((a, b, index2) => {
+      console.log("g",index2, b, a);
       const check = r === b;
       return check ? a + 1 : a;
       // console.log(check);
@@ -64,3 +66,23 @@ const q3 = (customers) => {
 };
 // console.log(acc);
 console.log(q3(customers));
+
+// answer q3 
+
+// const countCustomerByHobbies = (customers) =>
+//   Object.entries(
+//     customers
+//       .map((customer) => customer.hobbies)
+//       .flat()
+//       .reduce((acc, r) => {
+//         acc[r] = (acc[r] ?? 0) + 1;
+//         return acc;
+//       }, {})
+//   )
+//     .map((r) => ({
+//       hobby: r[0],
+//       count: r[1],
+//     }))
+//     .sort((a, b) => b.count - a.count);
+
+// console.log("Q3: ", countCustomerByHobbies(customers));
