@@ -14,8 +14,8 @@ const customers = [
 
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
-// 1. use .some to loop through customer
-// 2. use .some in hobbies nested .some from 1 to check if swimming is in hobby
+// 1. use .filter to loop through customer
+// 2. use .some in hobbies nested .filter from 1 to check if swimming is in hobby
 // 3. use .map to extract only customer name
 
 // Quiz 3: Count customers by hobby and by count desc
