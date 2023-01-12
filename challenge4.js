@@ -83,7 +83,7 @@ const orders = [
     ],
   },
 ];
-
+// งานกลุ่ม
 // Quiz 1: Find order value including shipping price for each order
 // 1. use .map loop through all orders
 // 2. use .reduce inside .map to calculate order value
