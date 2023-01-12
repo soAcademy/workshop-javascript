@@ -113,9 +113,6 @@ const summarizeOrder = (shippingByOrderValueTiers, orders) => {
     let orderValue = 0;
     e.items.map((i) => {
       let value = i.quantity * i.price;
-      // let shippingPrice = shippingByOrderValueTiers.find(
-      //   (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
-      // )
       let shippingPrice = shippingByOrderValueTiers.find(
         (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
       )?.shippingPrice;
@@ -132,6 +129,7 @@ const summarizeOrder = (shippingByOrderValueTiers, orders) => {
       return result;
     });
   });
-  console.log(result);
+  // console.log(result);
+  return Object.values(result);
 };
-summarizeOrder(shippingByOrderValueTiers, orders);
+console.log(summarizeOrder(shippingByOrderValueTiers, orders));
