@@ -2331,4 +2331,77 @@ const getInd = (stockPrices, n) => {
   }));
 };
 
-console.log(getInd(stockPrices, 20).slice(-5));
+// console.log(getInd(stockPrices, 20).slice(-5));
+// Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10), 
+//generate buy signal otherwise generate sell signal.
+//
+// [
+//   {
+//     date: "2023-01-11",
+//     position: "BUY"
+//   },
+//   {
+//     date: "2023-01-12",
+//     position: "BUY"
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL"
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL"
+//   }
+// ]
+const genSignal = (stockPrices, func=sma, n=10) => {
+  return stockPrices.reduce((acc,e,idx)=>{
+    let ind = func(stockPrices, n, idx)
+    let position = e.adjClose > ind ? 'BUY' : 'SELL' 
+    acc.push({
+      date: e.date,
+      position: position
+    })
+    return acc
+  }, [])
+}
+let position = genSignal(stockPrices, sma, 10)
+console.log(genSignal(stockPrices, sma, 10).slice(150,160));
+console.log(genSignal(stockPrices, ema, 10).slice(150,160));
+console.log(position.slice(150,160));
+
+// Q3: Using signal from Q2 to generate PNL. If starting portfolio value is 1000000 THB
+// [
+//   {
+//     date: "2023-01-11",
+//     position: "BUY",
+//     value: 1000000
+//   },
+//   {
+//     date: "2023-01-12",
+//     position: "BUY",
+//     value: 1015000
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL",
+//     value: 1013000
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL",
+//     value: 1013000
+//   }
+// ]
+
+// if signal = 'buy' > buy at adjClose tomorrow
+const genPnl = (stockPrices, position, startingValue) => {
+  return position.reduce((acc,e,idx)=> {
+    let startValue = acc[idx-1]?.values ?? 1000000
+    let value = position.position === 'SELL' ? 
+    acc.push({
+      ...e,
+      value: startValue + 
+    })
+    return acc
+  }, [])
+}
