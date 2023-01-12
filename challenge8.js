@@ -2288,3 +2288,48 @@ const stockPrices = [
 //     roc: 0.015
 //   }
 // ]
+
+// Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10), generate buy signal otherwise generate sell signal.
+//
+// [
+//   {
+//     date: "2023-01-11",
+//     position: "BUY"
+//   },
+//   {
+//     date: "2023-01-12",
+//     position: "BUY"
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL"
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL"
+//   }
+// ]
+
+// Q3: Using signal from Q2 to generate PNL. If starting portfolio value is 1000000 THB
+// [
+//   {
+//     date: "2023-01-11",
+//     position: "BUY",
+//     value: 1000000
+//   },
+//   {
+//     date: "2023-01-12",
+//     position: "BUY",
+//     value: 1015000
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL",
+//     value: 1013000
+//   },
+//   {
+//     date: "2023-01-13",
+//     position: "SELL",
+//     value: 1013000
+//   }
+// ]
