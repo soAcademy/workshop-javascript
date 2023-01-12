@@ -144,3 +144,4 @@ function createGroup2() {
   const group2 = group1.users.map(user => user.name);
   return group2;
 }
+console.log("hasDocumentPermission");
