@@ -15,6 +15,19 @@ const csvData = `id,name,orderValue,orderDate
 //   }
 // ]
 
-const convertCsvToObject = () => {};
+const convertCsvToObject = (csv) => {
+  const rows = csv.split("\n");
 
-console.log("Q1: ", convertCsvToObject(csvData));
+  const keys = rows.shift().split(",");
+
+  const convertedObject = rows.reduce((acc, row) => {
+    const values = row.split(",");
+    const zippedKeyValuePairs = keys.map((key, index) => [key, values[index]]);
+    acc[values[0]] = Object.fromEntries(zippedKeyValuePairs);
+    return acc;
+  }, {});
+
+  return Object.values(convertedObject);
+};
+
+console.log("Q1: ", JSON.stringify(convertCsvToObject(csvData)));
