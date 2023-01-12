@@ -2405,25 +2405,23 @@ const genPnl = (stockPrices, signal, startingValue) => {
             stockQuantity: 0,
           }
         : (() => {
-            // const stockPriceT1 = stockPrices.slice(idx + 1, idx + 2);
             const stockPriceT = stockPrices[idx];
             const prevValue = acc[idx - 1]?.value;
-            // console.log(acc.slice(10, 11)[0] ?? 0 );
             const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
-            // console.log(prevStockQuant);
-            const prevSignalPosition = signal.at(idx-1)?.position;
+            const prevSignalPosition = signal.at(idx - 1)?.position;
             return e.position === "BUY"
               ? (() => {
                   // INDICATOR : BUY
+                  const stockQuantity =
+                    prevSignalPosition === "SELL"
+                      ? 0
+                      : prevStockQuant > 0
+                      ? prevStockQuant
+                      : prevValue / stockPriceT.adjClose;
                   const value =
                     prevStockQuant > 0
                       ? prevStockQuant * stockPriceT.adjClose
                       : prevValue ?? startingValue;
-                  const stockQuantity =
-                    prevSignalPosition === "SELL"
-                      ? 0
-                      : value / stockPriceT.adjClose;
-                  // console.log(value, stockQuantity);
                   return {
                     value: value,
                     stockQuantity: stockQuantity,
@@ -2431,15 +2429,12 @@ const genPnl = (stockPrices, signal, startingValue) => {
                 })()
               : (() => {
                   // INDICATOR : SELL
-                  // console.log(stockPriceT.adjClose);
-                  // console.log(prevValue);
                   const stockQuantity =
                     prevSignalPosition === "SELL" ? 0 : prevStockQuant;
                   const value =
                     prevStockQuant > 0
                       ? prevStockQuant * stockPriceT.adjClose
                       : prevValue;
-                  // console.log(value, stockQuantity);
 
                   return {
                     value: value,
@@ -2447,17 +2442,15 @@ const genPnl = (stockPrices, signal, startingValue) => {
                   };
                 })();
           })();
-    // console.log(acc[idx-1]?.value);
     acc.push({
       ...e,
-      value: Number((result.value).toFixed(2)),
+      value: Number(result.value.toFixed(2)),
       stockQuantity: result.stockQuantity,
     });
     return acc;
   }, []);
-  // console.log(pnl.slice(10,15));
   return pnl;
 };
 let pnl = genPnl(stockPrices, signal, 1000000);
-// console.log(pnl.slice(0,40));
-console.log("PNL: ",pnl.at(-1).value-1000000);
+console.log(pnl);
+console.log("PNL: ", pnl.at(-1).value - 1000000);
