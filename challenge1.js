@@ -130,8 +130,8 @@ const products = [
 console.log("\nChallange1.3 หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย");
 const resultNo3 = () => {
   const newOrder = orders.reduce((acc, r) => {
-    console.log(r);
-  },'');
+    // console.log(r);
+  },{});
 
   // const newOrders = orders.map((order) => {
   //   const valueByCustomer = order.items
