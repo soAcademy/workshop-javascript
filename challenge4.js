@@ -85,11 +85,6 @@ const orders = [
 ];
 
 // Quiz 1: Find order value including shipping price for each order
-// 1. use .map loop through all orders
-// 2. use .reduce inside .map to calculate order value
-// 3. use .find inside .map to find shippingTier
-// 4. concat orderValue and shippingPrice in order
-
 // [
 //   {
 //     customer: 'Bin',
@@ -112,22 +107,31 @@ const orders = [
 //   ...
 // ]
 
-const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
-  orders.map((order) => {
-    const orderValue = order.items.reduce(
-      (acc, r) => acc + r.quantity * r.price,
-      0
-    );
-    const shippingTier = shippingByOrderValueTiers.find(
-      (shipping) => orderValue <= shipping.orderValueLimit
-    );
-    const totalValue = orderValue + shippingTier.shippingPrice;
-    return {
-      ...order,
-      orderValue,
-      shippingPrice: shippingTier.shippingPrice,
-      totalValue,
-    };
+const summarizeOrder = (shippingByOrderValueTiers, orders) => {
+  let result = {};
+  orders.map((e) => {
+    let orderValue = 0;
+    e.items.map((i) => {
+      let value = i.quantity * i.price;
+      // let shippingPrice = shippingByOrderValueTiers.find(
+      //   (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
+      // )
+      let shippingPrice = shippingByOrderValueTiers.find(
+        (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
+      )?.shippingPrice;
+      result[e.customer] = {
+        ...e,
+        orderValue: (result[e.customer]?.orderValue ?? 0) + value,
+        shippingPrice: shippingPrice,
+        totalValue:
+          (result[e.customer]?.orderValue ?? 0) +
+          (result[e.customer]?.shippingPrice ?? 0) +
+          value +
+          shippingPrice,
+      };
+      return result;
+    });
   });
-
-console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+  console.log(result);
+};
+summarizeOrder(shippingByOrderValueTiers, orders);
