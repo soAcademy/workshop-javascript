@@ -49,5 +49,5 @@ const array8 = [
 ];
 const result8 = array8.filter((r) => r.status === "PAID");
 console.log(result8);
-const summary = result8.reduce((sum, r) => sum + (r.price * r.quantity),0);
+const summary = result8.reduce((sum, r) => sum + (r.price * r.quantity));
 console.log(summary);
