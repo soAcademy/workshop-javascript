@@ -15,17 +15,19 @@ const csvData = `id,name,orderValue,orderDate
 //   }
 // ]
 
-const convertCsvToObject = (csvData) => {
-  const rows = csvData.split("\n");
-  const fieldName = rows[0].split(",");
-  const datas = rows.splice(1, rows.length - 1);
-  const result = datas.map((data) => {
-    const fieldValues = data.split(",");
-    return fieldName.map((key, idx) => ({
-      [key]: fieldValues[idx],
-    }));
-  });
-  return result;
+const csvToObject = (csvData) => {
+  csvData = csvData.split("\n");
+  csvData.splice(0, 1);
+  csvData = csvData.reduce((acc, e) => {
+    e = e.split(",");
+    acc[e[0].toString()] = {
+      id: e[0],
+      name: e[1],
+      orderValue: e[2],
+      orderDate: e[3],
+    };
+    return acc
+  }, {});
+  return Object.values(csvData)
 };
-
-console.log("Q1: ", convertCsvToObject(csvData));
+console.log(csvToObject(csvData));
