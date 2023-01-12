@@ -2,12 +2,26 @@ const customers = [
   { name: "John", age: 25, hobbies: ["reading", "hiking", "swimming"] },
   { name: "Jane", age: 32, hobbies: ["cooking", "dancing", "traveling"] },
   { name: "Bob", age: 28, hobbies: ["cycling", "painting", "swimming"] },
-  { name: "Alice", age: 22, hobbies: ["reading", "gardening"] }
-]
+  { name: "Alice", age: 22, hobbies: ["reading", "gardening"] },
+];
 
 // Quiz 1: Filter customer age >= 25 and age <= 30 and then get unique hobbies
 // ["reading", "hiking", "swimming", "cycling", "painting"]
-// .filter, .map, .flat, .unique
+// 1. use .filter to filter customear age >= 25 and age <= 30
+// 2. use .map to extract hobbies from customer
+// 3. use .flat to destructure nested arrays
+// 4. use ...new Set to unique data in arrays
+
+const getCustomerHobbies = (customers) => [
+  ...new Set(
+    customers
+      .filter((customer) => customer.age >= 25 && customer.age <= 30)
+      .map((customer) => customer.hobbies)
+      .flat()
+  ),
+];
+
+// console.log("Q1: ", getCustomerHobbies(customers));
 
 const customersFiltered = customers
 .filter(customer => customer.age >= 25 && customer.age <= 30)
