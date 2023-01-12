@@ -23,7 +23,7 @@ const users = [
 
 const groups = [
   {
-    groudId: "g1",
+    groupId: "g1",
     name: "Group1",
     users: [
       {
@@ -35,7 +35,7 @@ const groups = [
     ],
   },
   {
-    groudId: "g2",
+    groupId: "g2",
     name: "Group2",
     users: [
       {
@@ -50,7 +50,7 @@ const groups = [
     ],
   },
   {
-    groudId: "g3",
+    groupId: "g3",
     name: "Group3",
     users: [
       {
@@ -126,23 +126,49 @@ const documents = [
 // 2. สร้าง group2 ที่ดึงข้อมูล name มาด้วย
 
 const hasDocumentPermission = ({ documentId, name, role }) => {
-  const document = documents.find((r) => r.documentId === documentId);
-  const user = users.find((r) => r.name === name);
-  const permissions = document.permissions.some(
-    (rule) =>
-      (rule?.userId === user.userId ||
-        groups
-          .find((r) => r.groudId === rule?.groupId)
-          .users.some((r) => r.userId === user.userId)) &&
-      rule.role === role
+  const document = documents.find((e) => e.documentId === documentId);
+  const userId = users.find((e) => e.name === name).userId;
+  const groupId = groups.find((e) =>
+    e.users.find((user) => user.userId === userId)
+  ).groupId;
+  let documentPermission = document.permissions.find(
+    (e) => e.userId === userId || e.groupId === groupId
   );
+  let permissions =
+    documentPermission.role === role &&
+    document.permissions.find(
+      (e) => e.userId === userId || e.groupId === groupId
+    )
+      ? true
+      : false;
   return permissions;
 };
+permissions = hasDocumentPermission({
+  documentId: "d1",
+  name: "Bob",
+  role: "ADMIN",
+});
+console.log(permissions);
 
-console.log(
-  hasDocumentPermission({ documentId: "d3", name: "Jam", role: "EDITOR" })
-); // true
-
-console.log(
-  hasDocumentPermission({ documentId: "d3", name: "Bin", role: "EDITOR" })
-); // false
+let group2 = {};
+groups.map((group) => {
+  let groupUsers = {};
+  group.users.map((user, idx) => {
+    // console.log(user);
+    // console.log(users.find((e) => e.userId === user.userId).name);
+    let name = users.find((e) => e.userId === user.userId)?.name ?? undefined;
+    // console.log(name);
+    groupUsers[idx] = {
+      userId: user.userId,
+      name: name,
+    };
+    groupUsers = Object.values(groupUsers);
+    group2[group.groupId] = {
+      groupId: group.groupId,
+      name: group.name,
+      users: groupUsers,
+    };
+  });
+});
+group2 = Object.values(group2);
+console.log(JSON.stringify(group2));
