@@ -40,6 +40,17 @@ console.log(customersInterestInSwimming);
 
 
 // Quiz 3: Count customers by hobby and by count desc
+const customersByHobby = customers.reduce((countByHobby, customer) => {
+  customer.hobbies.forEach(hobby => {
+    countByHobby[hobby] = (countByHobby[hobby] || 0) + 1;
+  });
+  return countByHobby;
+}, {});
+
+Object.entries(customersByHobby).forEach(entry => {
+  console.log(`Hobby: ${entry[0]}`);
+  console.log(`Count: ${entry[1]}`);
+});
 // [
 //   {
 //     hobby: "reading",
@@ -62,18 +73,4 @@ console.log(customersInterestInSwimming);
 //   return countByHobby;
 // }, {});
 // console.log(customersByHobby); // prints [
-
-  const customersByHobby = customers.reduce((countByHobby, customer) => {
-    customer.hobbies.forEach(hobby => {
-      countByHobby[hobby] = (countByHobby[hobby] || 0) + 1;
-    });
-    return countByHobby;
-  }, {});
-  
-  Object.entries(customersByHobby).forEach(entry => {
-    console.log(`Hobby: ${entry[0]}`);
-    console.log(`Count: ${entry[1]}`);
-  });
-  
-
 
