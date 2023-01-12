@@ -26,6 +26,14 @@ console.log(uniqueFilteredHobbies);
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
 
+console.log("\nQuiz #2");
+
+const customersWhoLikeSwimming = customers
+  .filter((customer) => customer.hobbies.find((hobby) => hobby === "swimming"))
+  .map((customer) => customer.name);
+
+console.log(customersWhoLikeSwimming);
+
 // Quiz 3: Count customers by hobby and by count desc
 // [
 //   {
