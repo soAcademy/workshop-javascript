@@ -86,18 +86,23 @@
 
 // Q8
 
-let orderList = [
-  { status: "PAID", name: "Glory", price: 200, quantity: 3 },
-  { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
-  { status: "PAID", name: "VitC", price: 150, quantity: 2 },
-];
+// let orderList = [
+//   { status: "PAID", name: "Glory", price: 200, quantity: 3 },
+//   { status: "PENDING", name: "Glory", price: 200, quantity: 1 },
+//   { status: "PAID", name: "VitC", price: 150, quantity: 2 },
+// ];
 
-const q8 = (input) => {
-  const totalPaidOrders = input
-  .filter((r) => r.status === "PAID")
-  .map((r) => r.price * r.quantity)
-  .reduce((acc, r) => { acc += r; return acc}, 0);
-  return totalPaidOrders;
-  };
+// const q8 = (input) => {
+//   const totalPaidOrders = input
+//     .filter((r) => r.status === "PAID")
+//     .map((r) => r.price * r.quantity)
+//     .reduce((acc, r) => {
+//       acc += r;
+//       return acc;
+//     }, 0);
+//   return totalPaidOrders;
+// };
 
-console.log(q8(orderList));
+// console.log(q8(orderList));
+
+
