@@ -31,6 +31,16 @@ console.log(getUniqueHobbies(customers));
 
 // Quiz 2: Find customer that interest in swimming
 // ['Johnn', 'Bob']
+// 1. use .filter to loop through customer
+// 2. use .some in hobbies nested .filter from 1 to check if swimming is in hobby
+// 3. use .map to extract only customer name
+
+const getCustomersByInterest = (customers, interest) =>
+  customers
+    .filter((customer) => customer.hobbies.some((hobby) => hobby === interest))
+    .map((customer) => customer.name);
+
+console.log("Q2: ", getCustomersByInterest(customers, "swimming"));
 
 const customersLikeSwimming = (customers) => {
   const swimming = customers
