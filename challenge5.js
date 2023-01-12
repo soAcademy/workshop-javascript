@@ -15,17 +15,6 @@ const csvData = `id,name,orderValue,orderDate
 //   }
 // ]
 
-const convertCsvToObject = (csvData) => {
-  const rows = csvData.split("\n");
-  const fieldName = rows[0].split(",");
-  const datas = rows.splice(1, rows.length - 1);
-  const result = datas.map((data) => {
-    const fieldValues = data.split(",");
-    return fieldName.map((key, idx) => ({
-      [key]: fieldValues[idx],
-    }));
-  });
-  return result;
-};
+const convertCsvToObject = () => {};
 
 console.log("Q1: ", convertCsvToObject(csvData));
