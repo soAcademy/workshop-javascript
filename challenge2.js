@@ -125,21 +125,22 @@ const documents = [
 // .some, .filter
 // 2. สร้าง group2 ที่ดึงข้อมูล name มาด้วย
 
-const hasDocumentPermission = ({ documentId, name, role }) => {
-  const user = users.find(user => user.name === name);
+function hasDocumentPermission({ documentId, name, role }) {
+  const group1 = groups.find(group => group.name === "Group1");
+  const user = group1.users.find(user => user.name === name);
   const userId = user ? user.userId : null;
-  const group = groups.find(group => group.users.find(user => user.userId === userId));
-  const groupId = group ? group.groupId : null;
 
   const document = documents.find(document => document.documentId === documentId);
   if (!document) return false;
 
   return document.permissions.some(permission => (
     (permission.userId === userId && permission.role === role) ||
-    (permission.groupId === groupId && permission.role === role)
+    (permission.groupId === group1.groupId && permission.role === role)
   ));
 }
 
-const createGroup2 = () => {
-  return users.map(user => user.name);
+function createGroup2() {
+  const group1 = groups.find(group => group.name === "Group1");
+  const group2 = group1.users.map(user => user.name);
+  return group2;
 }
