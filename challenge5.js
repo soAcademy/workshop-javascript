@@ -15,19 +15,34 @@ const csvData = `id,name,orderValue,orderDate
 //   }
 // ]
 
+// const csvToObject = (csvData) => {
+//   csvData = csvData.split("\n");
+//   csvData.splice(0, 1);
+//   csvData = csvData.reduce((acc, e) => {
+//     e = e.split(",");
+//     acc[e[0].toString()] = {
+//       id: e[0],
+//       name: e[1],
+//       orderValue: e[2],
+//       orderDate: e[3],
+//     };
+//     return acc;
+//   }, {});
+//   return Object.values(csvData);
+// };
+
+//using [key],[idx]
 const csvToObject = (csvData) => {
   csvData = csvData.split("\n");
-  csvData.splice(0, 1);
-  csvData = csvData.reduce((acc, e) => {
-    e = e.split(",");
-    acc[e[0].toString()] = {
-      id: e[0],
-      name: e[1],
-      orderValue: e[2],
-      orderDate: e[3],
-    };
-    return acc
-  }, {});
-  return Object.values(csvData)
+  colName = csvData[0].split(',');
+  csvData = csvData.splice(1,)
+  const result = csvData.map((e) => {
+    const row = e.split(',')
+    csvData = colName.map((key, idx) => ({
+      [key]: row[idx],
+    }));
+    return csvData
+  });
+  return result;
 };
 console.log(csvToObject(csvData));
