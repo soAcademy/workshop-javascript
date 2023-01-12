@@ -62,18 +62,5 @@ const q3 = (customers) => {
   // console.log(uniqHob);
   // return findHob;
 };
-
 // console.log(acc);
 console.log(q3(customers));
-
-let ff = [
-  { hobby: "reading", count: 2 },
-  { hobby: "swimming", count: 2 },
-  { hobby: "hiking", count: 1 },
-  { hobby: "cooking", count: 1 },
-  { hobby: "dancing", count: 1 },
-  { hobby: "traveling", count: 1 },
-  { hobby: "cycling", count: 1 },
-  { hobby: "painting", count: 1 },
-  { hobby: "gardening", count: 1 },
-];
