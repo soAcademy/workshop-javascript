@@ -55,7 +55,7 @@ console.log("\nQuiz #3");
 
 const hobbies = customers.map((customer) => customer.hobbies).flat();
 
-console.log(hobbies);
+// console.log(hobbies);
 
 const hobbiesWithCount = Object.values(
   hobbies.reduce((acc, hobby) => {
@@ -67,4 +67,4 @@ const hobbiesWithCount = Object.values(
   }, {})
 ).sort((a, b) => b.count - a.count);
 
-console.log(hobbiesWithCount);
+console.log(JSON.stringify(hobbiesWithCount));
