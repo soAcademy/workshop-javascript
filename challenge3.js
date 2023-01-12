@@ -66,7 +66,7 @@ const countHobbies = (customers) => {
   console.log("Object.keys(countHobbies)", Object.keys(countHobbies));
   const result = Object.keys(countHobbies).map((hobby) => {
     const count = countHobbies[hobby];
-    console.log(${hobby} count= ${count});
+    console.log(`${hobby} count= ${count}`);
     return {
       hobby,
       count,
