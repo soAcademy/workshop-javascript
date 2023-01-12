@@ -40,7 +40,7 @@ const getCustomersByInterest = (customers, interest) =>
     .filter((customer) => customer.hobbies.some((hobby) => hobby === interest))
     .map((customer) => customer.name);
 
-console.log("Q2: ", getCustomersByInterest(customers, "swimming"));
+// console.log("Q2: ", getCustomersByInterest(customers, "swimming"));
 
 const customersLikeSwimming = (customers) => {
   const swimming = customers
