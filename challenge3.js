@@ -50,3 +50,21 @@ console.log(customersWhoLikeSwimming);
 //   },
 //   ...
 // ]
+
+console.log("\nQuiz #3");
+
+const hobbies = customers.map((customer) => customer.hobbies).flat();
+
+console.log(hobbies);
+
+const hobbiesWithCount = Object.values(
+  hobbies.reduce((acc, hobby) => {
+    acc[hobby] = {
+      hobby: hobby,
+      count: acc[hobby] ? acc[hobby].count + 1 : 1,
+    };
+    return acc;
+  }, {})
+).sort((a, b) => b.count - a.count);
+
+console.log(hobbiesWithCount);
