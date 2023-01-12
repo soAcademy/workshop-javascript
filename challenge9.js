@@ -1,5 +1,5 @@
 // Q1: Calculate fibbonacci using reduce
-
+// 0 1 1 2 3 5 8 13 21
 const fib = (n) =>
   [...Array(n).keys()].reduce(
     (acc, r) => {
