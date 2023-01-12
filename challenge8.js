@@ -2330,9 +2330,9 @@ const getInd = (stockPrices, n) => {
     return e;
   }));
 };
-
+// console.log(getInd(stockPrices, 10).slice(0,15));
 // console.log(getInd(stockPrices, 20).slice(-5));
-// Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10), 
+// Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10),
 //generate buy signal otherwise generate sell signal.
 //
 // [
@@ -2353,21 +2353,22 @@ const getInd = (stockPrices, n) => {
 //     position: "SELL"
 //   }
 // ]
-const genSignal = (stockPrices, func=sma, n=10) => {
-  return stockPrices.reduce((acc,e,idx)=>{
-    let ind = func(stockPrices, n, idx)
-    let position = e.adjClose > ind ? 'BUY' : 'SELL' 
+const genSignal = (stockPrices, func = sma, n = 10) => {
+  return stockPrices.reduce((acc, e, idx) => {
+    let ind = func(stockPrices, n, idx);
+    let position =
+      ind !== 0 ? (e.adjClose > ind ? "BUY" : "SELL") : "No Indicator Values";
     acc.push({
       date: e.date,
-      position: position
-    })
-    return acc
-  }, [])
-}
-let position = genSignal(stockPrices, sma, 10)
-console.log(genSignal(stockPrices, sma, 10).slice(150,160));
-console.log(genSignal(stockPrices, ema, 10).slice(150,160));
-console.log(position.slice(150,160));
+      position: position,
+    });
+    return acc;
+  }, []);
+};
+let signal = genSignal(stockPrices, sma, 10);
+// console.log(genSignal(stockPrices, sma, 10).slice(150,160));
+// console.log(genSignal(stockPrices, ema, 10).slice(150,160));
+// console.log(signal.slice(10, 15));
 
 // Q3: Using signal from Q2 to generate PNL. If starting portfolio value is 1000000 THB
 // [
@@ -2394,14 +2395,69 @@ console.log(position.slice(150,160));
 // ]
 
 // if signal = 'buy' > buy at adjClose tomorrow
-const genPnl = (stockPrices, position, startingValue) => {
-  return position.reduce((acc,e,idx)=> {
-    let startValue = acc[idx-1]?.values ?? 1000000
-    let value = position.position === 'SELL' ? 
+const genPnl = (stockPrices, signal, startingValue) => {
+  let pnl = signal.reduce((acc, e, idx) => {
+    let result =
+      e.position === "No Indicator Values"
+        ? {
+            // INDICATOR : NONE
+            value: startingValue,
+            stockQuantity: 0,
+          }
+        : (() => {
+            // const stockPriceT1 = stockPrices.slice(idx + 1, idx + 2);
+            const stockPriceT = stockPrices[idx];
+            const prevValue = acc[idx - 1]?.value;
+            // console.log(acc.slice(10, 11)[0] ?? 0 );
+            const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
+            // console.log(prevStockQuant);
+            const prevSignalPosition = signal.at(idx-1)?.position;
+            return e.position === "BUY"
+              ? (() => {
+                  // INDICATOR : BUY
+                  const value =
+                    prevStockQuant > 0
+                      ? prevStockQuant * stockPriceT.adjClose
+                      : prevValue ?? startingValue;
+                  const stockQuantity =
+                    prevSignalPosition === "SELL"
+                      ? 0
+                      : value / stockPriceT.adjClose;
+                  // console.log(value, stockQuantity);
+                  return {
+                    value: value,
+                    stockQuantity: stockQuantity,
+                  };
+                })()
+              : (() => {
+                  // INDICATOR : SELL
+                  // console.log(stockPriceT.adjClose);
+                  // console.log(prevValue);
+                  const stockQuantity =
+                    prevSignalPosition === "SELL" ? 0 : prevStockQuant;
+                  const value =
+                    prevStockQuant > 0
+                      ? prevStockQuant * stockPriceT.adjClose
+                      : prevValue;
+                  // console.log(value, stockQuantity);
+
+                  return {
+                    value: value,
+                    stockQuantity: stockQuantity,
+                  };
+                })();
+          })();
+    // console.log(acc[idx-1]?.value);
     acc.push({
       ...e,
-      value: startValue + 
-    })
-    return acc
-  }, [])
-}
+      value: Number((result.value).toFixed(2)),
+      stockQuantity: result.stockQuantity,
+    });
+    return acc;
+  }, []);
+  // console.log(pnl.slice(10,15));
+  return pnl;
+};
+let pnl = genPnl(stockPrices, signal, 1000000);
+// console.log(pnl.slice(0,40));
+console.log("PNL: ",pnl.at(-1).value-1000000);
