@@ -4,7 +4,7 @@ const customers = [
   { name: "Bob", age: 28, hobbies: ["cycling", "painting", "swimming"] },
   { name: "Alice", age: 22, hobbies: ["reading", "gardening"] },
 ];
-
+console.log("Brackets Notation:: have or not", customers.key);
 // Quiz 1: Filter customer age >= 25 and age <= 30 and then get unique hobbies
 
 const getUniqueHobbies = (customers) => {
@@ -59,15 +59,17 @@ console.log(customersLikeSwimming(customers));
 
 const countHobbies = (customers) => {
   const countHobbies = customers
-    .map((customer) => customer.hobbies)
-    .flat()
+    .map((customer) => customer.hobbies) // ['swimming', ['hiking'],['running']]
+    .flat() // ['swimming', 'hiking','running']
     .reduce((acc, hobby) => {
+      // first round hobby => swimming
       if (acc[hobby]) {
+        // falsy:: '', 0, null, undifined, false
         acc[hobby] = acc[hobby] + 1;
         return acc;
       }
       acc[hobby] = 1;
-      return acc;
+      return acc; // first round :: {swimming:1}, second round :: {swiming:1,hiking:1}, third round :: {swimming:1,hiking:1,running:1}
     }, {});
   console.log("countHobbies", countHobbies);
   // {

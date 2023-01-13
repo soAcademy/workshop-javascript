@@ -137,4 +137,7 @@ const calculateOrderValue = (orders, shippingByOrderValueTiers) => {
   return orderCustomersInfo;
 };
 
-console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+console.log(
+  "Q1: ",
+  JSON.stringify(calculateOrderValue(orders, shippingByOrderValueTiers))
+);

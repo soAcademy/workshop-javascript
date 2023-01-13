@@ -2270,6 +2270,7 @@ const stockPrices = [
 ];
 
 // Q1: calculate Rate Of Change, Simple Moving Average (SMA) and Exponential moving average (EMA) for n period
+
 // ROC(t, n) = Close(t - 1) / Close(t - n - 1) - 1;
 // SMA(t, n) = sum(Close(t - n - 1) to Close(t - 1)) / n;
 // EMA(t, n, smoothing) = Close(t - 1) * (smoothing) / (1 + n) + EMA(t - 1, n, smoothing) * (1 - smoothing / (1 + n))
