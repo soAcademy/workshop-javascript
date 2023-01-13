@@ -107,13 +107,12 @@ const orders = [
 //   ...
 // ]
 
-const summarizeOrder = (shippingByOrderValueTiers, orders) => {
+const summarizeOrder = (shippingTiers, orders) => {
   let result = {};
   orders.map((e) => {
-    let orderValue = 0;
     e.items.map((i) => {
       let value = i.quantity * i.price;
-      let shippingPrice = shippingByOrderValueTiers.find(
+      let shippingPrice = shippingTiers.find(
         (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
       )?.shippingPrice;
       result[e.customer] = {
@@ -129,7 +128,6 @@ const summarizeOrder = (shippingByOrderValueTiers, orders) => {
       return result;
     });
   });
-  // console.log(result);
   return Object.values(result);
 };
 console.log(summarizeOrder(shippingByOrderValueTiers, orders));
