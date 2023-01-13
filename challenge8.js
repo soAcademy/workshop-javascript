@@ -2302,10 +2302,10 @@ const roc = (stockPrices, n, idx) => {
 const sum = (arr) => arr.reduce((acc, e) => acc + e, 0);
 
 const sma = (stockPrices, n, idx) => {
-  let start = idx - n - 1;
-  let closes = stockPrices.slice(idx - n - 1, idx);
+  let start = idx - n;
+  let closes = stockPrices.slice(start, idx);
   closes = closes.map((e) => e.close);
-  return (result = start >= 0 ? sum(closes) / (n + 1) : 0);
+  return (result = start >= 0 ? sum(closes) / n : 0);
 };
 
 const ema = (stockPrices, n, idx, smoothing = 2) => {
