@@ -112,21 +112,62 @@ const orders = [
 //   ...
 // ]
 
-const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
-  orders.map((order) => {
-    const orderValue = order.items.reduce(
-      (acc, r) => acc + r.quantity * r.price,
-      0
-    );
-    const shippingTier = shippingByOrderValueTiers.find(
-      (shipping) => orderValue <= shipping.orderValueLimit
-    );
-    const totalValue = orderValue + shippingTier.shippingPrice;
-    return {
-      ...order,
-      orderValue,
-      shippingPrice: shippingTier.shippingPrice,
-      totalValue,
-    };
-  });
-console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+// const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
+//   orders.map((order) => {
+//     const orderValue = order.items.reduce(
+//       (acc, r) => acc + r.quantity * r.price,
+//       0
+//     );
+//     const shippingTier = shippingByOrderValueTiers.find(
+//       (shipping) => orderValue <= shipping.orderValueLimit
+//     );
+//     const totalValue = orderValue + shippingTier.shippingPrice;
+//     return {
+//       ...order,
+//       orderValue,
+//       shippingPrice: shippingTier.shippingPrice,
+//       totalValue,
+//     };
+//   });
+// console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+
+// งานกลุ่ม
+// Quiz 1: Find order value including shipping price for each order
+// 1. use .map loop through all orders
+// 2. use .reduce inside .map to calculate order value
+// 3. use .find inside .map to find shippingTier
+// 4. concat orderValue and shippingPrice in order
+
+const calculateOrderValue = items => items.reduce((total, item) => total + item.quantity * item.price, 0);
+
+const findShippingTier = orderValue => shippingByOrderValueTiers.find(tier => orderValue <= tier.orderValueLimit);
+
+const ordersWithShipping = orders.map(order => {
+  const orderValue = calculateOrderValue(order.items);
+  const shippingTier = findShippingTier(orderValue);
+  return {
+    ...order,
+    orderValue,
+    shippingPrice: shippingTier.shippingPrice,
+    totalValue: orderValue + shippingTier.shippingPrice
+  };
+});
+console.log(ordersWithShipping);
+
+// const ordersWithShipping = orders.map(order => {
+//   const orderValue = order.items.reduce((total, item) => {
+//     return total + item.quantity * item.price;
+//   }, 0);
+//   const shippingTier = shippingByOrderValueTiers.find(
+//     tier => orderValue <= tier.orderValueLimit
+//   );
+//   return {
+//     ...order,
+//     orderValue,
+//     shippingPrice: shippingTier.shippingPrice,
+//     totalValue: orderValue + shippingTier.shippingPrice
+//   };
+// });
+// console.log(ordersWithShipping);
+
+
