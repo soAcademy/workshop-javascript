@@ -2289,33 +2289,32 @@ const stockPrices = [
 //   }
 // ]
 
-const roc = (stockPrices, n, idx) => {
+const calROC = (stockPrices, n, idx) => {
   let result =
-    (stockPrices[idx - 1]?.close ?? 0) /
-      (stockPrices[idx - n - 1]?.close ?? NaN) -
-      1 ?? 0;
-  result = Number.isNaN(result) ? 0 : result; // convert NaN result to 0
-  return Number(result.toFixed(6));
+    (stockPrices[idx]?.close ?? 0) / (stockPrices[idx - n]?.close ?? NaN) - 1 ??
+    0;
+  result = Number.isNaN(result) ? null : Number(result.toFixed(6)); // convert NaN result to 0
+  return result;
 };
-// console.log(roc(stockPrices, 2, 5));
+// console.log(calROC(stockPrices, 2, 5));
 
 const sum = (arr) => arr.reduce((acc, e) => acc + e, 0);
 
-const sma = (stockPrices, n, idx) => {
+const calSMA = (stockPrices, n, idx) => {
   let start = idx - n;
   let closes = stockPrices.slice(start, idx);
   closes = closes.map((e) => e.close);
   return (result = start >= 0 ? sum(closes) / n : 0);
 };
 
-const ema = (stockPrices, n, idx, smoothing = 2) => {
+const calEMA = (stockPrices, n, idx, smoothing = 2) => {
   let start = idx - 2;
-  let close = stockPrices.slice(idx - 1, idx)[0];
+  let close = stockPrices[idx];
   close = close?.close ?? 0;
   return (result =
     start >= 0
       ? (close * smoothing) / (1 + n) +
-        ema(stockPrices, n, idx - 1, smoothing) * (1 - smoothing / (1 + n))
+        calEMA(stockPrices, n, idx - 1, smoothing) * (1 - smoothing / (1 + n))
       : 0);
 };
 
@@ -2323,14 +2322,14 @@ const getInd = (stockPrices, n) => {
   return (stockPricesInd = stockPrices.map((e, idx) => {
     e = {
       ...e,
-      sma: sma(stockPrices, n, idx),
-      ema: ema(stockPrices, n, idx),
-      roc: roc(stockPrices, n, idx),
+      sma: calSMA(stockPrices, n, idx),
+      ema: calEMA(stockPrices, n, idx),
+      roc: calROC(stockPrices, n, idx),
     };
     return e;
   }));
 };
-// console.log(getInd(stockPrices, 10).slice(0,15));
+// console.log(getInd(stockPrices, 1).slice(0,5));
 // console.log(getInd(stockPrices, 20).slice(-5));
 // Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10),
 //generate buy signal otherwise generate sell signal.
@@ -2353,7 +2352,7 @@ const getInd = (stockPrices, n) => {
 //     position: "SELL"
 //   }
 // ]
-const genSignal = (stockPrices, func = sma, n = 10) => {
+const genSignal = (stockPrices, func = calSMA, n = 10) => {
   return stockPrices.reduce((acc, e, idx) => {
     let ind = func(stockPrices, n, idx);
     let position =
@@ -2365,7 +2364,7 @@ const genSignal = (stockPrices, func = sma, n = 10) => {
     return acc;
   }, []);
 };
-let signal = genSignal(stockPrices, sma, 10);
+let signal = genSignal(stockPrices, calSMA, 10);
 // console.log(genSignal(stockPrices, sma, 10).slice(150,160));
 // console.log(genSignal(stockPrices, ema, 10).slice(150,160));
 // console.log(signal.slice(10, 15));
@@ -2394,68 +2393,8 @@ let signal = genSignal(stockPrices, sma, 10);
 //   }
 // ]
 
-// if signal = 'buy' > buy at adjClose tomorrow
-// const genPnl = (stockPrices, signal, startingValue) => {
-//   let pnl = signal.reduce((acc, e, idx) => {
-//     let result =
-//       e.position === "No Indicator Values"
-//         ? {
-//             // INDICATOR : NONE
-//             value: startingValue,
-//             stockQuantity: 0,
-//           }
-//         : (() => {
-//             const stockPriceT = stockPrices[idx];
-//             const prevValue = acc[idx - 1]?.value;
-//             const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
-//             const prevSignalPosition = signal.at(idx - 1)?.position;
-//             return e.position === "BUY"
-//               ? (() => {
-//                   // INDICATOR : BUY
-//                   const stockQuantity =
-//                     prevSignalPosition === "SELL"
-//                       ? 0
-//                       : prevStockQuant > 0
-//                       ? prevStockQuant
-//                       : prevValue / stockPriceT.adjClose;
-//                   const value =
-//                     prevStockQuant > 0
-//                       ? prevStockQuant * stockPriceT.adjClose
-//                       : prevValue ?? startingValue;
-//                   return {
-//                     value: value,
-//                     stockQuantity: stockQuantity,
-//                   };
-//                 })()
-//               : (() => {
-//                   // INDICATOR : SELL
-//                   const stockQuantity =
-//                     prevSignalPosition === "SELL" ? 0 : prevStockQuant;
-//                   const value =
-//                     prevStockQuant > 0
-//                       ? prevStockQuant * stockPriceT.adjClose
-//                       : prevValue;
-
-//                   return {
-//                     value: value,
-//                     stockQuantity: stockQuantity,
-//                   };
-//                 })();
-//           })();
-//     acc.push({
-//       ...e,
-//       value: Number(result.value.toFixed(2)),
-//       stockQuantity: result.stockQuantity,
-//     });
-//     return acc;
-//   }, []);
-//   return pnl;
-// };
-// let pnl = genPnl(stockPrices, signal, 1000000);
-// // console.log(pnl);
-// console.log("PNL: ", pnl.at(-1).value - 1000000);
-
-const genPnl = (stockPrices, signal, startingValue) => {
+// if signal = 'BUY' > buy on tomorrow at adjClose
+const genPNL = (stockPrices, signal, startingValue) => {
   const pnl = signal.reduce((acc, e, idx) => {
     const execute = () => {
       const stockPriceT = stockPrices[idx];
@@ -2512,8 +2451,8 @@ const genPnl = (stockPrices, signal, startingValue) => {
   }, []);
   return pnl;
 };
-let pnl = genPnl(stockPrices, signal, 1000000);
-console.log(pnl.slice(0,20));
-console.log('.\n.\n.');
+let pnl = genPNL(stockPrices, signal, 1000000);
+console.log(pnl.slice(0, 20));
+console.log(".\n.\n.");
 console.log(pnl.slice(pnl.length - 20, pnl.length));
-console.log("PNL: ", pnl.at(-1).value - 1000000);
+console.log("PNL: ", Number((pnl.at(-1).value - 1000000).toFixed(5)));
