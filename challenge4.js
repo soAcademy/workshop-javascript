@@ -112,22 +112,26 @@ const orders = [
 //   ...
 // ]
 
-const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
-  orders.map((order) => {
-    const orderValue = order.items.reduce(
-      (acc, r) => acc + r.quantity * r.price,
+const findOrderValues = (orders, shippingByOrderValueTiers) => {
+  const orderDetails = orders.map((order) => {
+    const orderValues = order.items.reduce(
+      (acc, item) => acc + item.quantity * item.price,
       0
     );
-    const shippingTier = shippingByOrderValueTiers.find(
-      (shipping) => orderValue <= shipping.orderValueLimit
+    const orderShippingPrice = shippingByOrderValueTiers.find(
+      (shippingTier) => orderValues <= shippingTier.orderValueLimit
     );
-    const totalValue = orderValue + shippingTier.shippingPrice;
+    // console.log(orderShippingPrice);
+    const totalValues = orderShippingPrice.shippingPrice + orderValues;
     return {
-      ...order,
-      orderValue,
-      shippingPrice: shippingTier.shippingPrice,
-      totalValue,
+      customer: order.customer,
+      items: order.items,
+      orderValues,
+      shippingPrice: orderShippingPrice.shippingPrice,
+      totalValues,
     };
   });
-
-console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+  return orderDetails;
+};
+console.log(JSON.stringify(findOrderValues(orders, shippingByOrderValueTiers)));
+// findOrderValues(orders,shippingByOrderValueTiers)
