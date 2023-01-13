@@ -118,21 +118,18 @@ const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
       (acc, r) => acc + r.quantity * r.price,
       0
     );
-    //console.log(orderValue);
+
     const findShippingTier = shippingByOrderValueTiers.find(
       (r) => r.orderValueLimit >= orderValue
     );
+    const totalOrderValue = orderValue + findShippingTier.shippingPrice;
 
     return {
       ...order,
       orderValue: orderValue,
       shippingPrice: findShippingTier.shippingPrice,
+      totalValue: totalOrderValue,
     };
   });
 
-//console.log(calculateOrderValue)
 console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
-
-// const calculateOrderValue =  orders
-//   .map(order =>  order.items.reduce((acc, r) => acc + r.quantity * r.price, 0));
-//   console.log(calculateOrderValue);
