@@ -129,9 +129,20 @@ const products = [
 // 3. topBuyer -> {customer: String, saleValue: Number, items: {id: String, name: String, quantity: String}[]}[]
 console.log("\nChallange1.3 หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย");
 const resultNo3 = () => {
-  const newOrder = orders.reduce((acc, r) => {
-    // console.log(r);
-  },{});
+  
+  const customer = orders.map(order => order.customer);
+  const uniqueCus = [...new Set(customer)];
+  // console.log(uniqueCus);
+  uniqueCus.map(user => {
+    console.log(user);
+    const eachOrder = orders.reduce((acc, r) => {
+      // console.log(r);
+      // console.log(r.customer === user ? r.items : '');
+      return r.customer === user ? [...acc, r.items] : acc;
+    },[])
+    console.log(eachOrder.flat());
+  });
+
 
   // const newOrders = orders.map((order) => {
   //   const valueByCustomer = order.items
