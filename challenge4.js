@@ -136,24 +136,23 @@ const calculateOrderValue = orders.map((order) => {
   const total = order.items.reduce((acc, r) => {
     return acc + r.quantity * r.price;
   }, 0);
-  return { customer: order.customer, total: total };
+  return { ...order, orderValue: total };
 });
 
 const ordersWithShippingPrices = calculateOrderValue.map((order) => {
   const shipping = shippingByOrderValueTiers.find(
-    (tier) => order.total <= tier.orderValueLimit
+    (tier) => order.orderValue <= tier.orderValueLimit
   );
 
   return {
-    customer: order.customer,
-    total: order.total,
-    shippingcost: shipping.shippingPrice,
+    ...order,
+    shippingCost: shipping.shippingPrice,
   };
 });
 
 const sumTotal = ordersWithShippingPrices.map((order) => {
-  order.totalcost = order.total + order.shippingcost;
+  order.totalValue = order.orderValue + order.shippingCost;
   return order;
 });
 
-console.log(sumTotal);
+console.log(JSON.stringify(sumTotal, null, 2));
