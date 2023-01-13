@@ -112,22 +112,29 @@ const orders = [
 //   ...
 // ]
 
-const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
-  orders.map((order) => {
-    const orderValue = order.items.reduce(
-      (acc, r) => acc + r.quantity * r.price,
-      0
-    );
-    const shippingTier = shippingByOrderValueTiers.find(
-      (shipping) => orderValue <= shipping.orderValueLimit
-    );
-    const totalValue = orderValue + shippingTier.shippingPrice;
+const calculateOrderValue = (orders, shippingByOrderValueTiers) => {
+  const orderCustomersInfo = orders.map((user) => {
+    const orderValue = user.items.reduce((acc, r) => {
+      const productPrice = r.quantity * r.price;
+      return acc + productPrice;
+    }, 0);
+
+    const shippingPrice = shippingByOrderValueTiers.find((obj) => {
+      if (orderValue <= obj.orderValueLimit) {
+        return true;
+      }
+    });
+    console.log("shippingP:", shippingPrice);
+
     return {
-      ...order,
-      orderValue,
-      shippingPrice: shippingTier.shippingPrice,
-      totalValue,
+      customer: user.customer, //*
+      items: user.items, //*
+      orderValue: orderValue,
+      shippingPrice: shippingPrice.shippingPrice,
+      totalValue: orderValue + shippingPrice.shippingPrice,
     };
   });
+  return orderCustomersInfo;
+};
 
 console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
