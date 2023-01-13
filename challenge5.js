@@ -17,10 +17,14 @@ const csvData = `id,name,orderValue,orderDate
 
 const convertCsvToObject = (csvData) => {
   const rows = csvData.split("\n");
+  console.log(rows);
   const fieldName = rows[0].split(",");
-  const datas = rows.splice(1, rows.length - 1);
+  console.log(fieldName);
+  const datas = rows.splice(1, rows.length - 3);
+  console.log(datas);
   const result = datas.map((data) => {
     const fieldValues = data.split(",");
+    console.log(fieldValues);
     return fieldName.map((key, idx) => ({
       [key]: fieldValues[idx],
     }));
@@ -29,3 +33,21 @@ const convertCsvToObject = (csvData) => {
 };
 
 console.log("Q1: ", convertCsvToObject(csvData));
+
+// // const convertCsvToObject = (csvData) => {
+//   const rows = csvData.split("/n");
+//   console.log("rows: ", rows);
+//   const fieldName = rows[0].split(",");
+//   console.log("fieldName: ", fieldName);
+//   const datas = rows.splice(1, 1);
+//   console.log("datas: ", datas);
+//   const result = datas.map((data)=> {
+//     const fieldValues = data.split(",");
+//     return fieldName.map((key, idx)=> ({
+//       [key]: fieldValues[idx],
+//       console.log(fieldValues);
+//     }));
+//   })
+
+
+  
