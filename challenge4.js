@@ -138,7 +138,7 @@ const ordersWithShippingPrices = ordersWithOrderValues.map((order) => {
   return order;
 });
 
-console.log(JSON.stringify(ordersWithShippingPrices));
+console.log(JSON.stringify(ordersWithShippingPrices, null, "  "));
 
 // result
 // [
