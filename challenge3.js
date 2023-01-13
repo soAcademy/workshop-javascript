@@ -56,7 +56,7 @@ const q3 = Object.entries(
     }, {})
 )
   .map((r) => ({ hobby: r[0], count: r[1] }))
-  .sort((a,b) => b.count-a.count)
-  // .sort((a, b) => b.hobby.localeCompare(a.hobby));
+  .sort((a, b) => b.count - a.count);
+// .sort((a, b) => b.hobby.localeCompare(a.hobby));
 
 console.log(q3);
