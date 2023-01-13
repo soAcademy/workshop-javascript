@@ -1118,23 +1118,36 @@ const orders = [
   },
 ];
 
-// Answer Q1
+// Answer
 
-const rewardsTier1 = members.map((member) => {
-  const teams = members.filter((r) => r.referId === member.memberId).map((r) => r.memberId);
-  console.log(teams);
+const rewards = members.map((member) => {
+  const tier1Members = members
+    .filter((r) => r.referId === member.memberId)
+    .map((r) => r.memberId);
+  const tier2Members = members
+    .filter((r) => tier1Members.includes(r.referId))
+    .map((r) => r.memberId);
+
   const tier1TotalOrder = orders
-    .filter((order) => teams.includes(order.memberId))
+    .filter((order) => tier1Members.includes(order.memberId))
     .reduce((acc, r) => acc + r.orderValue, 0);
 
-  const tier = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
-  const rewardTier1 = tier1TotalOrder * tier.percentReward;
-  // return rewardTier1
-  return ({
+  const tier2TotalOrder = orders
+    .filter((order) => tier2Members.includes(order.memberId))
+    .reduce((acc, r) => acc + r.orderValue, 0);
+
+  const tier1 = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
+  const tier2 = rewardTier.tier2.find((r) => tier2TotalOrder <= r.saleLimit);
+  const rewardTier1 = tier1TotalOrder * tier1.percentReward;
+  const rewardTier2 = tier2TotalOrder * tier2.percentReward;
+  return {
     ...member,
     tier1TotalOrder,
+    tier2TotalOrder,
     rewardTier1,
-  })
+    rewardTier2,
+    totalReward: rewardTier1 + rewardTier2,
+  };
 });
 
-console.log("Q1: ", (rewardsTier1))
+console.log(rewards);
