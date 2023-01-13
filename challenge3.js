@@ -40,9 +40,9 @@ const customers = [
 //   },
 //   ...
 // ]
-const hobbies = customers.map((customer) => customer.hobbies).flat();
-const uniqueHobbies = [...new Set(hobbies)];
-// console.log(uniqueHobbies);
+// const hobbies = customers.map((customer) => customer.hobbies).flat();
+// const uniqueHobbies = [...new Set(hobbies)];
+// // console.log(uniqueHobbies);
 
 const sumHobbies = uniqueHobbies.reduce((acc, uniqHob) =>{
   const allHops = hobbies.reduce((acc, eachAllHob) => {

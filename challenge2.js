@@ -125,24 +125,25 @@ const documents = [
 // .some, .filter
 // 2. สร้าง group2 ที่ดึงข้อมูล name มาด้วย
 
-const hasDocumentPermission = ({ documentId, name, role }) => {
-  const document = documents.find((r) => r.documentId === documentId);
-  const user = users.find((r) => r.name === name);
-  const permissions = document.permissions.some(
-    (rule) =>
-      (rule?.userId === user.userId ||
-        groups
-          .find((r) => r.groudId === rule?.groupId)
-          .users.some((r) => r.userId === user.userId)) &&
-      rule.role === role
-  );
-  return permissions;
-};
+//SOLUTION:-------------------------------------------------------------
+// const hasDocumentPermission = ({ documentId, name, role }) => {
+//   const document = documents.find((r) => r.documentId === documentId);
+//   const user = users.find((r) => r.name === name);
+//   const permissions = document.permissions.some(
+//     (rule) =>
+//       (rule?.userId === user.userId ||
+//         groups
+//           .find((r) => r.groudId === rule?.groupId)
+//           .users.some((r) => r.userId === user.userId)) &&
+//       rule.role === role
+//   );
+//   return permissions;
+// };
 
-console.log(
-  hasDocumentPermission({ documentId: "d3", name: "Jam", role: "EDITOR" })
-); // true
+// console.log(
+//   hasDocumentPermission({ documentId: "d3", name: "Jam", role: "EDITOR" })
+// ); // true
 
-console.log(
-  hasDocumentPermission({ documentId: "d3", name: "Bin", role: "EDITOR" })
-); // false
+// console.log(
+//   hasDocumentPermission({ documentId: "d3", name: "Bin", role: "EDITOR" })
+// ); // false
