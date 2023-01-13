@@ -84,6 +84,7 @@ const orders = [
   },
 ];
 
+
 // Quiz 1: Find order value including shipping price for each order
 // 1. use .map loop through all orders
 // 2. use .reduce inside .map to calculate order value
@@ -112,22 +113,20 @@ const orders = [
 //   ...
 // ]
 
-const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
-  orders.map((order) => {
-    const orderValue = order.items.reduce(
-      (acc, r) => acc + r.quantity * r.price,
-      0
-    );
-    const shippingTier = shippingByOrderValueTiers.find(
-      (shipping) => orderValue <= shipping.orderValueLimit
-    );
-    const totalValue = orderValue + shippingTier.shippingPrice;
-    return {
-      ...order,
-      orderValue,
-      shippingPrice: shippingTier.shippingPrice,
-      totalValue,
-    };
-  });
-
-console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+const ansChallenge4 = (orders, shippingByOrderValueTiers) =>
+orders.map((order) => {
+  const orderValue = order.items.reduce((acc,r) => acc + r.quantity * r.price, 0);
+  const shippingTier = shippingByOrderValueTiers.find((tiers) => orderValue <= tiers.orderValueLimit);
+  const totalValue = orderValue + shippingTier.shippingPrice;
+  // console.log(orderValue);
+  // console.log(shippingTier);
+  // console.log(totalValue);
+  // console.log(order)
+  return{
+    ...order,
+    orderValue,
+    shippingPrice : shippingTier.shippingPrice,
+    totalValue,
+  }
+});
+console.log(`Answer of challenge4:` , ansChallenge4(orders, shippingByOrderValueTiers));
