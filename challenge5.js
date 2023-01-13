@@ -15,17 +15,31 @@ const csvData = `id,name,orderValue,orderDate
 //   }
 // ]
 
-const convertCsvToObject = (csvData) => {
-  const rows = csvData.split("\n");
-  const fieldName = rows[0].split(",");
-  const datas = rows.splice(1, rows.length - 1);
-  const result = datas.map((data) => {
-    const fieldValues = data.split(",");
-    return fieldName.map((key, idx) => ({
-      [key]: fieldValues[idx],
-    }));
+// const convertCsvToObject = (csvData) => {
+//   const rows = csvData.split("\n");
+//   const fieldName = rows[0].split(",");
+//   const datas = rows.splice(1, rows.length - 1);
+//   const result = datas.map((data) => {
+//     const fieldValues = data.split(",");
+//     return fieldName.map((key, idx) => ({
+//       [key]: fieldValues[idx],
+//     }));
+//   });
+//   return result;
+// };
+
+// console.log("Q1: ", convertCsvToObject(csvData));
+
+const rows = csvData.split("\n");
+const fieldName = rows[0].split(",");
+const datas = rows.splice(1, rows.length - 1);
+
+const newData = datas.map((r) => {
+  const data2 = r.split(",");
+  const result = fieldName.map((key, idx) => {
+    return { [key]: data2[idx] };
   });
   return result;
-};
+});
 
-console.log("Q1: ", convertCsvToObject(csvData));
+console.log(newData);
