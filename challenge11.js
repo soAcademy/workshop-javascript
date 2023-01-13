@@ -4,10 +4,12 @@
 // [
 //   {
 //     memberId: 1,
+//     tier1TotalOrder: 1000,
 //     rewardTier1: 178
 //   },
 //   {
 //     memberId: 2,
+//     tier1TotalOrder: 2000,
 //     rewardTier1: 200
 //   }
 // ]
@@ -1115,3 +1117,24 @@ const orders = [
     orderValue: 5840,
   },
 ];
+
+// Answer Q1
+
+const rewardsTier1 = members.map((member) => {
+  const teams = members.filter((r) => r.referId === member.memberId).map((r) => r.memberId);
+  console.log(teams);
+  const tier1TotalOrder = orders
+    .filter((order) => teams.includes(order.memberId))
+    .reduce((acc, r) => acc + r.orderValue, 0);
+
+  const tier = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
+  const rewardTier1 = tier1TotalOrder * tier.percentReward;
+  // return rewardTier1
+  return ({
+    ...member,
+    tier1TotalOrder,
+    rewardTier1,
+  })
+});
+
+console.log("Q1: ", (rewardsTier1))
