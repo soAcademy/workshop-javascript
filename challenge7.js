@@ -13,3 +13,4 @@ const findSecondMax = (numbers) =>
 
 const numbers = [1, 3, 7, 4, 9, 11, 6];
 console.log(findSecondMax(numbers)); // Output: 9
+  

@@ -9083,4 +9083,4 @@ const MA = [
 ];
 
 // Quiz: If my starting portfolio have 1000000 THB and invest equally for each stock (25% / 25% / 25% /25%)
-// Please calculate dialy NAV using adjClose
+// Please calculate daily NAV using adjClose
