@@ -128,7 +128,7 @@ const ordersWithOrderValues = orders.map((order) => {
 
 const ordersWithShippingPrices = ordersWithOrderValues.map((order) => {
   const matchedShippingTier = shippingByOrderValueTiers.find(
-    (tier) => order.orderValue < tier.orderValueLimit
+    (tier) => order.orderValue <= tier.orderValueLimit
   );
 
   order.shippingPrice = matchedShippingTier.shippingPrice;
