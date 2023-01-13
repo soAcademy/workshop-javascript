@@ -2395,8 +2395,106 @@ let signal = genSignal(stockPrices, sma, 10);
 // ]
 
 // if signal = 'buy' > buy at adjClose tomorrow
+// const genPnl = (stockPrices, signal, startingValue) => {
+//   let pnl = signal.reduce((acc, e, idx) => {
+//     let result =
+//       e.position === "No Indicator Values"
+//         ? {
+//             // INDICATOR : NONE
+//             value: startingValue,
+//             stockQuantity: 0,
+//           }
+//         : (() => {
+//             const stockPriceT = stockPrices[idx];
+//             const prevValue = acc[idx - 1]?.value;
+//             const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
+//             const prevSignalPosition = signal.at(idx - 1)?.position;
+//             return e.position === "BUY"
+//               ? (() => {
+//                   // INDICATOR : BUY
+//                   const stockQuantity =
+//                     prevSignalPosition === "SELL"
+//                       ? 0
+//                       : prevStockQuant > 0
+//                       ? prevStockQuant
+//                       : prevValue / stockPriceT.adjClose;
+//                   const value =
+//                     prevStockQuant > 0
+//                       ? prevStockQuant * stockPriceT.adjClose
+//                       : prevValue ?? startingValue;
+//                   return {
+//                     value: value,
+//                     stockQuantity: stockQuantity,
+//                   };
+//                 })()
+//               : (() => {
+//                   // INDICATOR : SELL
+//                   const stockQuantity =
+//                     prevSignalPosition === "SELL" ? 0 : prevStockQuant;
+//                   const value =
+//                     prevStockQuant > 0
+//                       ? prevStockQuant * stockPriceT.adjClose
+//                       : prevValue;
+
+//                   return {
+//                     value: value,
+//                     stockQuantity: stockQuantity,
+//                   };
+//                 })();
+//           })();
+//     acc.push({
+//       ...e,
+//       value: Number(result.value.toFixed(2)),
+//       stockQuantity: result.stockQuantity,
+//     });
+//     return acc;
+//   }, []);
+//   return pnl;
+// };
+// let pnl = genPnl(stockPrices, signal, 1000000);
+// // console.log(pnl);
+// console.log("PNL: ", pnl.at(-1).value - 1000000);
+
 const genPnl = (stockPrices, signal, startingValue) => {
-  let pnl = signal.reduce((acc, e, idx) => {
+  const pnl = signal.reduce((acc, e, idx) => {
+    const execute = () => {
+      const stockPriceT = stockPrices[idx];
+      const prevValue = acc[idx - 1]?.value;
+      const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
+      const prevSignalPosition = signal.at(idx - 1)?.position;
+      const buy = () => {
+        // INDICATOR : BUY
+        const stockQuantity =
+          prevSignalPosition === "SELL"
+            ? 0
+            : prevStockQuant > 0
+            ? prevStockQuant
+            : prevValue / stockPriceT.adjClose;
+        const value =
+          prevStockQuant > 0
+            ? prevStockQuant * stockPriceT.adjClose
+            : prevValue ?? startingValue;
+        return {
+          value: value,
+          stockQuantity: stockQuantity,
+        };
+      };
+      const sell = () => {
+        // INDICATOR : SELL
+        const stockQuantity =
+          prevSignalPosition === "SELL" ? 0 : prevStockQuant;
+        const value =
+          prevStockQuant > 0
+            ? prevStockQuant * stockPriceT.adjClose
+            : prevValue;
+
+        return {
+          value: value,
+          stockQuantity: stockQuantity,
+        };
+      };
+      return prevSignalPosition === "BUY" ? buy() : sell();
+    };
     let result =
       e.position === "No Indicator Values"
         ? {
@@ -2404,44 +2502,7 @@ const genPnl = (stockPrices, signal, startingValue) => {
             value: startingValue,
             stockQuantity: 0,
           }
-        : (() => {
-            const stockPriceT = stockPrices[idx];
-            const prevValue = acc[idx - 1]?.value;
-            const prevStockQuant = acc[idx - 1]?.stockQuantity ?? 0;
-            const prevSignalPosition = signal.at(idx - 1)?.position;
-            return e.position === "BUY"
-              ? (() => {
-                  // INDICATOR : BUY
-                  const stockQuantity =
-                    prevSignalPosition === "SELL"
-                      ? 0
-                      : prevStockQuant > 0
-                      ? prevStockQuant
-                      : prevValue / stockPriceT.adjClose;
-                  const value =
-                    prevStockQuant > 0
-                      ? prevStockQuant * stockPriceT.adjClose
-                      : prevValue ?? startingValue;
-                  return {
-                    value: value,
-                    stockQuantity: stockQuantity,
-                  };
-                })()
-              : (() => {
-                  // INDICATOR : SELL
-                  const stockQuantity =
-                    prevSignalPosition === "SELL" ? 0 : prevStockQuant;
-                  const value =
-                    prevStockQuant > 0
-                      ? prevStockQuant * stockPriceT.adjClose
-                      : prevValue;
-
-                  return {
-                    value: value,
-                    stockQuantity: stockQuantity,
-                  };
-                })();
-          })();
+        : execute();
     acc.push({
       ...e,
       value: Number(result.value.toFixed(2)),
@@ -2452,5 +2513,7 @@ const genPnl = (stockPrices, signal, startingValue) => {
   return pnl;
 };
 let pnl = genPnl(stockPrices, signal, 1000000);
-console.log(pnl);
+console.log(pnl.slice(0,20));
+console.log('.\n.\n.');
+console.log(pnl.slice(pnl.length - 20, pnl.length));
 console.log("PNL: ", pnl.at(-1).value - 1000000);
