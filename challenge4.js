@@ -118,18 +118,19 @@ const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
       (acc, r) => acc + r.quantity * r.price,
       0
     );
+    console.log(orderValue);
 
     const findShippingTier = shippingByOrderValueTiers.find(
       (r) => r.orderValueLimit >= orderValue
     );
-    const totalOrderValue = orderValue + findShippingTier.shippingPrice;
+    console.log(findShippingTier);
 
     return {
-      ...order,
+      customer: order.customer,
+      items: order.items,
       orderValue: orderValue,
       shippingPrice: findShippingTier.shippingPrice,
-      totalValue: totalOrderValue,
+      totalValue: orderValue + findShippingTier.shippingPrice,
     };
   });
-
 console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
