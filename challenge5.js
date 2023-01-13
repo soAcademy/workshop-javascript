@@ -40,7 +40,10 @@ const q1 = (csvData) => {
   // console.log(rows);
   const result = datas.map((data) => {
     const fieldData = data.split(",");
-    // console.log(fieldData)
+    // console.log(fieldData[2]);
+    fieldData[2] = parseInt(fieldData[2]);
+    fieldData[0] = parseInt(fieldData[0]);
+    // fieldData[3] = Date(fieldData[3]);
     return fieldName.map((head, value) => ({
       [head]: fieldData[value],
     }));

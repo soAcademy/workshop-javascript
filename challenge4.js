@@ -112,6 +112,27 @@ const orders = [
 //   ...
 // ]
 
+const calculateOrderValue = (shippingByOrderValueTiers, orders) =>
+  orders.map((order) => {
+    const totalOrder = order.items.reduce(
+      (acc, item) => acc + item.quantity * item.price,
+      0
+    );
+    // console.log(orderValue);
+    const shippingTier = shippingByOrderValueTiers.find(
+      (shipCost) => totalOrder <= shipCost.orderValueLimit
+    );
+    // console.log(shippingTier);
+    return {
+      ...order,
+      orderValue: totalOrder,
+      shippingPrice: shippingTier.shippingPrice,
+      totalValue: totalOrder + shippingTier.shippingPrice,
+    };
+  });
+
+console.log(calculateOrderValue(shippingByOrderValueTiers, orders));
+
 // const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
 //   orders.map((order) => {
 //     const orderValue = order.items.reduce(
@@ -131,3 +152,18 @@ const orders = [
 //   });
 
 // console.log("Q1: ", calculateOrderValue(orders, shippingByOrderValueTiers));
+
+// OpenAI
+
+// const orderValuesWithShipping = orders.map(order => {
+//   // Use reduce to calculate the total value of the items in the order
+//   const orderValue = order.items.reduce((acc, item) => acc + (item.quantity * item.price), 0);
+
+//   // Use find to determine the shipping tier for the order
+//   const shippingTier = shippingByOrderValueTiers.find(tier => orderValue <= tier.orderValueLimit);
+
+//   // Concatenate the orderValue and shippingPrice in the order object
+//   return { ...order, orderValue, shippingPrice: shippingTier.shippingPrice };
+// });
+
+// console.log(orderValuesWithShipping);
