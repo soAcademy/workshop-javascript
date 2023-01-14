@@ -1,261 +1,278 @@
 // Quiz: MLM Reward Systems,
 // Calculated reward/rebate for each members
-// Output
+// Q1: Tier 1 Reward
 // [
 //   {
 //     memberId: 1,
-//     reward: 178
+//     tier1TotalOrder: 1000,
+//     rewardTier1: 178
 //   },
 //   {
 //     memberId: 2,
-//     reward: 200
+//     tier1TotalOrder: 2000,
+//     rewardTier1: 200
+//   }
+// ]
+// Q2: Tier 2 Reward
+// [
+//   {
+//     memberId: 1,
+//     rewardTier1: 178,
+//     rewardTier2: 50
+//     totalReward: 228,
+//   },
+//   {
+//     memberId: 2,
+//     rewardTier1: 200
+//     rewardTier2: 30,
+//     totalReward: 230
 //   }
 // ]
 
 const members = [
   {
     memberId: 0,
-    headId: 0,
+    referId: 0,
   },
   {
     memberId: 1,
-    headId: 0,
+    referId: 0,
   },
   {
     memberId: 2,
-    headId: 0,
+    referId: 0,
   },
   {
     memberId: 3,
-    headId: 0,
+    referId: 0,
   },
   {
     memberId: 4,
-    headId: 1,
+    referId: 1,
   },
   {
     memberId: 5,
-    headId: 2,
+    referId: 2,
   },
   {
     memberId: 6,
-    headId: 3,
+    referId: 3,
   },
   {
     memberId: 7,
-    headId: 1,
+    referId: 1,
   },
   {
     memberId: 8,
-    headId: 1,
+    referId: 1,
   },
   {
     memberId: 9,
-    headId: 2,
+    referId: 2,
   },
   {
     memberId: 10,
-    headId: 2,
+    referId: 2,
   },
   {
     memberId: 11,
-    headId: 3,
+    referId: 3,
   },
   {
     memberId: 12,
-    headId: 3,
+    referId: 3,
   },
   {
     memberId: 13,
-    headId: 1,
+    referId: 1,
   },
   {
     memberId: 14,
-    headId: 1,
+    referId: 1,
   },
   {
     memberId: 15,
-    headId: 2,
+    referId: 2,
   },
   {
     memberId: 16,
-    headId: 4,
+    referId: 4,
   },
   {
     memberId: 17,
-    headId: 5,
+    referId: 5,
   },
   {
     memberId: 18,
-    headId: 6,
+    referId: 6,
   },
   {
     memberId: 19,
-    headId: 7,
+    referId: 7,
   },
   {
     memberId: 20,
-    headId: 8,
+    referId: 8,
   },
   {
     memberId: 21,
-    headId: 9,
+    referId: 9,
   },
   {
     memberId: 22,
-    headId: 10,
+    referId: 10,
   },
   {
     memberId: 23,
-    headId: 11,
+    referId: 11,
   },
   {
     memberId: 24,
-    headId: 12,
+    referId: 12,
   },
   {
     memberId: 25,
-    headId: 13,
+    referId: 13,
   },
   {
     memberId: 26,
-    headId: 14,
+    referId: 14,
   },
   {
     memberId: 27,
-    headId: 15,
+    referId: 15,
   },
   {
     memberId: 28,
-    headId: 5,
+    referId: 5,
   },
   {
     memberId: 29,
-    headId: 6,
+    referId: 6,
   },
   {
     memberId: 30,
-    headId: 7,
+    referId: 7,
   },
   {
     memberId: 31,
-    headId: 8,
+    referId: 8,
   },
   {
     memberId: 32,
-    headId: 9,
+    referId: 9,
   },
   {
     memberId: 33,
-    headId: 10,
+    referId: 10,
   },
   {
     memberId: 34,
-    headId: 11,
+    referId: 11,
   },
   {
     memberId: 35,
-    headId: 12,
+    referId: 12,
   },
   {
     memberId: 36,
-    headId: 13,
+    referId: 13,
   },
   {
     memberId: 37,
-    headId: 14,
+    referId: 14,
   },
   {
     memberId: 38,
-    headId: 15,
+    referId: 15,
   },
   {
     memberId: 39,
-    headId: 16,
+    referId: 16,
   },
   {
     memberId: 40,
-    headId: 17,
+    referId: 17,
   },
   {
     memberId: 41,
-    headId: 18,
+    referId: 18,
   },
   {
     memberId: 42,
-    headId: 19,
+    referId: 19,
   },
   {
     memberId: 43,
-    headId: 20,
+    referId: 20,
   },
   {
     memberId: 44,
-    headId: 21,
+    referId: 21,
   },
   {
     memberId: 45,
-    headId: 22,
+    referId: 22,
   },
   {
     memberId: 46,
-    headId: 23,
+    referId: 23,
   },
   {
     memberId: 47,
-    headId: 24,
+    referId: 24,
   },
   {
     memberId: 48,
-    headId: 25,
+    referId: 25,
   },
   {
     memberId: 49,
-    headId: 26,
+    referId: 26,
   },
   {
     memberId: 50,
-    headId: 27,
+    referId: 27,
   },
   {
     memberId: 51,
-    headId: 28,
+    referId: 28,
   },
   {
     memberId: 52,
-    headId: 29,
+    referId: 29,
   },
   {
     memberId: 53,
-    headId: 30,
+    referId: 30,
   },
   {
     memberId: 54,
-    headId: 31,
+    referId: 31,
   },
   {
     memberId: 55,
-    headId: 32,
+    referId: 32,
   },
   {
     memberId: 56,
-    headId: 33,
+    referId: 33,
   },
   {
     memberId: 57,
-    headId: 34,
+    referId: 34,
   },
   {
     memberId: 58,
-    headId: 35,
+    referId: 35,
   },
   {
     memberId: 59,
-    headId: 37,
+    referId: 37,
   },
   {
     memberId: 60,
-    headId: 38,
+    referId: 38,
   },
 ];
 
@@ -1100,3 +1117,37 @@ const orders = [
     orderValue: 5840,
   },
 ];
+
+// Answer
+
+const rewards = members.map((member) => {
+  const tier1Members = members
+    .filter((r) => r.referId === member.memberId)
+    .map((r) => r.memberId);
+  const tier2Members = members
+    .filter((r) => tier1Members.includes(r.referId))
+    .map((r) => r.memberId);
+
+  const tier1TotalOrder = orders
+    .filter((order) => tier1Members.includes(order.memberId))
+    .reduce((acc, r) => acc + r.orderValue, 0);
+
+  const tier2TotalOrder = orders
+    .filter((order) => tier2Members.includes(order.memberId))
+    .reduce((acc, r) => acc + r.orderValue, 0);
+
+  const tier1 = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
+  const tier2 = rewardTier.tier2.find((r) => tier2TotalOrder <= r.saleLimit);
+  const rewardTier1 = tier1TotalOrder * tier1.percentReward;
+  const rewardTier2 = tier2TotalOrder * tier2.percentReward;
+  return {
+    ...member,
+    tier1TotalOrder,
+    tier2TotalOrder,
+    rewardTier1,
+    rewardTier2,
+    totalReward: rewardTier1 + rewardTier2,
+  };
+});
+
+console.log(rewards);
