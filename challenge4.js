@@ -123,22 +123,23 @@ const orders = [
 // ]
 
 const summarizeOrder = (shippingTiers, orders) => {
-  const result = {};
+  const result = [];
   orders.map((e) => {
+    order = {};
     e.items.map((i) => {
       const value = i.quantity * i.price;
       const shippingPrice = shippingTiers.find(
-        (t) => t.orderValueLimit >= result[e.customer]?.orderValue ?? value
+        (t) => t.orderValueLimit >= (order.orderValue ?? 0 + value) ?? value
       )?.shippingPrice;
-      result[e.customer] = {
+      order = {
         ...e,
-        orderValue: (result[e.customer]?.orderValue ?? 0) + value,
+        orderValue: (order.orderValue ?? 0) + value,
         shippingPrice: shippingPrice,
-        totalValue:
-          (result[e.customer]?.orderValue ?? 0) + value + shippingPrice,
+        totalValue: (order.orderValue ?? 0) + value + shippingPrice,
       };
-      return result;
+      return order;
     });
+    result.push(order);
   });
   return Object.values(result);
 };
