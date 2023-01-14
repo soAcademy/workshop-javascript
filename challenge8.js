@@ -2273,20 +2273,28 @@ const stockPrices = [
 // ROC(t, n) = Close(t - 1) / Close(t - n - 1) - 1;
 // SMA(t, n) = sum(Close(t - n - 1) to Close(t - 1)) / n;
 // EMA(t, n, smoothing) = Close(t - 1) * (smoothing) / (1 + n) + EMA(t - 1, n, smoothing) * (1 - smoothing / (1 + n))
-const n = 2;
-let prevEMA = 0;
-const smoothing = 0.5;
 
-const ROC = stockPrices.map((day, i) =>  (day.close / stockPrices[i - n + 1].close) - 1);
-const SMA = stockPrices.map((day, i) => stockPrices1.slice(i - n + 1, i + 1).reduce((sum, curr) => sum + curr.close, 0) / n);
-const EMA = stockPrices.map((day, i) => {
-  prevEMA = (i === 0) ? day.close : day.close * smoothing / (n + 1) + prevEMA * (1 - smoothing / (n + 1));
-  return prevEMA;
-});
+// const n = 2;
+// let prevEMA = 0;
+// const smoothing = 0.5;
 
-console.log('ROC:', ROC);
-console.log('SMA:', SMA);
-console.log('EMA:', EMA);
+// const ROC = stockPrices.map((day, i) => (i < n) ? null : (day.close / stockPrices[i - n].close) - 1);
+// const SMA = stockPrices.map((day, i) => (i < n) ? null : stockPrices.slice(i - n, i).reduce((sum, curr) => sum + curr.close, 0) / n);
+// const EMA = stockPrices.map((day, i) => {
+//   prevEMA = (i === 0) ? day.close : day.close * smoothing + prevEMA * (1 - smoothing);
+//   return prevEMA;
+// });
+
+// const newStockPrices = stockPrices.map((day, i) => {
+//   return {
+//     ...day,
+//     sma: SMA[i],
+//     ema: EMA[i],
+//     roc: ROC[i]
+//   };
+// });
+// console.log(newStockPrices);
+
 // Output
 // [
 //   {
@@ -2324,7 +2332,26 @@ console.log('EMA:', EMA);
 //   }
 // ]
 
+const n = 10;
+let prevEMA = 0;
+const smoothing = 0.5;
+
+const SMA = stockPrices.map((day, i) => (i < n) ? null : stockPrices.slice(i - n, i).reduce((sum, curr) => sum + curr.adjClose, 0) / n);
+
+const signals = stockPrices.map((day, i) => (i < n) ? null : {date: day.date, position: (day.adjClose > SMA[i]) ? "BUY" : "SELL"} );
+console.log(signals);
+
+
 // Q3: Using signal from Q2 to generate PNL. If starting portfolio value is 1000000 THB
+const filteredSignals = signals.filter(signal => signal !== null);
+let portfolioValue = 1000000; // starting portfolio value in THB
+let shares = 0; // shares owned
+
+filteredSignals.forEach(signal => {
+    portfolioValue = signal.position === "BUY" ? 0 : shares * signal.adjClose;
+    shares = signal.position === "BUY" ? portfolioValue / signal.adjClose : 0;
+});
+console.log("PNL: ", portfolioValue - 1000000);
 // [
 //   {
 //     date: "2023-01-11",
