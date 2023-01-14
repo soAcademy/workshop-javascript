@@ -1121,25 +1121,48 @@ const orders = [
 // Answer
 
 const rewards = members.map((member) => {
+  /* first round
+     member : => memberId: 0
+    [first action] : => find my member tier1
+    [second action] : => find my member tier2
+
+    [third action] : => find and sum tier1 order
+    [fourth action] : => find and sum tier2 order
+
+    [fifth action] : => calculate reward
+
+    [sixth action] : => return result
+  */
   const tier1Members = members
     .filter((r) => r.referId === member.memberId)
-    .map((r) => r.memberId);
+    .map((r) => r.memberId)
+    .filter((r) => r !== member.memberId);
+  // console.log("tier1Members::", tier1Members);
+
   const tier2Members = members
     .filter((r) => tier1Members.includes(r.referId))
     .map((r) => r.memberId);
+  // console.log("tier2Members::", tier2Members);
 
   const tier1TotalOrder = orders
     .filter((order) => tier1Members.includes(order.memberId))
     .reduce((acc, r) => acc + r.orderValue, 0);
+  // console.log("tier1TotalOrder::", tier1TotalOrder);
+  //คือการหายอดรวม order tier1
 
   const tier2TotalOrder = orders
     .filter((order) => tier2Members.includes(order.memberId))
     .reduce((acc, r) => acc + r.orderValue, 0);
+  // console.log("tier2TotalOrder::", tier2TotalOrder);
+  //หายอดรวม order tier2
+  // console.log("================================================");
 
   const tier1 = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
   const tier2 = rewardTier.tier2.find((r) => tier2TotalOrder <= r.saleLimit);
+
   const rewardTier1 = tier1TotalOrder * tier1.percentReward;
   const rewardTier2 = tier2TotalOrder * tier2.percentReward;
+
   return {
     ...member,
     tier1TotalOrder,
@@ -1149,5 +1172,4 @@ const rewards = members.map((member) => {
     totalReward: rewardTier1 + rewardTier2,
   };
 });
-
 console.log(rewards);
