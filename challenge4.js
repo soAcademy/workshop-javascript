@@ -72,7 +72,7 @@ const orders = [
     items: [
       {
         product: "Item 1",
-        quantity: 10,
+        quantity: 150,
         price: 30,
       },
       {
@@ -123,28 +123,21 @@ const orders = [
 // ]
 
 const summarizeOrder = (shippingTiers, orders) => {
-  const result = [];
-  orders.map((e) => {
-    let order = {};
-    e.items.map((i) => {
-      const value = i.quantity * i.price;
-      const shippingPrice = shippingTiers.find(
-        (t) => t.orderValueLimit >= (order.orderValue ?? 0 + value) ?? value
-      )?.shippingPrice;
-      order = {
-        ...e,
-        orderValue: (order.orderValue ?? 0) + value,
-        shippingPrice: shippingPrice,
-        totalValue: (order.orderValue ?? 0) + value + shippingPrice,
-      };
-      return order;
-    });
-    result.push(order);
-  });
+  const result = orders.reduce((acc, order, idx) => {
+    let orderValue = order.items.reduce((values, i) => values + (i.price*i.quantity) ,0);
+    const shippingPrice = shippingTiers.find(
+      (t) => t.orderValueLimit >= orderValue
+    )?.shippingPrice;
+    acc[idx] = {
+      ...order,
+      orderValue: orderValue,
+      shippingPrice: shippingPrice,
+      totalValue: orderValue + shippingPrice
+    };
+    return acc
+  },{});
   return Object.values(result);
 };
-// console.log(summarizeOrder(shippingByOrderValueTiers, orders));
-
-order = {}
-console.log(order);
+// summarizeOrder(shippingByOrderValueTiers, orders)
+console.log(summarizeOrder(shippingByOrderValueTiers, orders));
 
