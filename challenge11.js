@@ -1119,35 +1119,61 @@ const orders = [
 ];
 
 // Answer
+const calculateReward = (members, rewardTier, orders) => {
+  let rewardT1 = orders.reduce((acc, order) => {
+    const memberId = members.find(
+      (member) => member.memberId === order.memberId
+    )?.referId;
+    const tier1TotalOrder =
+      (acc[memberId]?.tier1TotalOrder ?? 0) + order.orderValue;
+    const rewardTier1 =
+      rewardTier.tier1.find((i) => i.saleLimit >= tier1TotalOrder)
+        .percentReward * tier1TotalOrder;
+    acc[memberId] = {
+      memberId: memberId,
+      tier1TotalOrder: tier1TotalOrder,
+      rewardTier1: rewardTier1,
+    };
+    return acc;
+  }, {});
+  rewardT1 = Object.values(rewardT1);
+  const rewardT2 = rewardT1.reduce((acc, e) => {
+    const memberId = members.find(
+      (member) => member.memberId === e.memberId
+    )?.referId;
+    const tier2TotalOrder =
+      (acc[memberId]?.tier2TotalOrder ?? 0) + e.tier1TotalOrder;
+    const rewardTier2 =
+      rewardTier.tier2.find((i) => i.saleLimit >= tier2TotalOrder)
+        .percentReward * tier2TotalOrder;
+    const rewardTier1 =
+      rewardT1.find((i) => i.memberId === memberId)?.rewardTier1 ?? 0;
+    const totalReward = rewardTier1 + rewardTier2;
+    acc[memberId] = {
+      memberId: memberId,
+      rewardTier1: rewardTier1,
+      rewardTier2: rewardTier2,
+      tier2TotalOrder: tier2TotalOrder,
+      totalReward: totalReward,
+    };
+    return acc;
+  }, {});
+  const rewardTier2 = Object.values(rewardT2);
+  return (result = rewardTier2.map((e) => ({
+    memberId: e.memberId,
+    rewardTier1: e.rewardTier1,
+    rewardTier2: e.rewardTier2,
+    totalReward: e.totalReward,
+  })));
+};
+// calculateReward(members, rewardTier, orders);
+console.log(calculateReward(members, rewardTier, orders));
 
-const rewards = members.map((member) => {
-  const tier1Members = members
-    .filter((r) => r.referId === member.memberId)
-    .map((r) => r.memberId);
-  const tier2Members = members
-    .filter((r) => tier1Members.includes(r.referId))
-    .map((r) => r.memberId);
-
-  const tier1TotalOrder = orders
-    .filter((order) => tier1Members.includes(order.memberId))
-    .reduce((acc, r) => acc + r.orderValue, 0);
-
-  const tier2TotalOrder = orders
-    .filter((order) => tier2Members.includes(order.memberId))
-    .reduce((acc, r) => acc + r.orderValue, 0);
-
-  const tier1 = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
-  const tier2 = rewardTier.tier2.find((r) => tier2TotalOrder <= r.saleLimit);
-  const rewardTier1 = tier1TotalOrder * tier1.percentReward;
-  const rewardTier2 = tier2TotalOrder * tier2.percentReward;
-  return {
-    ...member,
-    tier1TotalOrder,
-    tier2TotalOrder,
-    rewardTier1,
-    rewardTier2,
-    totalReward: rewardTier1 + rewardTier2,
-  };
-});
-
-console.log(rewards);
+// Test
+// memberId: 15 <- Tier1TotalOrder id38=6960 ,id27= 15300
+// memberId: 14 <- Tier1TotalOrder id37=20590 ,id26= 24070
+// console.log('Test');
+// console.log('tier1TotalOrder: ',6960+15300)
+// console.log('totalReward',(6960+15300)*0.03);
+// console.log('tier1TotalOrder: ',20590+24070);
+// console.log('totalReward',(20590+24070)*0.03);
