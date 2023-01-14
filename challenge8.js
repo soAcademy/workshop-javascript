@@ -2273,6 +2273,20 @@ const stockPrices = [
 // ROC(t, n) = Close(t - 1) / Close(t - n - 1) - 1;
 // SMA(t, n) = sum(Close(t - n - 1) to Close(t - 1)) / n;
 // EMA(t, n, smoothing) = Close(t - 1) * (smoothing) / (1 + n) + EMA(t - 1, n, smoothing) * (1 - smoothing / (1 + n))
+const n = 2;
+let prevEMA = 0;
+const smoothing = 0.5;
+
+const ROC = stockPrices.map((day, i) =>  (day.close / stockPrices[i - n + 1].close) - 1);
+const SMA = stockPrices.map((day, i) => stockPrices1.slice(i - n + 1, i + 1).reduce((sum, curr) => sum + curr.close, 0) / n);
+const EMA = stockPrices.map((day, i) => {
+  prevEMA = (i === 0) ? day.close : day.close * smoothing / (n + 1) + prevEMA * (1 - smoothing / (n + 1));
+  return prevEMA;
+});
+
+console.log('ROC:', ROC);
+console.log('SMA:', SMA);
+console.log('EMA:', EMA);
 // Output
 // [
 //   {
