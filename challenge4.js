@@ -124,7 +124,7 @@ const orders = [
 
 const summarizeOrder = (shippingTiers, orders) => {
   const result = orders.reduce((acc, order, idx) => {
-    let orderValue = order.items.reduce((values, i) => values + (i.price*i.quantity) ,0);
+    const orderValue = order.items.reduce((values, i) => values + (i.price*i.quantity) ,0);
     const shippingPrice = shippingTiers.find(
       (t) => t.orderValueLimit >= orderValue
     )?.shippingPrice;
