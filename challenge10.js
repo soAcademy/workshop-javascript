@@ -9084,3 +9084,39 @@ const MA = [
 
 // Quiz: If my starting portfolio have 1000000 THB and invest equally for each stock (25% / 25% / 25% /25%)
 // Please calculate dialy NAV using adjClose
+
+//NAV = มูลค่าคงเหลือ (NET Asset Value)
+//adjClose = ราคาปิด
+//ไม่มีปันผลเพราะ adjclose = close
+// my port 1,000,000
+//ลงทุน APPL 250,000
+//calculate my port in everday for gain or loss
+//APPL = 250k
+//my port = 750k
+
+const calculateDailyNavUsingAdjustClose = (stockHistory) => {
+  let Nav = 1000000;
+  const wallet = 750000;
+  const stockInvest = 250000; //wallet + stockValue = Nav
+  const adjClose = stockHistory[0].adjClose
+    ? stockHistory[0].adjClose
+    : stockHistory[0].adjclose;
+  const stockAmount = stockInvest / adjClose; //จำนวนหุ้นของวันแรกที่เราลงทุน
+  let stockValue = 0;
+  const output = stockHistory.map((daily) => {
+    const dailyAdjClose = daily.adjClose ? daily.adjClose : daily.adjclose;
+    stockValue = stockAmount * dailyAdjClose;
+    Nav = wallet + stockValue;
+    return {
+      date: daily.date,
+      nav: Nav,
+    };
+  });
+  return output;
+};
+const result = calculateDailyNavUsingAdjustClose(APPL);
+console.log(result[result.length - 1]);
+
+// const arr = [1, 2, 3, 4];
+// const arrIndex = arr.length;
+// console.log("arrIndex", arr[arrIndex]);
