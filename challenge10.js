@@ -9095,17 +9095,16 @@ const MA = [
 //my port = 750k
 
 const calculateDailyNavUsingAdjustClose = (stockHistory) => {
-  let Nav = 1000000;
+  let Nav = 1000000; //wallet + stockValue = Nav
   const wallet = 750000;
-  const stockInvest = 250000; //wallet + stockValue = Nav
+  const stockInvest = 250000;
   const adjClose = stockHistory[0].adjClose
     ? stockHistory[0].adjClose
     : stockHistory[0].adjclose;
   const stockAmount = stockInvest / adjClose; //จำนวนหุ้นของวันแรกที่เราลงทุน
-  let stockValue = 0;
   const output = stockHistory.map((daily) => {
     const dailyAdjClose = daily.adjClose ? daily.adjClose : daily.adjclose;
-    stockValue = stockAmount * dailyAdjClose;
+    const stockValue = stockAmount * dailyAdjClose;
     Nav = wallet + stockValue;
     return {
       date: daily.date,
