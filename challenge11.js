@@ -1177,3 +1177,4 @@ console.log(calculateReward(members, rewardTier, orders));
 // console.log('totalReward',(6960+15300)*0.03);
 // console.log('tier1TotalOrder: ',20590+24070);
 // console.log('totalReward',(20590+24070)*0.03);
+ 
