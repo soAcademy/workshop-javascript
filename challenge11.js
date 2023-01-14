@@ -1159,7 +1159,7 @@ const calculateReward = (members, rewardTier, orders) => {
     return acc;
   }, {});
   const rewardTier2 = Object.values(rewardT2);
-  return (result = rewardTier2.map((e) => ({
+  return (rewardTier2.map((e) => ({
     memberId: e.memberId,
     rewardTier1: e.rewardTier1,
     rewardTier2: e.rewardTier2,
