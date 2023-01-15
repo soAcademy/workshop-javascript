@@ -1122,7 +1122,8 @@ const orders = [
 const calculateReward = (members, rewardTier, orders) => {
   let rewardT1 = orders.reduce((acc, order) => {
     const memberId = members.find(
-      (member) => member.memberId === order.memberId
+      (member) =>
+        member.memberId === order.memberId && member.memberId !== member.referId
     )?.referId;
     const tier1TotalOrder =
       (acc[memberId]?.tier1TotalOrder ?? 0) + order.orderValue;
@@ -1137,9 +1138,10 @@ const calculateReward = (members, rewardTier, orders) => {
     return acc;
   }, {});
   rewardT1 = Object.values(rewardT1);
-  const rewardT2 = rewardT1.reduce((acc, e) => {
+  let rewardT2 = rewardT1.reduce((acc, e) => {
     const memberId = members.find(
-      (member) => member.memberId === e.memberId
+      (member) =>
+        member.memberId === e.memberId && member.memberId !== member.referId
     )?.referId;
     const tier2TotalOrder =
       (acc[memberId]?.tier2TotalOrder ?? 0) + e.tier1TotalOrder;
@@ -1158,23 +1160,18 @@ const calculateReward = (members, rewardTier, orders) => {
     };
     return acc;
   }, {});
-  const rewardTier2 = Object.values(rewardT2);
-  return (rewardTier2.map((e) => ({
-    memberId: e.memberId,
-    rewardTier1: e.rewardTier1,
-    rewardTier2: e.rewardTier2,
-    totalReward: e.totalReward,
-  })));
+  rewardT2 = Object.values(rewardT2);
+  return (result = members.map((e, idx) => {
+    const rewardTier1 = rewardT1.find((i) => i.memberId === e.memberId);
+    const rewardTier2 = rewardT2.find((i) => i.memberId === e.memberId);
+    return {
+      memberId: e.memberId,
+      rewardTier1: rewardTier1?.rewardTier1 ?? 0,
+      rewardTier2: rewardTier2?.rewardTier2 ?? 0,
+      totalReward:
+        (rewardTier1?.rewardTier1 ?? 0) + (rewardTier2?.rewardTier2 ?? 0),
+    };
+  }));
 };
 // calculateReward(members, rewardTier, orders);
 console.log(calculateReward(members, rewardTier, orders));
-
-// Test
-// memberId: 15 <- Tier1TotalOrder id38=6960 ,id27= 15300
-// memberId: 14 <- Tier1TotalOrder id37=20590 ,id26= 24070
-// console.log('Test');
-// console.log('tier1TotalOrder: ',6960+15300)
-// console.log('totalReward',(6960+15300)*0.03);
-// console.log('tier1TotalOrder: ',20590+24070);
-// console.log('totalReward',(20590+24070)*0.03);
- 
