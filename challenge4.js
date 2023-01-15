@@ -132,5 +132,6 @@ const calculateOrderValue = (orders, shippingByOrderValueTiers) =>
   });
 
 console.log(
-JSON.stringify(calculateOrderValue(orders, shippingByOrderValueTiers), null, 4)
+  JSON.stringify(
+    calculateOrderValue(orders, shippingByOrderValueTiers), null, 4)
 );
