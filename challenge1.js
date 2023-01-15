@@ -77,142 +77,156 @@ const orders = [
   },
 ];
 
-// Quiz: 1
-
-const calculateTotalSale = (orders, products) => {
+// Quiz: 1 by myself
+/*const calculateTotalSale = (orders, products) => {
   const totalSale = orders
-    .map((order) => {
-      const items = order.items.map((item) => {
-        const product = products.find(
+    .map((r) => {
+      const itemDetail = r.items.map((item) => {
+        const productDetail = products.find(
           (product) => product.id === item.productId
         );
-        return {
-          ...item,
-          ...product,
-          saleValue: item.quantity * product.price,
-          costValue: item.quantity * product.cost,
-        };
+        const sale = item.quantity * productDetail.price;
+        // console.log(product);
+        // console.log(typeof(sale));
+        return sale;
       });
-      return {
-        id: order.id,
-        customer: order.customer,
-        items,
-        datetime: order.datetime,
-        saleValue: items.reduce((acc, r) => acc + r.saleValue, 0),
-        // costValue: items.reduce((acc, r) => acc + r.costValue, 0),
-      };
+      return itemDetail;
     })
-    .reduce((acc, r) => acc + r.saleValue, 0);
+    .flat()
+    // .reduce((acc, result) => acc + result);
   return totalSale;
 };
-// console.log(JSON.stringify(calculateTotalSale(orders, products)));
-console.log("Total Sale: ", calculateTotalSale(orders, products));
+console.log(`Total sale =`, calculateTotalSale(orders, products));*/
 
-const topSellingProduct = (orders, products) => {
-  const items = orders.map((order) => order.items).flat();
-  const result = products
+
+//Quiz: 2 by myself
+/*const topSellingProduct = (products, orders) => {
+  const orderDetail = orders.map((order) => order.items).flat();
+  // console.log(orderDetail);
+  const productDetail = products
     .map((product) => {
-      const filteredItems = items.filter(
-        (item) => item.productId === product.id
+      const filteredProducts = orderDetail.filter(
+        (f) => f.productId === product.id
       );
-      const saleValue = filteredItems.reduce(
-        (acc, r) => acc + r.quantity * product.price,
+      // console.log(filteredProducts);
+      // return filteredProducts;
+      const saleValue = filteredProducts.reduce(
+        (acc, p) => acc + p.quantity * product.price,
         0
       );
-      const costValue = filteredItems.reduce(
-        (acc, r) => acc + r.quantity * product.cost,
+      const costValues = filteredProducts.reduce(
+        (acc, p) => acc + p.quantity * product.cost,
         0
       );
-      const saleQuantity = filteredItems.reduce(
-        (acc, r) => acc + r.quantity,
+      const profit = saleValue - costValues;
+      const saleQuantity = filteredProducts.reduce(
+        (acc, p) => acc + p.quantity,
         0
       );
+      const remainQuantity = filteredProducts.reduce(
+        (acc, p) => acc + product.quantity - p.quantity,
+        0
+      );
+      // console.log(saleValue);
       return {
         ...product,
         saleValue,
-        costValue,
-        profit: saleValue - costValue,
+        costValues,
+        profit,
         saleQuantity,
-        remainQuantity: product.quantity - saleQuantity,
+        remainQuantity,
       };
     })
+    // console.log(productDetail);
     .sort((a, b) => b.saleValue - a.saleValue);
-  return result;
+  return productDetail;
 };
 
-console.log("Top Selling Product: ", topSellingProduct(orders, products));
+console.log(`Top Selling Product :`, topSellingProduct(products, orders));*/
 
-const topBuyer = (orders, products) => {
-  const customers = [...new Set(orders.map((order) => order.customer))];
-  const result = customers
-    .map((customer) => {
-      const filteredItems = orders
-        .filter((order) => order.customer === customer)
-        .map((r) => r.items)
-        .flat();
-      const groupItems = filteredItems.reduce((acc, r) => {
-        acc[r.productId] = {
-          productId: r.productId,
-          quantity: (acc[r.productId]?.quantity ?? 0) + r.quantity,
-        };
-        return acc;
-      }, {});
-      const items = Object.values(groupItems).map((item) => {
-        const product = products.find(
-          (product) => product.id === item.productId
-        );
+
+// Quiz: 3 (Use code from answer => Study new method)
+/*const topBuyer = (orders, products) => {
+    const customers = [...new Set(orders.map((order) => order.customer))];
+    // console.log(customers) //=> Build structure of required answers by customer names.
+    const result = customers
+      .map((customer) => {
+        const filteredItems = orders
+          .filter((order) => order.customer === customer)
+          .map((r) => r.items)
+          .flat();
+        //console.log(filteredItems) //=> Build object of productId & quantity by separating from customer Array.
+          const groupItems = filteredItems.reduce((acc, r) => {
+          acc[r.productId] = {
+            productId: r.productId,
+            quantity: (acc[r.productId]?.quantity ?? 0) + r.quantity,
+          };
+          // console.log(acc) //=> Calculate total quantity by separating from product.
+          return acc;
+        }, {});
+        // console.log(groupItems); //=> Grouping total quantity by product to be object individually.
+        const items = Object.values(groupItems).map((item) => {
+          const product = products.find(
+            (product) => product.id === item.productId
+          );
+          // console.log(product); //=> Mapping data between product and groupItems by productId.
+          return {
+            ...item, // Data in groupItems.
+            price: product.price,
+            cost: product.cost,
+            saleValue: product.price * item.quantity,
+            costValue: product.cost * item.quantity,
+            profit: (product.price - product.cost) * item.quantity,
+          };
+        });
+  // console.log(items); //=> Show results from return.
         return {
-          ...item,
-          price: product.price,
-          cost: product.cost,
-          saleValue: product.price * item.quantity,
-          costValue: product.cost * item.quantity,
-          profit: (product.price - product.cost) * item.quantity,
-        };
-      });
-
-      return {
-        customer: customer,
-        items,
-        saleValue: items.reduce((acc, r) => acc + r.saleValue, 0),
-        costValue: items.reduce((acc, r) => acc + r.costValue, 0),
-        profit: items.reduce((acc, r) => acc + r.profit, 0),
-      };
-    })
-    .sort((a, b) => b.saleValue - a.saleValue);
-  return result;
-};
-
-console.log("Top Buyer: ", topBuyer(orders, products));
-
-const saleByDate = (orders, products) => {
-  const ordersByDate = orders.reduce((acc, order) => {
-    const date = order.datetime.slice(0, 10);
-    const sale = order.items
-      .map((r) => {
-        const product = products.find((p) => p.id === r.productId);
-        console.log(product);
-        return {
-          ...r,
-          saleValue: r.quantity * product.price,
+          customer: customer, // Data in assigned customer.
+          items,
+          saleValue: items.reduce((acc, r) => acc + r.saleValue, 0), //Refer data from items variable.
+          costValue: items.reduce((acc, r) => acc + r.costValue, 0), //Refer data from items variable.
+          profit: items.reduce((acc, r) => acc + r.profit, 0), //Refer data from items variable.
         };
       })
-      .reduce((acc, r) => acc + r.saleValue, 0);
+      //console.log(result);
+      .sort((a, b) => b.saleValue - a.saleValue);
+    return result;
+  };
+  
+  console.log("Top Buyer: ", topBuyer(orders, products));*/
 
-    acc[date] = {
-      date,
-      saleValue: (acc[date]?.saleValue ?? 0) + sale,
-      quantity:
-        (acc[date]?.saleValue ?? 0) +
-        order.items.reduce((acc, r) => acc + r.quantity, 0),
+
+//Quiz: 4 (Use code from answer => Study new method)
+  const saleByDate = (orders, products) => {
+      const ordersByDate = orders.reduce((acc, order) => { // Create the answer structure on the order object.
+        const date = order.datetime.slice(0, 10);
+        // console.log(date); // Pull data of d/m/y
+        const sale = order.items
+          .map((r) => {
+            const product = products.find((p) => p.id === r.productId);
+            // console.log(product);
+            return {
+              // ...r,
+              saleValue: r.quantity * product.price,
+            };
+          })
+          .reduce((acc, r) => acc + r.saleValue, 0);
+          console.log(sale);
+        acc[date] = { // Create the variable of acc[data] by having property of date, saleValue, quantity.
+          date,
+          saleValue: (acc[date]?.saleValue ?? 0) + sale, // check what value in acc[date] if none, will use "0"
+          quantity: (acc[date]?.quantity ?? 0) + // check what value in acc[date] if none, will use "0"
+          order.items.reduce((acc, r) => acc + r.quantity, 0),
+        };
+        // console.log(acc);
+        return acc;
+      }, {});
+    
+      return Object.values(ordersByDate);
     };
-    return acc;
-  }, {});
-
-  return Object.values(ordersByDate);
-};
-
-console.log("Sale By Date: ", saleByDate(orders, products));
+    
+    console.log("Sale By Date: ", saleByDate(orders, products));
+    
 
 // แจกโจทย์ assignment : ให้โจทย์ e-commerce โดยให้ข้อมูล array สินค้ามีอะไรบ้าง สินค้าเป็นเท่าไหร่ จำนวนที่เหลือเท่าไหร่ input2 ให้รายการคำสั่งซื้อจากลูกค้าจริง โจทย์คือ หายอดรวมรายได้ทั้งหมด / ให้หาว่าสินค้าไหนขายดีสุด / ให้เช็คว่าสินค้าแต่ละรายการคงเหลือเท่าไหร่ / หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย / ให้ทำรายได้แยกออกมาเป็นรายวัน / คำนวนกำไร ต้นทุนรายวัน    integrade ความรู้ week 1 ออกมาเป็นชิ้นงานประเมินผล 1 ชิ้น products.json
 
@@ -220,3 +234,6 @@ console.log("Sale By Date: ", saleByDate(orders, products));
 // 2. topSellingProduct -> {id: Number, name: String, saleValue: Number, costValue: Number, profit: Number, saleQuantity: Number, remainQuantity: Number}[]
 // 3. topBuyer -> {customer: String, saleValue: Number, items: {id: String, name: String, quantity: String}[]}[]
 // 4. saleByDate -> {date: String, saleValue: Number, costValue: Number, profit: Number, saleQuantity: Number}[]
+
+
+
