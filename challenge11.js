@@ -1161,15 +1161,16 @@ const calculateReward = (members, rewardTier, orders) => {
     return acc;
   }, {});
   rewardT2 = Object.values(rewardT2);
-  return (result = members.map((e, idx) => {
-    const rewardTier1 = rewardT1.find((i) => i.memberId === e.memberId);
-    const rewardTier2 = rewardT2.find((i) => i.memberId === e.memberId);
+  return (result = members.map((member) => {
+    const rewardTier1 =
+      rewardT1.find((i) => i.memberId === member.memberId)?.rewardTier1 ?? 0;
+    const rewardTier2 =
+      rewardT2.find((i) => i.memberId === member.memberId)?.rewardTier2 ?? 0;
     return {
-      memberId: e.memberId,
-      rewardTier1: rewardTier1?.rewardTier1 ?? 0,
-      rewardTier2: rewardTier2?.rewardTier2 ?? 0,
-      totalReward:
-        (rewardTier1?.rewardTier1 ?? 0) + (rewardTier2?.rewardTier2 ?? 0),
+      memberId: member.memberId,
+      rewardTier1: rewardTier1,
+      rewardTier2: rewardTier2,
+      totalReward: rewardTier1 + rewardTier2,
     };
   }));
 };
