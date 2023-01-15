@@ -2270,9 +2270,7 @@ const stockPrices = [
 ];
 
 // Q1: calculate Rate Of Change, Simple Moving Average (SMA) and Exponential moving average (EMA) for n period
-// ROC(t, n) = Close(t - 1) / Close(t - n - 1) - 1;
-// SMA(t, n) = sum(Close(t - n - 1) to Close(t - 1)) / n;
-// EMA(t, n, smoothing) = Close(t - 1) * (smoothing) / (1 + n) + EMA(t - 1, n, smoothing) * (1 - smoothing / (1 + n))
+ 
 // Output
 // [
 //   {
@@ -2288,6 +2286,59 @@ const stockPrices = [
 //     roc: 0.015
 //   }
 // ]
+
+
+// //ROC
+// const calculateStock = stockPrices
+// .map(item => ({...item, roc:((item.close/item.open) - 1) * 100}));
+
+//console.log(calculateStock);
+
+const calculateROC = (stockPrices, n) => {
+  const openPrice = stockPrices[n].open;
+  const closePrice = stockPrices[n].close;
+  roc = (((closePrice/openPrice) - 1) * 100);
+  return roc;
+}
+
+//console.log(calculateROC(stockPrices, 2));
+
+//SMA
+const calculateSMA = (stockPrices, n) => {
+  const numberOfObject = stockPrices.slice(0, n);
+  const stock = numberOfObject.reduce((acc, item) => acc + item.close, 0);
+  return stock/n;
+}
+
+//console.log(calculateSMA(stockPrices, 4));
+
+
+//EMA
+const calculateEMA = (stockPrices, a, n) => {
+  //const numberedObject = stockPrices.map((i) => i + 1);
+  const currentValue = stockPrices[n].close;
+  const previousValue = stockPrices[n - 1].close;
+  const ema = (a * currentValue) + ((1 - a) * previousValue);
+  return ema;
+}
+
+//console.log(calculateEMA(stockPrices, 0.5, 2))
+
+
+const completedObject = (stockPrices, a, n) => {
+  return ({
+    stockPrices: stockPrices[n],
+    roc: calculateROC(stockPrices, n),
+    sma: calculateSMA(stockPrices, n),
+    ema: calculateEMA(stockPrices, a, n),
+  });
+}
+
+console.log(JSON.stringify(completedObject(stockPrices, 0.5, 5), null, 2));
+
+
+
+
 
 // Q2: Using SMA(10) for trading strategy. if AdjClose > SMA(10), generate buy signal otherwise generate sell signal.
 //
