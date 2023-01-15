@@ -16,12 +16,18 @@ const csvData = `id,name,orderValue,orderDate
 // ]
 
 const convertCsvToObject = (csvData) => {
-  const rows = csvData.split("\n");
-  const fieldName = rows[0].split(",");
-  const datas = rows.splice(1, rows.length - 1);
+  const rows = csvData.split("\n"); // split the string into an array of rows
+  console.log(rows);
+  const fieldName = rows[0].split(","); //split the first row into an array using the "," delimiter.
+  console.log(fieldName);
+  const datas = rows.splice(1, rows.length - 1); //removes the first row, which is the field name, from the rows array using the splice method.
+  console.log(datas);
   const result = datas.map((data) => {
+    //uses the map method to loop through the remaining rows, and for each row, it splits the row into an array of field values using the "," delimiter.
     const fieldValues = data.split(",");
+    console.log(fieldValues);
     return fieldName.map((key, idx) => ({
+      //maps the field names array to an object by creating a new object for each field name and value pair, and returns the resulting array of objects.
       [key]: fieldValues[idx],
     }));
   });
