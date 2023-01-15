@@ -1118,36 +1118,65 @@ const orders = [
   },
 ];
 
-// Answer
+// Answer T1
 
-const rewards = members.map((member) => {
-  const tier1Members = members
-    .filter((r) => r.referId === member.memberId)
-    .map((r) => r.memberId);
-  const tier2Members = members
-    .filter((r) => tier1Members.includes(r.referId))
-    .map((r) => r.memberId);
+const calculateRewardTier1 = (members, rewardTier, orders) => {
+  const memberDetails = members.map((m) => {
+    const memberOrderValue = orders
+      .filter((order) => order.memberId === m.memberId)
+      .reduce((acc, r) => acc + r.orderValue, 0);
 
-  const tier1TotalOrder = orders
-    .filter((order) => tier1Members.includes(order.memberId))
-    .reduce((acc, r) => acc + r.orderValue, 0);
+    //find tier 1 list and tier 1 value
+    const tier1List = members
+      .filter((n) => n.referId === m.memberId)
+      .map((o) => {
+        return o.memberId;
+      });
 
-  const tier2TotalOrder = orders
-    .filter((order) => tier2Members.includes(order.memberId))
-    .reduce((acc, r) => acc + r.orderValue, 0);
+    const tier1OrderValue = orders
+      .filter((o) => tier1List.includes(o.memberId))
+      .reduce((acc, r) => acc + r.orderValue, 0);
 
-  const tier1 = rewardTier.tier1.find((r) => tier1TotalOrder <= r.saleLimit);
-  const tier2 = rewardTier.tier2.find((r) => tier2TotalOrder <= r.saleLimit);
-  const rewardTier1 = tier1TotalOrder * tier1.percentReward;
-  const rewardTier2 = tier2TotalOrder * tier2.percentReward;
-  return {
-    ...member,
-    tier1TotalOrder,
-    tier2TotalOrder,
-    rewardTier1,
-    rewardTier2,
-    totalReward: rewardTier1 + rewardTier2,
-  };
-});
+    // console.log(tier1OrderValue);
+    //  console.log(tier1Orders)
+    // console.log(memberOrderValues);
 
-console.log(rewards);
+    const tier1RewardPercent = rewardTier.tier1.find(
+      (t) => t.saleLimit >= tier1OrderValue
+    ).percentReward;
+    const tier1Reward = tier1OrderValue * tier1RewardPercent;
+
+    //find tier2 list and value
+    const tier2List = members
+      .filter((n) => tier1List.includes(n.referId))
+      .map((o) => {
+        return o.memberId;
+      });
+    const tier2OrderValue = orders
+      .filter((o) => tier2List.includes(o.memberId))
+      .reduce((acc, r) => acc + r.orderValue, 0);
+
+    const tier2RewardPercent = rewardTier.tier2.find(
+      (t) => t.saleLimit >= tier2OrderValue
+    ).percentReward;
+
+    const tier2Reward = tier2OrderValue * tier2RewardPercent;
+
+    return {
+      ...m,
+      memberOrderValue,
+      tier1List,
+      tier1OrderValue,
+      tier1RewardPercent,
+      tier1Reward,
+      tier2List,
+      tier2RewardPercent,
+      tier2Reward,
+    };
+  });
+
+  return memberDetails;
+};
+console.log(calculateRewardTier1(members, rewardTier, orders));
+
+// calculateRewardTier1(members, rewardTier, orders);

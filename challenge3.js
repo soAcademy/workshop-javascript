@@ -16,23 +16,25 @@ const customers = [
 // console.log("uniqueHobbies",uniqueHobbies);
 const findUniqueHobbies = (customers) => {
   const hobbies = customers
-  .filter(customer => customer.age >= 25 && customer.age <= 30)
-  .map(customer => customer.hobbies)
-  .flat();
+    .filter((customer) => customer.age >= 25 && customer.age <= 30)
+    .map((customer) => customer.hobbies)
+    .flat();
   const uniqueHobbies = [...new Set(hobbies)];
-  return uniqueHobbies
-}
-console.log("find unique hobbies",findUniqueHobbies(customers));
+  return uniqueHobbies;
+};
+console.log("find unique hobbies", findUniqueHobbies(customers));
 
 // Quiz 2: Find customer that interest in swimming
 // ['John', 'Bob']
 const findSwimCustomer = (customers) => {
   const swimCustomer = customers
-  .filter(customer => customer.hobbies.some((hobby)=>  hobby === 'swimming'))
-  .map(customer => customer.name);
-  return swimCustomer
-}
-console.log("find swim customer",findSwimCustomer(customers));
+    .filter((customer) =>
+      customer.hobbies.some((hobby) => hobby === "swimming")
+    )
+    .map((customer) => customer.name);
+  return swimCustomer;
+};
+console.log("find swim customer", findSwimCustomer(customers));
 
 // Quiz 3: Count customers by hobby and by count desc
 // [
@@ -40,46 +42,28 @@ console.log("find swim customer",findSwimCustomer(customers));
 //   {hobby: "swimming",count: 2},
 //   {hobby: "hiking",count: 1},...]
 const countHobbies = (customers) => {
-  const countHobbies = customers
-    .map((customer) => customer.hobbies)
-    .flat()
-    .reduce((acc, hobby) => {
-      if (acc[hobby]) {
-        acc[hobby] = acc[hobby] + 1;
-        return acc;
+  const result = [
+    ...new Set(
+      customers
+        .map((customer) => customer.hobbies)
+        .flat()
+        .map((hobby) => {
+          return { hobby: hobby };
+        })
+    ),
+  ].map((hobby) => {
+    const count = customers.reduce((acc, n) => {
+      if (n.hobbies.includes(hobby.hobby)) {
+        acc += 1;
       }
-      acc[hobby] = 1;
-      return acc;
-    }, {});
-  console.log("countHobbies", countHobbies);
-  // {
-  //   reading: 2,
-  //   hiking: 1,
-  //   swimming: 2,
-  //   cooking: 1,
-  //   dancing: 1,
-  //   traveling: 1,
-  //   cycling: 1,
-  //   painting: 1,
-  //   gardening: 1
-  // }
-  console.log("Object.keys(countHobbies)", Object.keys(countHobbies));
-  const result = Object.keys(countHobbies).map((hobby) => {
-    const count = countHobbies[hobby];
-    console.log(`${hobby} count= ${count}`);
+      return acc
+    }, 0);
+
     return {
-      hobby,
+      ...hobby,
       count,
     };
-  });
-  return result;
-  // after reduce
-  // {
-  //   "reading": 1,
-  //   "hiking": 1
-  //   "dancing": 1
-  //   "reading": 1
-  // }
+  }); // .reduce 
+  console.log("result", result);
 };
-console.log(countHobbies(customers));
-
+countHobbies(customers);
