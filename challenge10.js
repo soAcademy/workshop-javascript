@@ -9123,9 +9123,9 @@ const calNAV = (stocksInPort, allocation, startingNAV) => {
       ...port,
       NAV: NAV,
     };
-    acc.push(port);
+    acc = [...acc, port];
     return acc;
   }, []);
   return result
 };
-console.log(calNAV(stocksInPort, allocation, 1000000))
+console.log(calNAV(stocksInPort, allocation, 1000000).at(-1))
