@@ -2333,3 +2333,134 @@ const stockPrices = [
 //     value: 1013000
 //   }
 // ]
+
+// Q1 Complete
+const findPrice = (stockData, dd, mm, yy, n) => {
+
+  const tellDate = `${dd}-${mm}-${yy}`;
+  const dayFilter = stockData.filter((data) => {
+    const day = new Date(data.date).getDate();
+    return day === dd;
+  });
+  const monthFilter = dayFilter.filter((data) => {
+    const month = new Date(data.date).getMonth() + 1;
+    return month === mm;
+  });
+
+  const yearFilter = monthFilter.filter((data) => {
+    const year = new Date(data.date).getFullYear();
+    return year === yy;
+  });
+  const findclose = yearFilter.map((data) => data.close);
+
+  const priceByDate = findclose;
+  const numberOnly = priceByDate[0];
+  // console.log(numberOnly);
+  // return findclose;
+  const closeData = stockPrices.map((data) => data.close);
+  const searchIndex = closeData.indexOf(numberOnly); //
+  //ได้ idx ของค่า close จากการ input ค่าที่ dd/mm/yyyy
+  // console.log(
+  //   `Close price at ${dd}-${mm}-${yy} = `,numberOnly,"Idx : ",searchIndex
+  // );
+
+  //Find close price by idx - n
+  const findValueByIndex = closeData.find((data, idx) => {
+    return idx === searchIndex - n;
+  });
+  // console.log(
+  //   `Close price by ${dd - n}-${mm}-${yy} = `,findValueByIndex,"Idx : ",searchIndex - n
+  // );
+
+  const roc = (numberOnly / findValueByIndex - 1) * 100;
+  //find SMA(t, n) = sum(Close(t - n - 1) to Close(t - 1)) / n;
+  const closeDataForSMA = closeData
+    .filter((data, idx) => idx >= searchIndex - n && idx <= searchIndex)
+    .reduce((acc, r) => (acc = acc + r));
+  // console.log(closeDataForSMA);
+  const SMAResults = closeDataForSMA / n;
+
+  //find EMA(n) = close*a + SMA(1-a)
+  const smoothing = 2/(n-1);
+  const SMAForEMA = closeData
+    .filter((data, idx) => idx >= searchIndex-n && idx <= searchIndex-1)
+    .reduce((acc, r) => (acc = acc + r));
+  const EMA = closeData[searchIndex]*smoothing + (SMAForEMA/n)*(1-smoothing);
+
+  return [
+    {
+      ...stockData[searchIndex],
+      sma: SMAResults.toFixed(2),
+      ema: EMA.toFixed(2),
+      roc: roc.toFixed(2),
+    },
+  ];
+};
+console.log(JSON.stringify(findPrice(stockPrices, 11, 01, 2023, 10), null, 4));
+
+//Q2 Complete  
+
+const BuyOrSell = (stockData, dd, mm, yy, n) => {
+  const tellDate = `${dd}-${mm}-${yy}`;
+  const dayFilter = stockData.filter((data) => {
+    const day = new Date(data.date).getDate();
+    return day === dd;
+  });
+  const monthFilter = dayFilter.filter((data) => {
+    const month = new Date(data.date).getMonth() + 1;
+    return month === mm;
+  });
+
+  const yearFilter = monthFilter.filter((data) => {
+    const year = new Date(data.date).getFullYear();
+    return year === yy;
+  });
+  //Close value of Input
+  const findclose = yearFilter.map((data) => data.close);
+  // Transform value for finding index
+  const priceByDate = findclose;
+  const numberOnly = priceByDate[0];
+  //All close values
+  const closeData = stockData.map((data) => data.close);
+  //Index of close value input
+  const searchIndex = closeData.indexOf(numberOnly); //
+  // console.log(searchIndex);
+
+  //Calculate SMA(10)
+  //Filter close data for SMA
+  const closeDataForSMA = closeData
+    .filter((data, idx) => idx >= searchIndex - n && idx < searchIndex)
+
+    .reduce((acc, r) => (acc = acc + r));
+  // console.log(closeDataForSMA.toFixed(2));
+  const SMAResults = closeDataForSMA / n;
+  // console.log(`SMA = ${SMAResults.toFixed(2)}`);
+
+  // //AdjClose values from input
+  const AdjClose = yearFilter.map((data) => data.adjClose);
+  //All adjClose values
+  const AdjCloseData = stockData.map((data) => data.adjClose);
+  const searchIndex2 = AdjCloseData.indexOf(AdjClose[0]); //
+  // console.log(`AdjClose =${AdjClose}`);
+  // console.log(`Idex of Adj = ${searchIndex2}`);
+
+  const sell = stockData
+    .filter((r) => r.adjClose <= SMAResults)
+    .map((data) => ({ ...data, position: "SELL" }));
+  // console.log(sell.length);
+  const buy = stockData
+    .filter((r) => r.adjClose > SMAResults)
+    .map((data) => ({ ...data, position: "BUY" }));
+  // console.log(buy.length);
+  const sumArry = [...sell, ...buy];
+
+  const filteredData = sumArry.map((r) => ({
+    date: r.date,
+    position: r.position,
+  }));
+
+  return filteredData.slice(-3);
+};
+
+// // };
+console.log(BuyOrSell(stockPrices, 18, 10, 2022, 12));;
