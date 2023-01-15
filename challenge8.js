@@ -2393,7 +2393,7 @@ let signal = genSignal(stockPrices, calSMA, 10);
 //   }
 // ]
 
-// if signal = 'BUY' > buy on tomorrow at adjClose
+// if signal = 'BUY' > buy on the next day at adjClose
 const genPNL = (stockPrices, signal, startingValue) => {
   const pnl = signal.reduce((acc, e, idx) => {
     const execute = () => {
@@ -2452,7 +2452,7 @@ const genPNL = (stockPrices, signal, startingValue) => {
   return pnl;
 };
 let pnl = genPNL(stockPrices, signal, 1000000);
-console.log(pnl.slice(0, 20));
-console.log(".\n.\n.");
-console.log(pnl.slice(pnl.length - 20, pnl.length));
-console.log("PNL: ", Number((pnl.at(-1).value - 1000000).toFixed(5)));
+console.table(pnl);
+// console.log(".\n.\n.");
+// console.log(pnl.slice(pnl.length - 20, pnl.length));
+// console.log("PNL: ", Number((pnl.at(-1).value - 1000000).toFixed(5)));

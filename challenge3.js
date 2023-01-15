@@ -70,7 +70,7 @@ let hobbiesCounts = hobbies.reduce((acc, e) => {
   return acc;
 }, {});
 hobbiesCounts = Object.values(hobbiesCounts)
-console.log(hobbiesCounts.sort((a,b)=> b.count - a.count));
+console.table(hobbiesCounts.sort((a,b)=> b.count - a.count));
 
 // For explaination
 // const data = ["k1", "k2", "k3", "k1"].reduce((acc, r) => {

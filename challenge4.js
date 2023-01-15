@@ -139,5 +139,5 @@ const summarizeOrder = (shippingTiers, orders) => {
   return Object.values(result);
 };
 // summarizeOrder(shippingByOrderValueTiers, orders)
-console.log(summarizeOrder(shippingByOrderValueTiers, orders));
+console.table(summarizeOrder(shippingByOrderValueTiers, orders));
 

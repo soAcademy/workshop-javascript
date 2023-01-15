@@ -285,5 +285,7 @@ const summarizeOrder = (productsObject = products, ordersObject = orders) => {
   }
   return ordersByProductId;
 };
-console.log(summarizeOrder());
-console.log(products);
+// console.log(summarizeOrder());
+console.table(products);
+
+console.warn('Hello')

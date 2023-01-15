@@ -36,4 +36,4 @@ const calROC = (prices, n) => {
         };
   });
 };
-console.log(calROC(stockPrices, 2));
+console.table(calROC(stockPrices, 2));

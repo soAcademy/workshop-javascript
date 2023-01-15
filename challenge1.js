@@ -89,7 +89,7 @@ const calTotalSale = (orders, products) => {
   );
   return total;
 };
-console.log(calTotalSale(orders, products));
+console.table(calTotalSale(orders, products));
 
 // Find Best Seller Product
 const topSellingProduct = (orders, products) => {
@@ -126,7 +126,7 @@ const topSellingProduct = (orders, products) => {
   let sortedProductBySale = result.sort((a, b) => b.saleValue - a.saleValue)[0];
   return sortedProductBySale;
 };
-console.log(topSellingProduct(orders, products));
+console.table(topSellingProduct(orders, products));
 
 // Find Top Buyer
 //   customer: String,
@@ -169,7 +169,7 @@ const topBuyer = (orders, products) => {
   result.sort((a, b) => b.saleValue - a.saleValue);
   return result[0];
 };
-console.log(topBuyer(orders, products));
+console.table(topBuyer(orders, products));
 
 // Summarize sale by date
 // {
@@ -207,4 +207,4 @@ const saleByDate = (orders, products) => {
   return saleByDate;
 };
 
-console.log(saleByDate(orders, products));
+console.table(saleByDate(orders, products));

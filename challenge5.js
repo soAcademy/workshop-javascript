@@ -45,4 +45,4 @@ const csvToObject = (csvData) => {
 //   });
 //   return result;
 // };
-console.log(csvToObject(csvData));
+console.table(csvToObject(csvData));

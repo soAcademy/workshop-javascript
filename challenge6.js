@@ -11,4 +11,4 @@ const getUrl = (socialUrl) => {
   return Object.values(socialUrl)
 }
 
-console.log(getUrl(socialUrl));
+console.table(getUrl(socialUrl));

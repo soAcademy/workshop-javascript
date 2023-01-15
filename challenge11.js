@@ -1175,4 +1175,4 @@ const calculateReward = (members, rewardTier, orders) => {
   }));
 };
 // calculateReward(members, rewardTier, orders);
-console.log(calculateReward(members, rewardTier, orders));
+console.table(calculateReward(members, rewardTier, orders));
