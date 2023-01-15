@@ -113,6 +113,7 @@ const orders = [
 //   ...
 // ]
 
+// Following the answer and study itself
 const ansChallenge4 = (orders, shippingByOrderValueTiers) =>
 orders.map((order) => {
   const orderValue = order.items.reduce((acc,r) => acc + r.quantity * r.price, 0);
@@ -120,6 +121,7 @@ orders.map((order) => {
   const totalValue = orderValue + shippingTier.shippingPrice;
   // console.log(orderValue);
   // console.log(shippingTier);
+  // console.log(shippingTier.shippingPrice)
   // console.log(totalValue);
   // console.log(order)
   return{
@@ -127,6 +129,8 @@ orders.map((order) => {
     orderValue,
     shippingPrice : shippingTier.shippingPrice,
     totalValue,
-  }
+  };
 });
-console.log(`Answer of challenge4:` , ansChallenge4(orders, shippingByOrderValueTiers));
+
+ console.log(`Answer of Challenge 4 :` ,ansChallenge4 (orders, shippingByOrderValueTiers))
+
