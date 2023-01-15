@@ -1,15 +1,20 @@
 // Calculate fibbonacci using reduce
+const fibbonacciSum = (n) => {
+  let fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib.reduce((acc, r) => acc + r, 0);
+};
 
-const fib = (n) =>
-  [...Array(n).keys()].reduce(
-    (acc, r) => {
-      const vt = acc.v1;
-      acc.v1 = acc.v1 + acc.v0;
-      acc.v0 = vt;
-      return acc;
-    },
-    { v0: 0, v1: 1 }
-  ).v1;
+console.log(fibbonacciSum(9));
 
-// 13
-console.log(fib(6));
+const fibbonacciArray = (n) => {
+  let fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib;
+};
+
+console.log(fibbonacciArray(9));
