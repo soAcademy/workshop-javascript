@@ -129,41 +129,53 @@ const products = [
 // 3. topBuyer -> {customer: String, saleValue: Number, items: {id: String, name: String, quantity: String}[]}[]
 console.log("\nChallange1.3 หาว่าลูกค้าคนไหนซื้อมากหรือซื้อน้อย");
 const resultNo3 = () => {
-  
-  const customer = orders.map(order => order.customer);
+  const customer = orders.map((order) => order.customer);
   const uniqueCus = [...new Set(customer)];
   // console.log(uniqueCus);
-  uniqueCus.map(user => {
-    console.log(user);
+  const result = uniqueCus.map((user) => {
+    // console.log(user);
     const eachOrder = orders.reduce((acc, r) => {
       // console.log(r);
       // console.log(r.customer === user ? r.items : '');
       return r.customer === user ? [...acc, r.items] : acc;
-    },[])
-    console.log(eachOrder.flat());
+    }, []);
+    // console.log(eachOrder.flat());
+    const itemsFlat = eachOrder.flat();
+    const uniqItems = itemsFlat.map((item) => {
+      // console.log(item);
+      return item.productId;
+    });
+    const reUniqItems = [...new Set(uniqItems)];
+    // console.log(reUniqItems);
+
+    const alignItems = reUniqItems.map((uItem) => {
+      const countQuantity = itemsFlat.reduce((acc, r) => {
+        return acc + (r.productId === uItem ? r.quantity : 0);
+      }, 0);
+      const prodNameIdx = products.findIndex((p) => p.id === uItem);
+      // console.log(prodNameIdx);
+      return {
+        id: uItem,
+        name: products[prodNameIdx].name,
+        quantity: countQuantity,
+      };
+    });
+
+    // console.log(alignItems);
+    const saleValue = alignItems.reduce((acc, r) => {
+      return acc + products[products.findIndex((p) => p.id === r.id)].price * r.quantity;
+    }, 0);
+
+    return {
+      customer: user,
+      saleValue: saleValue,
+      items: [...alignItems],
+    };
   });
-
-
-  // const newOrders = orders.map((order) => {
-  //   const valueByCustomer = order.items
-  //     .map((item) => {
-  //       const filterProduct = Object.values(products).filter(
-  //         (r) => r.id === item.productId
-  //       );
-  //       // console.log(filterProduct);
-  //       return filterProduct[0].price * item.quantity;
-  //     })
-  //     .reduce((acc, r) => acc + r, 0);
-  //   // console.log(valueByCustomer);
-  //   return {
-  //     id: order.id,
-  //     customer: order.customer,
-  //     saleValue: valueByCustomer
-  //   };
-  // });
-  // console.log(newOrders);
+  return result.sort((a, b) => b.saleValue - a.saleValue);
+  // console.log(result);
 };
-resultNo3();
+console.log(JSON.stringify(resultNo3(), null, 2));
 ///////////////////////////////////////////////////////////////
 
 //4.ให้ทำรายได้แยกออกมาเป็นรายวัน
