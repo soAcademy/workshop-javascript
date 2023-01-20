@@ -5,7 +5,7 @@ const APPL = [
     high: 175.179993,
     low: 170.820007,
     close: 175.080002,
-    adjclose: 174.069733,
+    adjClose: 174.069733,
     volume: 76138300,
   },
   {
@@ -14,7 +14,7 @@ const APPL = [
     high: 177.179993,
     low: 174.820007,
     close: 175.529999,
-    adjclose: 174.517136,
+    adjClose: 174.517136,
     volume: 74805200,
   },
   {
@@ -23,7 +23,7 @@ const APPL = [
     high: 176.619995,
     low: 171.789993,
     close: 172.190002,
-    adjclose: 171.196426,
+    adjClose: 171.196426,
     volume: 84505800,
   },
   {
@@ -32,7 +32,7 @@ const APPL = [
     high: 173.779999,
     low: 171.089996,
     close: 173.070007,
-    adjclose: 172.07135,
+    adjClose: 172.07135,
     volume: 80440800,
   },
   {
@@ -41,7 +41,7 @@ const APPL = [
     high: 172.539993,
     low: 169.410004,
     close: 169.800003,
-    adjclose: 168.820206,
+    adjClose: 168.820206,
     volume: 90956700,
   },
   {
@@ -50,7 +50,7 @@ const APPL = [
     high: 171.080002,
     low: 165.940002,
     close: 166.229996,
-    adjclose: 165.270798,
+    adjClose: 165.270798,
     volume: 94815000,
   },
   {
@@ -59,7 +59,7 @@ const APPL = [
     high: 169.679993,
     low: 164.179993,
     close: 164.509995,
-    adjclose: 163.560715,
+    adjClose: 163.560715,
     volume: 91420500,
   },
   {
@@ -68,7 +68,7 @@ const APPL = [
     high: 166.330002,
     low: 162.300003,
     close: 162.410004,
-    adjclose: 161.47287,
+    adjClose: 161.47287,
     volume: 122848900,
   },
   {
@@ -77,7 +77,7 @@ const APPL = [
     high: 162.300003,
     low: 154.699997,
     close: 161.619995,
-    adjclose: 160.687378,
+    adjClose: 160.687378,
     volume: 162294600,
   },
   {
@@ -86,7 +86,7 @@ const APPL = [
     high: 162.759995,
     low: 157.020004,
     close: 159.779999,
-    adjclose: 158.858017,
+    adjClose: 158.858017,
     volume: 115798400,
   },
   {
@@ -95,7 +95,7 @@ const APPL = [
     high: 164.389999,
     low: 157.820007,
     close: 159.690002,
-    adjclose: 158.768539,
+    adjClose: 158.768539,
     volume: 108275300,
   },
   {
@@ -104,7 +104,7 @@ const APPL = [
     high: 163.839996,
     low: 158.279999,
     close: 159.220001,
-    adjclose: 158.301254,
+    adjClose: 158.301254,
     volume: 121954600,
   },
   {
@@ -113,7 +113,7 @@ const APPL = [
     high: 170.350006,
     low: 162.800003,
     close: 170.330002,
-    adjclose: 169.347153,
+    adjClose: 169.347153,
     volume: 179935700,
   },
   {
@@ -122,7 +122,7 @@ const APPL = [
     high: 175,
     low: 169.509995,
     close: 174.779999,
-    adjclose: 173.771484,
+    adjClose: 173.771484,
     volume: 115541600,
   },
   {
@@ -131,7 +131,7 @@ const APPL = [
     high: 174.839996,
     low: 172.309998,
     close: 174.610001,
-    adjclose: 173.602448,
+    adjClose: 173.602448,
     volume: 86213900,
   },
   {
@@ -140,7 +140,7 @@ const APPL = [
     high: 175.880005,
     low: 173.330002,
     close: 175.839996,
-    adjclose: 174.825348,
+    adjClose: 174.825348,
     volume: 84914300,
   },
   {
@@ -149,7 +149,7 @@ const APPL = [
     high: 176.240005,
     low: 172.119995,
     close: 172.899994,
-    adjclose: 171.902313,
+    adjClose: 171.902313,
     volume: 89418100,
   },
   {
@@ -158,7 +158,7 @@ const APPL = [
     high: 174.100006,
     low: 170.679993,
     close: 172.389999,
-    adjclose: 171.613632,
+    adjClose: 171.613632,
     volume: 82465400,
   },
   {
@@ -167,7 +167,7 @@ const APPL = [
     high: 173.949997,
     low: 170.949997,
     close: 171.660004,
-    adjclose: 170.886917,
+    adjClose: 170.886917,
     volume: 77251200,
   },
   {
@@ -176,7 +176,7 @@ const APPL = [
     high: 175.350006,
     low: 171.429993,
     close: 174.830002,
-    adjclose: 174.042633,
+    adjClose: 174.042633,
     volume: 74829200,
   },
   {
@@ -185,7 +185,7 @@ const APPL = [
     high: 176.649994,
     low: 174.899994,
     close: 176.279999,
-    adjclose: 175.486099,
+    adjClose: 175.486099,
     volume: 71285000,
   },
   {
@@ -194,7 +194,7 @@ const APPL = [
     high: 175.479996,
     low: 171.550003,
     close: 172.119995,
-    adjclose: 171.344833,
+    adjClose: 171.344833,
     volume: 90865900,
   },
   {
@@ -203,7 +203,7 @@ const APPL = [
     high: 173.080002,
     low: 168.039993,
     close: 168.639999,
-    adjclose: 167.880524,
+    adjClose: 167.880524,
     volume: 98670700,
   },
   {
@@ -212,7 +212,7 @@ const APPL = [
     high: 169.580002,
     low: 166.559998,
     close: 168.880005,
-    adjclose: 168.119446,
+    adjClose: 168.119446,
     volume: 86185500,
   },
   {
@@ -221,7 +221,7 @@ const APPL = [
     high: 172.949997,
     low: 170.25,
     close: 172.789993,
-    adjclose: 172.01181,
+    adjClose: 172.01181,
     volume: 62527400,
   },
   {
@@ -230,7 +230,7 @@ const APPL = [
     high: 173.339996,
     low: 170.050003,
     close: 172.550003,
-    adjclose: 171.772903,
+    adjClose: 171.772903,
     volume: 61177400,
   },
   {
@@ -239,7 +239,7 @@ const APPL = [
     high: 171.910004,
     low: 168.470001,
     close: 168.880005,
-    adjclose: 168.119446,
+    adjClose: 168.119446,
     volume: 69589300,
   },
   {
@@ -248,7 +248,7 @@ const APPL = [
     high: 170.539993,
     low: 166.190002,
     close: 167.300003,
-    adjclose: 166.546539,
+    adjClose: 166.546539,
     volume: 82772700,
   },
   {
@@ -257,7 +257,7 @@ const APPL = [
     high: 166.690002,
     low: 162.149994,
     close: 164.320007,
-    adjclose: 163.579971,
+    adjClose: 163.579971,
     volume: 91162800,
   },
   {
@@ -266,7 +266,7 @@ const APPL = [
     high: 166.149994,
     low: 159.75,
     close: 160.070007,
-    adjclose: 159.349121,
+    adjClose: 159.349121,
     volume: 90009200,
   },
   {
@@ -275,7 +275,7 @@ const APPL = [
     high: 162.850006,
     low: 152,
     close: 162.740005,
-    adjclose: 162.00708,
+    adjClose: 162.00708,
     volume: 141147500,
   },
   {
@@ -284,7 +284,7 @@ const APPL = [
     high: 165.119995,
     low: 160.869995,
     close: 164.850006,
-    adjclose: 164.10759,
+    adjClose: 164.10759,
     volume: 91974200,
   },
   {
@@ -293,7 +293,7 @@ const APPL = [
     high: 165.419998,
     low: 162.429993,
     close: 165.119995,
-    adjclose: 164.376373,
+    adjClose: 164.376373,
     volume: 95056600,
   },
   {
@@ -302,7 +302,7 @@ const APPL = [
     high: 166.600006,
     low: 161.970001,
     close: 163.199997,
-    adjclose: 162.465012,
+    adjClose: 162.465012,
     volume: 83474400,
   },
   {
@@ -311,7 +311,7 @@ const APPL = [
     high: 167.360001,
     low: 162.949997,
     close: 166.559998,
-    adjclose: 165.809875,
+    adjClose: 165.809875,
     volume: 79724800,
   },
   {
@@ -320,7 +320,7 @@ const APPL = [
     high: 168.910004,
     low: 165.550003,
     close: 166.229996,
-    adjclose: 165.481369,
+    adjClose: 165.481369,
     volume: 76678400,
   },
   {
@@ -329,7 +329,7 @@ const APPL = [
     high: 165.550003,
     low: 162.100006,
     close: 163.169998,
-    adjclose: 162.43515,
+    adjClose: 162.43515,
     volume: 83737200,
   },
   {
@@ -338,7 +338,7 @@ const APPL = [
     high: 165.020004,
     low: 159.039993,
     close: 159.300003,
-    adjclose: 158.582581,
+    adjClose: 158.582581,
     volume: 96418800,
   },
   {
@@ -347,7 +347,7 @@ const APPL = [
     high: 162.880005,
     low: 155.800003,
     close: 157.440002,
-    adjclose: 156.730957,
+    adjClose: 156.730957,
     volume: 131148300,
   },
   {
@@ -356,7 +356,7 @@ const APPL = [
     high: 163.410004,
     low: 159.410004,
     close: 162.949997,
-    adjclose: 162.216141,
+    adjClose: 162.216141,
     volume: 91454900,
   },
   {
@@ -365,7 +365,7 @@ const APPL = [
     high: 160.389999,
     low: 155.979996,
     close: 158.520004,
-    adjclose: 157.806107,
+    adjClose: 157.806107,
     volume: 105342000,
   },
   {
@@ -374,7 +374,7 @@ const APPL = [
     high: 159.279999,
     low: 154.5,
     close: 154.729996,
-    adjclose: 154.033157,
+    adjClose: 154.033157,
     volume: 96970100,
   },
   {
@@ -383,7 +383,7 @@ const APPL = [
     high: 154.119995,
     low: 150.100006,
     close: 150.619995,
-    adjclose: 149.941666,
+    adjClose: 149.941666,
     volume: 108732100,
   },
   {
@@ -392,7 +392,7 @@ const APPL = [
     high: 155.570007,
     low: 150.380005,
     close: 155.089996,
-    adjclose: 154.391541,
+    adjClose: 154.391541,
     volume: 92964300,
   },
   {
@@ -401,7 +401,7 @@ const APPL = [
     high: 160,
     low: 154.460007,
     close: 159.589996,
-    adjclose: 158.871262,
+    adjClose: 158.871262,
     volume: 102300200,
   },
   {
@@ -410,7 +410,7 @@ const APPL = [
     high: 161,
     low: 157.630005,
     close: 160.619995,
-    adjclose: 159.896637,
+    adjClose: 159.896637,
     volume: 75615400,
   },
   {
@@ -419,7 +419,7 @@ const APPL = [
     high: 164.479996,
     low: 159.759995,
     close: 163.979996,
-    adjclose: 163.241501,
+    adjClose: 163.241501,
     volume: 123511700,
   },
   {
@@ -428,7 +428,7 @@ const APPL = [
     high: 166.350006,
     low: 163.009995,
     close: 165.380005,
-    adjclose: 164.635193,
+    adjClose: 164.635193,
     volume: 95811400,
   },
   {
@@ -437,7 +437,7 @@ const APPL = [
     high: 169.419998,
     low: 164.910004,
     close: 168.820007,
-    adjclose: 168.059723,
+    adjClose: 168.059723,
     volume: 81532000,
   },
   {
@@ -446,7 +446,7 @@ const APPL = [
     high: 172.639999,
     low: 167.649994,
     close: 170.210007,
-    adjclose: 169.443451,
+    adjClose: 169.443451,
     volume: 98062700,
   },
   {
@@ -455,7 +455,7 @@ const APPL = [
     high: 174.139999,
     low: 170.210007,
     close: 174.070007,
-    adjclose: 173.286057,
+    adjClose: 173.286057,
     volume: 90131400,
   },
   {
@@ -464,7 +464,7 @@ const APPL = [
     high: 175.279999,
     low: 172.75,
     close: 174.720001,
-    adjclose: 173.933136,
+    adjClose: 173.933136,
     volume: 80546200,
   },
   {
@@ -473,7 +473,7 @@ const APPL = [
     high: 175.729996,
     low: 172,
     close: 175.600006,
-    adjclose: 174.809189,
+    adjClose: 174.809189,
     volume: 90371900,
   },
   {
@@ -482,7 +482,7 @@ const APPL = [
     high: 179.009995,
     low: 176.339996,
     close: 178.960007,
-    adjclose: 178.154037,
+    adjClose: 178.154037,
     volume: 100589400,
   },
   {
@@ -491,7 +491,7 @@ const APPL = [
     high: 179.610001,
     low: 176.699997,
     close: 177.770004,
-    adjclose: 176.969406,
+    adjClose: 176.969406,
     volume: 92633200,
   },
   {
@@ -500,7 +500,7 @@ const APPL = [
     high: 178.029999,
     low: 174.399994,
     close: 174.610001,
-    adjclose: 173.823639,
+    adjClose: 173.823639,
     volume: 103049300,
   },
   {
@@ -509,7 +509,7 @@ const APPL = [
     high: 174.880005,
     low: 171.940002,
     close: 174.309998,
-    adjclose: 173.524963,
+    adjClose: 173.524963,
     volume: 78751300,
   },
   {
@@ -518,7 +518,7 @@ const APPL = [
     high: 178.490005,
     low: 174.440002,
     close: 178.440002,
-    adjclose: 177.636383,
+    adjClose: 177.636383,
     volume: 76468400,
   },
   {
@@ -527,7 +527,7 @@ const APPL = [
     high: 178.300003,
     low: 174.419998,
     close: 175.059998,
-    adjclose: 174.271591,
+    adjClose: 174.271591,
     volume: 73401800,
   },
   {
@@ -536,7 +536,7 @@ const APPL = [
     high: 173.630005,
     low: 170.130005,
     close: 171.830002,
-    adjclose: 171.056152,
+    adjClose: 171.056152,
     volume: 89058800,
   },
   {
@@ -545,7 +545,7 @@ const APPL = [
     high: 173.360001,
     low: 169.850006,
     close: 172.139999,
-    adjclose: 171.364746,
+    adjClose: 171.364746,
     volume: 77594700,
   },
   {
@@ -554,7 +554,7 @@ const APPL = [
     high: 171.779999,
     low: 169.199997,
     close: 170.089996,
-    adjclose: 169.32399,
+    adjClose: 169.32399,
     volume: 76575500,
   },
   {
@@ -563,7 +563,7 @@ const APPL = [
     high: 169.029999,
     low: 165.5,
     close: 165.75,
-    adjclose: 165.003525,
+    adjClose: 165.003525,
     volume: 72246700,
   },
   {
@@ -572,7 +572,7 @@ const APPL = [
     high: 169.869995,
     low: 166.639999,
     close: 167.660004,
-    adjclose: 166.904938,
+    adjClose: 166.904938,
     volume: 79265200,
   },
   {
@@ -581,7 +581,7 @@ const APPL = [
     high: 171.039993,
     low: 166.770004,
     close: 170.399994,
-    adjclose: 169.632584,
+    adjClose: 169.632584,
     volume: 70618900,
   },
   {
@@ -590,7 +590,7 @@ const APPL = [
     high: 171.270004,
     low: 165.039993,
     close: 165.289993,
-    adjclose: 164.545593,
+    adjClose: 164.545593,
     volume: 75329400,
   },
   {
@@ -599,7 +599,7 @@ const APPL = [
     high: 166.600006,
     low: 163.570007,
     close: 165.070007,
-    adjclose: 164.326599,
+    adjClose: 164.326599,
     volume: 69023900,
   },
   {
@@ -608,7 +608,7 @@ const APPL = [
     high: 167.820007,
     low: 163.910004,
     close: 167.399994,
-    adjclose: 166.646088,
+    adjClose: 166.646088,
     volume: 67723800,
   },
   {
@@ -617,7 +617,7 @@ const APPL = [
     high: 168.880005,
     low: 166.100006,
     close: 167.229996,
-    adjclose: 166.476868,
+    adjClose: 166.476868,
     volume: 67929800,
   },
   {
@@ -626,7 +626,7 @@ const APPL = [
     high: 171.529999,
     low: 165.910004,
     close: 166.419998,
-    adjclose: 165.670517,
+    adjClose: 165.670517,
     volume: 87227800,
   },
   {
@@ -635,7 +635,7 @@ const APPL = [
     high: 167.869995,
     low: 161.5,
     close: 161.789993,
-    adjclose: 161.06134,
+    adjClose: 161.06134,
     volume: 84882400,
   },
   {
@@ -644,7 +644,7 @@ const APPL = [
     high: 163.169998,
     low: 158.460007,
     close: 162.880005,
-    adjclose: 162.146454,
+    adjClose: 162.146454,
     volume: 96046400,
   },
   {
@@ -653,7 +653,7 @@ const APPL = [
     high: 162.339996,
     low: 156.720001,
     close: 156.800003,
-    adjclose: 156.093842,
+    adjClose: 156.093842,
     volume: 95623200,
   },
   {
@@ -662,7 +662,7 @@ const APPL = [
     high: 159.789993,
     low: 155.380005,
     close: 156.570007,
-    adjclose: 155.864883,
+    adjClose: 155.864883,
     volume: 88063200,
   },
   {
@@ -671,7 +671,7 @@ const APPL = [
     high: 164.520004,
     low: 158.929993,
     close: 163.639999,
-    adjclose: 162.90303,
+    adjClose: 162.90303,
     volume: 130216800,
   },
   {
@@ -680,7 +680,7 @@ const APPL = [
     high: 166.199997,
     low: 157.25,
     close: 157.649994,
-    adjclose: 156.940002,
+    adjClose: 156.940002,
     volume: 131747600,
   },
   {
@@ -689,7 +689,7 @@ const APPL = [
     high: 158.229996,
     low: 153.270004,
     close: 157.960007,
-    adjclose: 157.248627,
+    adjClose: 157.248627,
     volume: 123055300,
   },
   {
@@ -698,7 +698,7 @@ const APPL = [
     high: 160.710007,
     low: 156.320007,
     close: 159.479996,
-    adjclose: 158.761765,
+    adjClose: 158.761765,
     volume: 88966500,
   },
   {
@@ -707,7 +707,7 @@ const APPL = [
     high: 166.479996,
     low: 159.259995,
     close: 166.020004,
-    adjclose: 165.272324,
+    adjClose: 165.272324,
     volume: 108256500,
   },
   {
@@ -716,7 +716,7 @@ const APPL = [
     high: 164.080002,
     low: 154.949997,
     close: 156.770004,
-    adjclose: 156.063995,
+    adjClose: 156.063995,
     volume: 130525300,
   },
   {
@@ -725,7 +725,7 @@ const APPL = [
     high: 159.440002,
     low: 154.179993,
     close: 157.279999,
-    adjclose: 156.801712,
+    adjClose: 156.801712,
     volume: 116124600,
   },
   {
@@ -734,7 +734,7 @@ const APPL = [
     high: 155.830002,
     low: 151.490005,
     close: 152.059998,
-    adjclose: 151.597595,
+    adjClose: 151.597595,
     volume: 131577900,
   },
   {
@@ -743,7 +743,7 @@ const APPL = [
     high: 156.740005,
     low: 152.929993,
     close: 154.509995,
-    adjclose: 154.040131,
+    adjClose: 154.040131,
     volume: 115366700,
   },
   {
@@ -752,7 +752,7 @@ const APPL = [
     high: 155.449997,
     low: 145.809998,
     close: 146.5,
-    adjclose: 146.054504,
+    adjClose: 146.054504,
     volume: 142689800,
   },
   {
@@ -761,7 +761,7 @@ const APPL = [
     high: 146.199997,
     low: 138.800003,
     close: 142.559998,
-    adjclose: 142.12648,
+    adjClose: 142.12648,
     volume: 182602000,
   },
   {
@@ -770,7 +770,7 @@ const APPL = [
     high: 148.100006,
     low: 143.110001,
     close: 147.110001,
-    adjclose: 146.662659,
+    adjClose: 146.662659,
     volume: 113990900,
   },
   {
@@ -779,7 +779,7 @@ const APPL = [
     high: 147.520004,
     low: 144.179993,
     close: 145.539993,
-    adjclose: 145.097427,
+    adjClose: 145.097427,
     volume: 86643800,
   },
   {
@@ -788,7 +788,7 @@ const APPL = [
     high: 149.770004,
     low: 146.679993,
     close: 149.240005,
-    adjclose: 148.786179,
+    adjClose: 148.786179,
     volume: 78336300,
   },
   {
@@ -797,7 +797,7 @@ const APPL = [
     high: 147.360001,
     low: 139.899994,
     close: 140.820007,
-    adjclose: 140.391785,
+    adjClose: 140.391785,
     volume: 109742900,
   },
   {
@@ -806,7 +806,7 @@ const APPL = [
     high: 141.660004,
     low: 136.600006,
     close: 137.350006,
-    adjclose: 136.932327,
+    adjClose: 136.932327,
     volume: 136095600,
   },
   {
@@ -815,7 +815,7 @@ const APPL = [
     high: 140.699997,
     low: 132.610001,
     close: 137.589996,
-    adjclose: 137.171585,
+    adjClose: 137.171585,
     volume: 137426100,
   },
   {
@@ -824,7 +824,7 @@ const APPL = [
     high: 143.259995,
     low: 137.649994,
     close: 143.110001,
-    adjclose: 142.674805,
+    adjClose: 142.674805,
     volume: 117726300,
   },
   {
@@ -833,7 +833,7 @@ const APPL = [
     high: 141.970001,
     low: 137.330002,
     close: 140.360001,
-    adjclose: 139.933167,
+    adjClose: 139.933167,
     volume: 104132700,
   },
   {
@@ -842,7 +842,7 @@ const APPL = [
     high: 141.789993,
     low: 138.339996,
     close: 140.520004,
-    adjclose: 140.092697,
+    adjClose: 140.092697,
     volume: 92482700,
   },
   {
@@ -851,7 +851,7 @@ const APPL = [
     high: 144.339996,
     low: 137.139999,
     close: 143.779999,
-    adjclose: 143.342758,
+    adjClose: 143.342758,
     volume: 90601500,
   },
   {
@@ -860,7 +860,7 @@ const APPL = [
     high: 149.679993,
     low: 145.259995,
     close: 149.639999,
-    adjclose: 149.184952,
+    adjClose: 149.184952,
     volume: 90978500,
   },
   {
@@ -869,7 +869,7 @@ const APPL = [
     high: 150.660004,
     low: 146.839996,
     close: 148.839996,
-    adjclose: 148.38739,
+    adjClose: 148.38739,
     volume: 103718400,
   },
   {
@@ -878,7 +878,7 @@ const APPL = [
     high: 151.740005,
     low: 147.679993,
     close: 148.710007,
-    adjclose: 148.257782,
+    adjClose: 148.257782,
     volume: 74286600,
   },
   {
@@ -887,7 +887,7 @@ const APPL = [
     high: 151.270004,
     low: 146.860001,
     close: 151.210007,
-    adjclose: 150.750183,
+    adjClose: 150.750183,
     volume: 72348100,
   },
   {
@@ -896,7 +896,7 @@ const APPL = [
     high: 147.970001,
     low: 144.460007,
     close: 145.380005,
-    adjclose: 144.937912,
+    adjClose: 144.937912,
     volume: 88570300,
   },
   {
@@ -905,7 +905,7 @@ const APPL = [
     high: 148.570007,
     low: 144.899994,
     close: 146.139999,
-    adjclose: 145.695602,
+    adjClose: 145.695602,
     volume: 71598400,
   },
   {
@@ -914,7 +914,7 @@ const APPL = [
     high: 149,
     low: 144.100006,
     close: 148.710007,
-    adjclose: 148.257782,
+    adjClose: 148.257782,
     volume: 67808200,
   },
   {
@@ -923,7 +923,7 @@ const APPL = [
     high: 149.869995,
     low: 147.460007,
     close: 147.960007,
-    adjclose: 147.510071,
+    adjClose: 147.510071,
     volume: 53950200,
   },
   {
@@ -932,7 +932,7 @@ const APPL = [
     high: 147.949997,
     low: 142.529999,
     close: 142.639999,
-    adjclose: 142.206238,
+    adjClose: 142.206238,
     volume: 69473000,
   },
   {
@@ -941,7 +941,7 @@ const APPL = [
     high: 140.759995,
     low: 137.059998,
     close: 137.130005,
-    adjclose: 136.712997,
+    adjClose: 136.712997,
     volume: 91437900,
   },
   {
@@ -950,7 +950,7 @@ const APPL = [
     high: 135.199997,
     low: 131.440002,
     close: 131.880005,
-    adjclose: 131.478958,
+    adjClose: 131.478958,
     volume: 122207100,
   },
   {
@@ -959,7 +959,7 @@ const APPL = [
     high: 133.889999,
     low: 131.479996,
     close: 132.759995,
-    adjclose: 132.356277,
+    adjClose: 132.356277,
     volume: 84784300,
   },
   {
@@ -968,7 +968,7 @@ const APPL = [
     high: 137.339996,
     low: 132.160004,
     close: 135.429993,
-    adjclose: 135.018158,
+    adjClose: 135.018158,
     volume: 91533000,
   },
   {
@@ -977,7 +977,7 @@ const APPL = [
     high: 132.389999,
     low: 129.039993,
     close: 130.059998,
-    adjclose: 129.66449,
+    adjClose: 129.66449,
     volume: 108123900,
   },
   {
@@ -986,7 +986,7 @@ const APPL = [
     high: 133.080002,
     low: 129.809998,
     close: 131.559998,
-    adjclose: 131.159927,
+    adjClose: 131.159927,
     volume: 134520300,
   },
   {
@@ -995,7 +995,7 @@ const APPL = [
     high: 137.059998,
     low: 133.320007,
     close: 135.869995,
-    adjclose: 135.456833,
+    adjClose: 135.456833,
     volume: 81000500,
   },
   {
@@ -1004,7 +1004,7 @@ const APPL = [
     high: 137.759995,
     low: 133.910004,
     close: 135.350006,
-    adjclose: 134.938416,
+    adjClose: 134.938416,
     volume: 73409200,
   },
   {
@@ -1013,7 +1013,7 @@ const APPL = [
     high: 138.589996,
     low: 135.630005,
     close: 138.270004,
-    adjclose: 137.849533,
+    adjClose: 137.849533,
     volume: 72433800,
   },
   {
@@ -1022,7 +1022,7 @@ const APPL = [
     high: 141.910004,
     low: 139.770004,
     close: 141.660004,
-    adjclose: 141.229218,
+    adjClose: 141.229218,
     volume: 89116800,
   },
   {
@@ -1031,7 +1031,7 @@ const APPL = [
     high: 143.490005,
     low: 140.970001,
     close: 141.660004,
-    adjclose: 141.229218,
+    adjClose: 141.229218,
     volume: 70207900,
   },
   {
@@ -1040,7 +1040,7 @@ const APPL = [
     high: 143.419998,
     low: 137.320007,
     close: 137.440002,
-    adjclose: 137.022064,
+    adjClose: 137.022064,
     volume: 67083400,
   },
   {
@@ -1049,7 +1049,7 @@ const APPL = [
     high: 140.669998,
     low: 136.669998,
     close: 139.229996,
-    adjclose: 138.80661,
+    adjClose: 138.80661,
     volume: 66242400,
   },
   {
@@ -1058,7 +1058,7 @@ const APPL = [
     high: 138.369995,
     low: 133.770004,
     close: 136.720001,
-    adjclose: 136.304245,
+    adjClose: 136.304245,
     volume: 98964500,
   },
   {
@@ -1067,7 +1067,7 @@ const APPL = [
     high: 139.039993,
     low: 135.660004,
     close: 138.929993,
-    adjclose: 138.507507,
+    adjClose: 138.507507,
     volume: 71051600,
   },
   {
@@ -1076,7 +1076,7 @@ const APPL = [
     high: 141.610001,
     low: 136.929993,
     close: 141.559998,
-    adjclose: 141.129517,
+    adjClose: 141.129517,
     volume: 73353800,
   },
   {
@@ -1085,7 +1085,7 @@ const APPL = [
     high: 144.119995,
     low: 141.080002,
     close: 142.919998,
-    adjclose: 142.485397,
+    adjClose: 142.485397,
     volume: 74064300,
   },
   {
@@ -1094,7 +1094,7 @@ const APPL = [
     high: 146.550003,
     low: 143.279999,
     close: 146.350006,
-    adjclose: 145.904968,
+    adjClose: 145.904968,
     volume: 66253700,
   },
   {
@@ -1103,7 +1103,7 @@ const APPL = [
     high: 147.550003,
     low: 145,
     close: 147.039993,
-    adjclose: 146.59285,
+    adjClose: 146.59285,
     volume: 64547800,
   },
   {
@@ -1112,7 +1112,7 @@ const APPL = [
     high: 146.639999,
     low: 143.779999,
     close: 144.869995,
-    adjclose: 144.429443,
+    adjClose: 144.429443,
     volume: 63141600,
   },
   {
@@ -1121,7 +1121,7 @@ const APPL = [
     high: 148.449997,
     low: 145.050003,
     close: 145.860001,
-    adjclose: 145.416443,
+    adjClose: 145.416443,
     volume: 77588800,
   },
   {
@@ -1130,7 +1130,7 @@ const APPL = [
     high: 146.449997,
     low: 142.119995,
     close: 145.490005,
-    adjclose: 145.047577,
+    adjClose: 145.047577,
     volume: 71185600,
   },
   {
@@ -1139,7 +1139,7 @@ const APPL = [
     high: 148.949997,
     low: 143.25,
     close: 148.470001,
-    adjclose: 148.018509,
+    adjClose: 148.018509,
     volume: 78140700,
   },
   {
@@ -1148,7 +1148,7 @@ const APPL = [
     high: 150.860001,
     low: 148.199997,
     close: 150.169998,
-    adjclose: 149.713348,
+    adjClose: 149.713348,
     volume: 76259900,
   },
   {
@@ -1157,7 +1157,7 @@ const APPL = [
     high: 151.570007,
     low: 146.699997,
     close: 147.070007,
-    adjclose: 146.622772,
+    adjClose: 146.622772,
     volume: 81420900,
   },
   {
@@ -1166,7 +1166,7 @@ const APPL = [
     high: 151.229996,
     low: 146.910004,
     close: 151,
-    adjclose: 150.540817,
+    adjClose: 150.540817,
     volume: 82982400,
   },
   {
@@ -1175,7 +1175,7 @@ const APPL = [
     high: 153.720001,
     low: 150.369995,
     close: 153.039993,
-    adjclose: 152.574615,
+    adjClose: 152.574615,
     volume: 64823400,
   },
   {
@@ -1184,7 +1184,7 @@ const APPL = [
     high: 155.570007,
     low: 151.940002,
     close: 155.350006,
-    adjclose: 154.877594,
+    adjClose: 154.877594,
     volume: 65086600,
   },
   {
@@ -1193,7 +1193,7 @@ const APPL = [
     high: 156.279999,
     low: 153.410004,
     close: 154.089996,
-    adjclose: 153.621414,
+    adjClose: 153.621414,
     volume: 66675400,
   },
   {
@@ -1202,7 +1202,7 @@ const APPL = [
     high: 155.039993,
     low: 152.279999,
     close: 152.949997,
-    adjclose: 152.484894,
+    adjClose: 152.484894,
     volume: 53623900,
   },
   {
@@ -1211,7 +1211,7 @@ const APPL = [
     high: 153.089996,
     low: 150.800003,
     close: 151.600006,
-    adjclose: 151.139008,
+    adjClose: 151.139008,
     volume: 55138700,
   },
   {
@@ -1220,7 +1220,7 @@ const APPL = [
     high: 157.330002,
     low: 152.160004,
     close: 156.789993,
-    adjclose: 156.313202,
+    adjClose: 156.313202,
     volume: 78620700,
   },
   {
@@ -1229,7 +1229,7 @@ const APPL = [
     high: 157.639999,
     low: 154.410004,
     close: 157.350006,
-    adjclose: 156.871521,
+    adjClose: 156.871521,
     volume: 81378700,
   },
   {
@@ -1238,7 +1238,7 @@ const APPL = [
     high: 163.630005,
     low: 159.5,
     close: 162.509995,
-    adjclose: 162.015808,
+    adjClose: 162.015808,
     volume: 101786900,
   },
   {
@@ -1247,7 +1247,7 @@ const APPL = [
     high: 163.589996,
     low: 160.889999,
     close: 161.509995,
-    adjclose: 161.01886,
+    adjClose: 161.01886,
     volume: 67829400,
   },
   {
@@ -1256,7 +1256,7 @@ const APPL = [
     high: 162.410004,
     low: 159.630005,
     close: 160.009995,
-    adjclose: 159.523407,
+    adjClose: 159.523407,
     volume: 59907000,
   },
   {
@@ -1265,7 +1265,7 @@ const APPL = [
     high: 166.589996,
     low: 160.75,
     close: 166.130005,
-    adjclose: 165.624817,
+    adjClose: 165.624817,
     volume: 82507500,
   },
   {
@@ -1274,7 +1274,7 @@ const APPL = [
     high: 167.190002,
     low: 164.429993,
     close: 165.809998,
-    adjclose: 165.305786,
+    adjClose: 165.305786,
     volume: 55474100,
   },
   {
@@ -1283,7 +1283,7 @@ const APPL = [
     high: 165.850006,
     low: 163,
     close: 165.350006,
-    adjclose: 165.076172,
+    adjClose: 165.076172,
     volume: 56697000,
   },
   {
@@ -1292,7 +1292,7 @@ const APPL = [
     high: 167.809998,
     low: 164.199997,
     close: 164.869995,
-    adjclose: 164.596954,
+    adjClose: 164.596954,
     volume: 60276900,
   },
   {
@@ -1301,7 +1301,7 @@ const APPL = [
     high: 165.820007,
     low: 163.25,
     close: 164.919998,
-    adjclose: 164.646866,
+    adjClose: 164.646866,
     volume: 63135500,
   },
   {
@@ -1310,7 +1310,7 @@ const APPL = [
     high: 169.339996,
     low: 166.899994,
     close: 169.240005,
-    adjclose: 168.959732,
+    adjClose: 168.959732,
     volume: 70170500,
   },
   {
@@ -1319,7 +1319,7 @@ const APPL = [
     high: 170.990005,
     low: 168.190002,
     close: 168.490005,
-    adjclose: 168.210968,
+    adjClose: 168.210968,
     volume: 57149200,
   },
   {
@@ -1328,7 +1328,7 @@ const APPL = [
     high: 172.169998,
     low: 169.399994,
     close: 172.100006,
-    adjclose: 171.814987,
+    adjClose: 171.814987,
     volume: 68039400,
   },
   {
@@ -1337,7 +1337,7 @@ const APPL = [
     high: 173.389999,
     low: 171.350006,
     close: 173.190002,
-    adjclose: 172.903183,
+    adjClose: 172.903183,
     volume: 54091700,
   },
   {
@@ -1346,7 +1346,7 @@ const APPL = [
     high: 173.710007,
     low: 171.660004,
     close: 173.029999,
-    adjclose: 172.743439,
+    adjClose: 172.743439,
     volume: 56377100,
   },
   {
@@ -1355,7 +1355,7 @@ const APPL = [
     high: 176.149994,
     low: 172.570007,
     close: 174.550003,
-    adjclose: 174.260925,
+    adjClose: 174.260925,
     volume: 79542000,
   },
   {
@@ -1364,7 +1364,7 @@ const APPL = [
     high: 174.899994,
     low: 173.119995,
     close: 174.149994,
-    adjclose: 173.861588,
+    adjClose: 173.861588,
     volume: 62290100,
   },
   {
@@ -1373,7 +1373,7 @@ const APPL = [
     high: 173.740005,
     low: 171.309998,
     close: 171.520004,
-    adjclose: 171.235947,
+    adjClose: 171.235947,
     volume: 70346300,
   },
   {
@@ -1382,7 +1382,7 @@ const APPL = [
     high: 169.860001,
     low: 167.139999,
     close: 167.570007,
-    adjclose: 167.292496,
+    adjClose: 167.292496,
     volume: 69026800,
   },
   {
@@ -1391,7 +1391,7 @@ const APPL = [
     high: 168.710007,
     low: 166.649994,
     close: 167.229996,
-    adjclose: 166.953049,
+    adjClose: 166.953049,
     volume: 54147100,
   },
   {
@@ -1400,7 +1400,7 @@ const APPL = [
     high: 168.110001,
     low: 166.25,
     close: 167.529999,
-    adjclose: 167.252548,
+    adjClose: 167.252548,
     volume: 53841500,
   },
   {
@@ -1409,7 +1409,7 @@ const APPL = [
     high: 170.139999,
     low: 168.350006,
     close: 170.029999,
-    adjclose: 169.748413,
+    adjClose: 169.748413,
     volume: 51218200,
   },
   {
@@ -1418,7 +1418,7 @@ const APPL = [
     high: 171.050003,
     low: 163.559998,
     close: 163.619995,
-    adjclose: 163.349014,
+    adjClose: 163.349014,
     volume: 78961000,
   },
   {
@@ -1427,7 +1427,7 @@ const APPL = [
     high: 162.899994,
     low: 159.820007,
     close: 161.380005,
-    adjclose: 161.112747,
+    adjClose: 161.112747,
     volume: 73314000,
   },
   {
@@ -1436,7 +1436,7 @@ const APPL = [
     high: 162.559998,
     low: 157.720001,
     close: 158.910004,
-    adjclose: 158.646835,
+    adjClose: 158.646835,
     volume: 77906200,
   },
   {
@@ -1445,7 +1445,7 @@ const APPL = [
     high: 160.580002,
     low: 157.139999,
     close: 157.220001,
-    adjclose: 156.959625,
+    adjClose: 156.959625,
     volume: 87991100,
   },
   {
@@ -1454,7 +1454,7 @@ const APPL = [
     high: 158.419998,
     low: 154.669998,
     close: 157.960007,
-    adjclose: 157.69841,
+    adjClose: 157.69841,
     volume: 74229900,
   },
   {
@@ -1463,7 +1463,7 @@ const APPL = [
     high: 160.360001,
     low: 154.970001,
     close: 155.809998,
-    adjclose: 155.551956,
+    adjClose: 155.551956,
     volume: 76957800,
   },
   {
@@ -1472,7 +1472,7 @@ const APPL = [
     high: 157.089996,
     low: 153.690002,
     close: 154.529999,
-    adjclose: 154.274078,
+    adjClose: 154.274078,
     volume: 73714800,
   },
   {
@@ -1481,7 +1481,7 @@ const APPL = [
     high: 156.669998,
     low: 153.610001,
     close: 155.960007,
-    adjclose: 155.701721,
+    adjClose: 155.701721,
     volume: 87449600,
   },
   {
@@ -1490,7 +1490,7 @@ const APPL = [
     high: 156.360001,
     low: 152.679993,
     close: 154.460007,
-    adjclose: 154.204208,
+    adjClose: 154.204208,
     volume: 84923800,
   },
   {
@@ -1499,7 +1499,7 @@ const APPL = [
     high: 157.820007,
     low: 154.75,
     close: 157.369995,
-    adjclose: 157.109375,
+    adjClose: 157.109375,
     volume: 68028800,
   },
   {
@@ -1508,7 +1508,7 @@ const APPL = [
     high: 164.259995,
     low: 159.300003,
     close: 163.429993,
-    adjclose: 163.159332,
+    adjClose: 163.159332,
     volume: 104956000,
   },
   {
@@ -1517,7 +1517,7 @@ const APPL = [
     high: 160.539993,
     low: 153.369995,
     close: 153.839996,
-    adjclose: 153.58522,
+    adjClose: 153.58522,
     volume: 122656600,
   },
   {
@@ -1526,7 +1526,7 @@ const APPL = [
     high: 157.100006,
     low: 153.610001,
     close: 155.309998,
-    adjclose: 155.05278,
+    adjClose: 155.05278,
     volume: 87965400,
   },
   {
@@ -1535,7 +1535,7 @@ const APPL = [
     high: 155.240005,
     low: 151.380005,
     close: 152.369995,
-    adjclose: 152.117645,
+    adjClose: 152.117645,
     volume: 90481100,
   },
   {
@@ -1544,7 +1544,7 @@ const APPL = [
     high: 151.350006,
     low: 148.369995,
     close: 150.699997,
-    adjclose: 150.450424,
+    adjClose: 150.450424,
     volume: 162278800,
   },
   {
@@ -1553,7 +1553,7 @@ const APPL = [
     high: 154.559998,
     low: 149.100006,
     close: 154.479996,
-    adjclose: 154.224152,
+    adjClose: 154.224152,
     volume: 81474200,
   },
   {
@@ -1562,7 +1562,7 @@ const APPL = [
     high: 158.080002,
     low: 153.080002,
     close: 156.899994,
-    adjclose: 156.640152,
+    adjClose: 156.640152,
     volume: 107689800,
   },
   {
@@ -1571,7 +1571,7 @@ const APPL = [
     high: 158.740005,
     low: 153.600006,
     close: 153.720001,
-    adjclose: 153.465424,
+    adjClose: 153.465424,
     volume: 101696800,
   },
   {
@@ -1580,7 +1580,7 @@ const APPL = [
     high: 154.470001,
     low: 150.910004,
     close: 152.740005,
-    adjclose: 152.487045,
+    adjClose: 152.487045,
     volume: 86652500,
   },
   {
@@ -1589,7 +1589,7 @@ const APPL = [
     high: 151.470001,
     low: 148.559998,
     close: 150.429993,
-    adjclose: 150.180862,
+    adjClose: 150.180862,
     volume: 96029900,
   },
   {
@@ -1598,7 +1598,7 @@ const APPL = [
     high: 153.770004,
     low: 149.639999,
     close: 150.770004,
-    adjclose: 150.520309,
+    adjClose: 150.520309,
     volume: 93339400,
   },
   {
@@ -1607,7 +1607,7 @@ const APPL = [
     high: 154.720001,
     low: 149.949997,
     close: 151.759995,
-    adjclose: 151.508667,
+    adjClose: 151.508667,
     volume: 84442700,
   },
   {
@@ -1616,7 +1616,7 @@ const APPL = [
     high: 150.639999,
     low: 144.839996,
     close: 149.839996,
-    adjclose: 149.591843,
+    adjClose: 149.591843,
     volume: 146691400,
   },
   {
@@ -1625,7 +1625,7 @@ const APPL = [
     high: 146.720001,
     low: 140.679993,
     close: 142.479996,
-    adjclose: 142.244034,
+    adjClose: 142.244034,
     volume: 128138200,
   },
   {
@@ -1634,7 +1634,7 @@ const APPL = [
     high: 143.100006,
     low: 138,
     close: 138.199997,
-    adjclose: 137.971115,
+    adjClose: 137.971115,
     volume: 124925300,
   },
   {
@@ -1643,7 +1643,7 @@ const APPL = [
     high: 143.070007,
     low: 137.690002,
     close: 142.449997,
-    adjclose: 142.214081,
+    adjClose: 142.214081,
     volume: 114311700,
   },
   {
@@ -1652,7 +1652,7 @@ const APPL = [
     high: 146.220001,
     low: 144.259995,
     close: 146.100006,
-    adjclose: 145.858047,
+    adjClose: 145.858047,
     volume: 87830100,
   },
   {
@@ -1661,7 +1661,7 @@ const APPL = [
     high: 147.380005,
     low: 143.009995,
     close: 146.399994,
-    adjclose: 146.157532,
+    adjClose: 146.157532,
     volume: 79471000,
   },
   {
@@ -1670,7 +1670,7 @@ const APPL = [
     high: 147.539993,
     low: 145.220001,
     close: 145.429993,
-    adjclose: 145.189148,
+    adjClose: 145.189148,
     volume: 68402200,
   },
   {
@@ -1679,7 +1679,7 @@ const APPL = [
     high: 143.100006,
     low: 139.449997,
     close: 140.089996,
-    adjclose: 139.857986,
+    adjClose: 139.857986,
     volume: 85925600,
   },
   {
@@ -1688,7 +1688,7 @@ const APPL = [
     high: 141.889999,
     low: 138.570007,
     close: 140.419998,
-    adjclose: 140.187439,
+    adjClose: 140.187439,
     volume: 74899000,
   },
   {
@@ -1697,7 +1697,7 @@ const APPL = [
     high: 141.350006,
     low: 138.220001,
     close: 138.979996,
-    adjclose: 138.749832,
+    adjClose: 138.749832,
     volume: 77033700,
   },
   {
@@ -1706,7 +1706,7 @@ const APPL = [
     high: 140.360001,
     low: 138.160004,
     close: 138.339996,
-    adjclose: 138.110886,
+    adjClose: 138.110886,
     volume: 70433700,
   },
   {
@@ -1715,7 +1715,7 @@ const APPL = [
     high: 143.589996,
     low: 134.369995,
     close: 142.990005,
-    adjclose: 142.753204,
+    adjClose: 142.753204,
     volume: 113224000,
   },
   {
@@ -1724,7 +1724,7 @@ const APPL = [
     high: 144.520004,
     low: 138.190002,
     close: 138.380005,
-    adjclose: 138.150833,
+    adjClose: 138.150833,
     volume: 88598000,
   },
   {
@@ -1733,7 +1733,7 @@ const APPL = [
     high: 142.899994,
     low: 140.270004,
     close: 142.410004,
-    adjclose: 142.174164,
+    adjClose: 142.174164,
     volume: 85250900,
   },
   {
@@ -1742,7 +1742,7 @@ const APPL = [
     high: 146.699997,
     low: 140.610001,
     close: 143.75,
-    adjclose: 143.511932,
+    adjClose: 143.511932,
     volume: 99136600,
   },
   {
@@ -1751,7 +1751,7 @@ const APPL = [
     high: 144.949997,
     low: 141.5,
     close: 143.860001,
-    adjclose: 143.62175,
+    adjClose: 143.62175,
     volume: 61758300,
   },
   {
@@ -1760,7 +1760,7 @@ const APPL = [
     high: 145.889999,
     low: 142.649994,
     close: 143.389999,
-    adjclose: 143.152527,
+    adjClose: 143.152527,
     volume: 64522000,
   },
   {
@@ -1769,7 +1769,7 @@ const APPL = [
     high: 147.850006,
     low: 142.649994,
     close: 147.270004,
-    adjclose: 147.026108,
+    adjClose: 147.026108,
     volume: 86548600,
   },
   {
@@ -1778,7 +1778,7 @@ const APPL = [
     high: 150.229996,
     low: 146,
     close: 149.449997,
-    adjclose: 149.202484,
+    adjClose: 149.202484,
     volume: 75981900,
   },
   {
@@ -1787,7 +1787,7 @@ const APPL = [
     high: 152.490005,
     low: 149.360001,
     close: 152.339996,
-    adjclose: 152.087708,
+    adjClose: 152.087708,
     volume: 74732300,
   },
   {
@@ -1796,7 +1796,7 @@ const APPL = [
     high: 151.990005,
     low: 148.039993,
     close: 149.350006,
-    adjclose: 149.102661,
+    adjClose: 149.102661,
     volume: 88194300,
   },
   {
@@ -1805,7 +1805,7 @@ const APPL = [
     high: 149.050003,
     low: 144.130005,
     close: 144.800003,
-    adjclose: 144.560196,
+    adjClose: 144.560196,
     volume: 109180200,
   },
   {
@@ -1814,7 +1814,7 @@ const APPL = [
     high: 157.5,
     low: 147.820007,
     close: 155.740005,
-    adjclose: 155.482086,
+    adjClose: 155.482086,
     volume: 164762400,
   },
   {
@@ -1823,7 +1823,7 @@ const APPL = [
     high: 154.240005,
     low: 151.919998,
     close: 153.339996,
-    adjclose: 153.086044,
+    adjClose: 153.086044,
     volume: 97943200,
   },
   {
@@ -1832,7 +1832,7 @@ const APPL = [
     high: 155.449997,
     low: 149.130005,
     close: 150.649994,
-    adjclose: 150.400497,
+    adjClose: 150.400497,
     volume: 80379300,
   },
   {
@@ -1841,7 +1841,7 @@ const APPL = [
     high: 152.169998,
     low: 145,
     close: 145.029999,
-    adjclose: 144.78981,
+    adjClose: 144.78981,
     volume: 93604600,
   },
   {
@@ -1850,7 +1850,7 @@ const APPL = [
     high: 142.800003,
     low: 138.75,
     close: 138.880005,
-    adjclose: 138.650009,
+    adjClose: 138.650009,
     volume: 97918500,
   },
   {
@@ -1859,7 +1859,7 @@ const APPL = [
     high: 142.669998,
     low: 134.380005,
     close: 138.380005,
-    adjclose: 138.380005,
+    adjClose: 138.380005,
     volume: 140814800,
   },
   {
@@ -1868,7 +1868,7 @@ const APPL = [
     high: 139.149994,
     low: 135.669998,
     close: 138.919998,
-    adjclose: 138.919998,
+    adjClose: 138.919998,
     volume: 83374600,
   },
   {
@@ -1877,7 +1877,7 @@ const APPL = [
     high: 141.429993,
     low: 137.490005,
     close: 139.5,
-    adjclose: 139.5,
+    adjClose: 139.5,
     volume: 89908500,
   },
   {
@@ -1886,7 +1886,7 @@ const APPL = [
     high: 138.550003,
     low: 134.589996,
     close: 134.869995,
-    adjclose: 134.869995,
+    adjClose: 134.869995,
     volume: 74917800,
   },
   {
@@ -1895,7 +1895,7 @@ const APPL = [
     high: 146.869995,
     low: 139.5,
     close: 146.869995,
-    adjclose: 146.869995,
+    adjClose: 146.869995,
     volume: 118854000,
   },
   {
@@ -1904,7 +1904,7 @@ const APPL = [
     high: 150.009995,
     low: 144.369995,
     close: 149.699997,
-    adjclose: 149.699997,
+    adjClose: 149.699997,
     volume: 93979700,
   },
   {
@@ -1913,7 +1913,7 @@ const APPL = [
     high: 150.279999,
     low: 147.429993,
     close: 148.279999,
-    adjclose: 148.279999,
+    adjClose: 148.279999,
     volume: 73374100,
   },
   {
@@ -1922,7 +1922,7 @@ const APPL = [
     high: 153.589996,
     low: 148.559998,
     close: 150.039993,
-    adjclose: 150.039993,
+    adjClose: 150.039993,
     volume: 89868300,
   },
   {
@@ -1931,7 +1931,7 @@ const APPL = [
     high: 149.869995,
     low: 147.289993,
     close: 148.789993,
-    adjclose: 148.789993,
+    adjClose: 148.789993,
     volume: 64218300,
   },
   {
@@ -1940,7 +1940,7 @@ const APPL = [
     high: 151.479996,
     low: 146.149994,
     close: 150.720001,
-    adjclose: 150.720001,
+    adjClose: 150.720001,
     volume: 80389400,
   },
   {
@@ -1949,7 +1949,7 @@ const APPL = [
     high: 152.699997,
     low: 149.970001,
     close: 151.289993,
-    adjclose: 151.289993,
+    adjClose: 151.289993,
     volume: 74829600,
   },
   {
@@ -1958,7 +1958,7 @@ const APPL = [
     high: 150.369995,
     low: 147.720001,
     close: 148.009995,
-    adjclose: 148.009995,
+    adjClose: 148.009995,
     volume: 58724100,
   },
   {
@@ -1967,7 +1967,7 @@ const APPL = [
     high: 150.419998,
     low: 146.929993,
     close: 150.179993,
-    adjclose: 150.179993,
+    adjClose: 150.179993,
     volume: 51804100,
   },
   {
@@ -1976,7 +1976,7 @@ const APPL = [
     high: 151.830002,
     low: 149.339996,
     close: 151.070007,
-    adjclose: 151.070007,
+    adjClose: 151.070007,
     volume: 58301400,
   },
   {
@@ -1985,7 +1985,7 @@ const APPL = [
     high: 148.880005,
     low: 147.119995,
     close: 148.110001,
-    adjclose: 148.110001,
+    adjClose: 148.110001,
     volume: 35195900,
   },
   {
@@ -1994,7 +1994,7 @@ const APPL = [
     high: 146.639999,
     low: 143.380005,
     close: 144.220001,
-    adjclose: 144.220001,
+    adjClose: 144.220001,
     volume: 69246000,
   },
   {
@@ -2003,7 +2003,7 @@ const APPL = [
     high: 144.809998,
     low: 140.350006,
     close: 141.169998,
-    adjclose: 141.169998,
+    adjClose: 141.169998,
     volume: 83763800,
   },
   {
@@ -2012,7 +2012,7 @@ const APPL = [
     high: 148.720001,
     low: 140.550003,
     close: 148.029999,
-    adjclose: 148.029999,
+    adjClose: 148.029999,
     volume: 111380900,
   },
   {
@@ -2021,7 +2021,7 @@ const APPL = [
     high: 149.130005,
     low: 146.610001,
     close: 148.309998,
-    adjclose: 148.309998,
+    adjClose: 148.309998,
     volume: 71250400,
   },
   {
@@ -2030,7 +2030,7 @@ const APPL = [
     high: 148,
     low: 145.649994,
     close: 147.809998,
-    adjclose: 147.809998,
+    adjClose: 147.809998,
     volume: 65447400,
   },
   {
@@ -2039,7 +2039,7 @@ const APPL = [
     high: 150.919998,
     low: 145.770004,
     close: 146.630005,
-    adjclose: 146.630005,
+    adjClose: 146.630005,
     volume: 68826400,
   },
   {
@@ -2048,7 +2048,7 @@ const APPL = [
     high: 147.300003,
     low: 141.919998,
     close: 142.910004,
-    adjclose: 142.910004,
+    adjClose: 142.910004,
     volume: 64727200,
   },
   {
@@ -2057,7 +2057,7 @@ const APPL = [
     high: 143.369995,
     low: 140,
     close: 140.940002,
-    adjclose: 140.940002,
+    adjClose: 140.940002,
     volume: 69721100,
   },
   {
@@ -2066,7 +2066,7 @@ const APPL = [
     high: 143.520004,
     low: 141.100006,
     close: 142.649994,
-    adjclose: 142.649994,
+    adjClose: 142.649994,
     volume: 62128300,
   },
   {
@@ -2075,7 +2075,7 @@ const APPL = [
     high: 145.570007,
     low: 140.899994,
     close: 142.160004,
-    adjclose: 142.160004,
+    adjClose: 142.160004,
     volume: 76097000,
   },
   {
@@ -2084,7 +2084,7 @@ const APPL = [
     high: 144.5,
     low: 141.059998,
     close: 144.490005,
-    adjclose: 144.490005,
+    adjClose: 144.490005,
     volume: 70462700,
   },
   {
@@ -2093,7 +2093,7 @@ const APPL = [
     high: 149.970001,
     low: 144.240005,
     close: 145.470001,
-    adjclose: 145.470001,
+    adjClose: 145.470001,
     volume: 93886200,
   },
   {
@@ -2102,7 +2102,7 @@ const APPL = [
     high: 146.660004,
     low: 141.160004,
     close: 143.210007,
-    adjclose: 143.210007,
+    adjClose: 143.210007,
     volume: 82291200,
   },
   {
@@ -2111,7 +2111,7 @@ const APPL = [
     high: 141.800003,
     low: 136.029999,
     close: 136.5,
-    adjclose: 136.5,
+    adjClose: 136.5,
     volume: 98931900,
   },
   {
@@ -2120,7 +2120,7 @@ const APPL = [
     high: 137.649994,
     low: 133.729996,
     close: 134.509995,
-    adjclose: 134.509995,
+    adjClose: 134.509995,
     volume: 160156900,
   },
   {
@@ -2129,7 +2129,7 @@ const APPL = [
     high: 135.199997,
     low: 131.320007,
     close: 132.369995,
-    adjclose: 132.369995,
+    adjClose: 132.369995,
     volume: 79592600,
   },
   {
@@ -2138,7 +2138,7 @@ const APPL = [
     high: 133.25,
     low: 129.889999,
     close: 132.300003,
-    adjclose: 132.300003,
+    adjClose: 132.300003,
     volume: 77432800,
   },
   {
@@ -2147,7 +2147,7 @@ const APPL = [
     high: 136.809998,
     low: 132.75,
     close: 135.449997,
-    adjclose: 135.449997,
+    adjClose: 135.449997,
     volume: 85928000,
   },
   {
@@ -2156,7 +2156,7 @@ const APPL = [
     high: 134.559998,
     low: 130.300003,
     close: 132.229996,
-    adjclose: 132.229996,
+    adjClose: 132.229996,
     volume: 77852100,
   },
   {
@@ -2165,7 +2165,7 @@ const APPL = [
     high: 132.419998,
     low: 129.639999,
     close: 131.860001,
-    adjclose: 131.860001,
+    adjClose: 131.860001,
     volume: 63814900,
   },
   {
@@ -2174,7 +2174,7 @@ const APPL = [
     high: 131.410004,
     low: 128.720001,
     close: 130.029999,
-    adjclose: 130.029999,
+    adjClose: 130.029999,
     volume: 69007800,
   },
   {
@@ -2183,7 +2183,7 @@ const APPL = [
     high: 131.029999,
     low: 125.870003,
     close: 126.040001,
-    adjclose: 126.040001,
+    adjClose: 126.040001,
     volume: 85438400,
   },
   {
@@ -2192,7 +2192,7 @@ const APPL = [
     high: 130.479996,
     low: 127.730003,
     close: 129.610001,
-    adjclose: 129.610001,
+    adjClose: 129.610001,
     volume: 75703700,
   },
   {
@@ -2201,7 +2201,7 @@ const APPL = [
     high: 129.949997,
     low: 127.43,
     close: 129.929993,
-    adjclose: 129.929993,
+    adjClose: 129.929993,
     volume: 76960600,
   },
   {
@@ -2210,7 +2210,7 @@ const APPL = [
     high: 130.899994,
     low: 124.169998,
     close: 125.07,
-    adjclose: 125.07,
+    adjClose: 125.07,
     volume: 112117500,
   },
   {
@@ -2219,7 +2219,7 @@ const APPL = [
     high: 128.660004,
     low: 125.080002,
     close: 126.360001,
-    adjclose: 126.360001,
+    adjClose: 126.360001,
     volume: 89113600,
   },
   {
@@ -2228,7 +2228,7 @@ const APPL = [
     high: 127.769997,
     low: 124.760002,
     close: 125.019997,
-    adjclose: 125.019997,
+    adjClose: 125.019997,
     volume: 80962700,
   },
   {
@@ -2237,7 +2237,7 @@ const APPL = [
     high: 130.289993,
     low: 124.889999,
     close: 129.619995,
-    adjclose: 129.619995,
+    adjClose: 129.619995,
     volume: 87686600,
   },
   {
@@ -2246,7 +2246,7 @@ const APPL = [
     high: 133.410004,
     low: 129.889999,
     close: 130.149994,
-    adjclose: 130.149994,
+    adjClose: 130.149994,
     volume: 70790800,
   },
   {
@@ -2255,7 +2255,7 @@ const APPL = [
     high: 131.259995,
     low: 128.119995,
     close: 130.729996,
-    adjclose: 130.729996,
+    adjClose: 130.729996,
     volume: 63896200,
   },
   {
@@ -2264,7 +2264,7 @@ const APPL = [
     high: 133.509995,
     low: 130.460007,
     close: 133.490005,
-    adjclose: 133.490005,
+    adjClose: 133.490005,
     volume: 69359700,
   },
 ];
